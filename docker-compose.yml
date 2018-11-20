@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  container_api:
+    container_name: api-colsubsidio
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+    - 8100:80
+    environment:
+    - "TZ=America/Bogota"
