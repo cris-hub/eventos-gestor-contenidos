@@ -512,11 +512,12 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    private function getUrlImage($path) {
+    private function getUrlImage($path){
+        $urlBlob = "https://bscolsubsidiotest.blob.core.windows.net/colsubsidioportalsalud/";
         $siteUrl = $this->getSiteurl();
-        $tempPath = str_replace(\Yii::$app->basePath, $siteUrl . \yii\helpers\Url::base() . '/..', $path);
+        $tempPath = str_replace(\Yii::$app->basePath, $urlBlob .'/..', $path);
         return str_replace('\\', '/', $tempPath);
-    }
+        }
 
     public function actionGetimagebanner() {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;

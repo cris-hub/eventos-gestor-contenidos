@@ -1,5 +1,3 @@
-assets/*
-!assets/.gitignore
 protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
@@ -7,7 +5,7 @@ themes/classic/views/
 
 # phpstorm project files
 .idea
-
+/vendor
 # netbeans project files
 #nbproject
 
@@ -18,7 +16,7 @@ themes/classic/views/
 
 # windows thumbnail cache
 Thumbs.db
-
+uploadds/
 # composer vendor dir
 #/vendor
 
