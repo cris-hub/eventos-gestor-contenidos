@@ -21,7 +21,7 @@
         "require-dev": {
             "phpunit/phpunit": "4.*"
         },
-        "time": "2017-06-12 18:51:26",
+        "time": "2017-06-12T18:51:26+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -77,7 +77,7 @@
             "bower-asset/jquery": ">=1.9.0 <4.0.0",
             "composer/installers": "1.*"
         },
-        "time": "2018-07-15 18:48:11",
+        "time": "2018-07-15T18:48:11+00:00",
         "type": "template",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
@@ -130,7 +130,7 @@
         "suggest": {
             "symfony/yaml": "If you want to parse features, represented in YAML files"
         },
-        "time": "2017-08-30 11:04:43",
+        "time": "2017-08-30T11:04:43+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -366,7 +366,7 @@
             "facebook/xhprof": "*@dev",
             "phpunit/phpunit": "4.1.*"
         },
-        "time": "2017-07-16 21:13:23",
+        "time": "2017-07-16T21:13:23+00:00",
         "bin": [
             "bin/markdown"
         ],
@@ -423,7 +423,7 @@
         "require": {
             "yiisoft/yii2": "*"
         },
-        "time": "2013-12-10 17:49:58",
+        "time": "2013-12-10T17:49:58+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -464,7 +464,7 @@
             "reference": "97b8f412f6b36985c734daf0717e81009a885dba",
             "shasum": ""
         },
-        "time": "2017-09-13 13:09:47",
+        "time": "2017-09-13T13:09:47+00:00",
         "type": "library",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
@@ -494,17 +494,17 @@
     },
     {
         "name": "codeception/base",
-        "version": "2.5.0",
-        "version_normalized": "2.5.0.0",
+        "version": "2.5.1",
+        "version_normalized": "2.5.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Codeception/base.git",
-            "reference": "04761aa6864d8fe7f6360aa3210cbf8235ad0d76"
+            "reference": "ec6b7bd4d78c1adba3dbd5c3c52fc683e8aef6de"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Codeception/base/zipball/04761aa6864d8fe7f6360aa3210cbf8235ad0d76",
-            "reference": "04761aa6864d8fe7f6360aa3210cbf8235ad0d76",
+            "url": "https://api.github.com/repos/Codeception/base/zipball/ec6b7bd4d78c1adba3dbd5c3c52fc683e8aef6de",
+            "reference": "ec6b7bd4d78c1adba3dbd5c3c52fc683e8aef6de",
             "shasum": ""
         },
         "require": {
@@ -548,7 +548,7 @@
             "stecman/symfony-console-completion": "For BASH autocompletion",
             "symfony/phpunit-bridge": "For phpunit-bridge support"
         },
-        "time": "2018-09-24 09:46:36",
+        "time": "2018-10-29T21:37:15+00:00",
         "bin": [
             "codecept"
         ],
@@ -612,7 +612,7 @@
             "codeception/specify": "*",
             "vlucas/phpdotenv": "^2.4"
         },
-        "time": "2018-09-12 20:19:47",
+        "time": "2018-09-12T20:19:47+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -654,7 +654,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2016-10-21 09:42:00",
+        "time": "2016-10-21T09:42:00+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -692,7 +692,7 @@
         "require": {
             "phpunit/phpunit": ">=4.8 <8.0"
         },
-        "time": "2018-07-26 11:55:37",
+        "time": "2018-07-26T11:55:37+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -724,7 +724,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2017-01-09 10:58:51",
+        "time": "2017-01-09T10:58:51+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -770,7 +770,7 @@
             "composer/composer": "1.0.*@dev",
             "phpunit/phpunit": "^4.8.36"
         },
-        "time": "2018-08-27 06:10:37",
+        "time": "2018-08-27T06:10:37+00:00",
         "type": "composer-plugin",
         "extra": {
             "class": "Composer\\Installers\\Plugin",
@@ -888,7 +888,7 @@
             "yiisoft/yii2": "2.*",
             "yiisoft/yii2-bootstrap": "~2.0.0"
         },
-        "time": "2018-07-24 14:47:13",
+        "time": "2018-07-24T14:47:13+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -953,7 +953,7 @@
             "phpunit/phpunit": "~4.0",
             "squizlabs/php_codesniffer": "~2.0"
         },
-        "time": "2015-06-14 21:17:01",
+        "time": "2015-06-14T21:17:01+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1005,7 +1005,7 @@
         "require-dev": {
             "simpletest/simpletest": "^1.1"
         },
-        "time": "2018-02-23 01:58:20",
+        "time": "2018-02-23T01:58:20+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1052,7 +1052,7 @@
             "jekyll": "1.0.2",
             "lessc": "1.4.2"
         },
-        "time": "2016-10-24 15:52:54",
+        "time": "2016-10-24T15:52:54+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1106,7 +1106,7 @@
             "phpunit/phpunit": "^4.8.35 || ^5.7",
             "squizlabs/php_codesniffer": "^1.5"
         },
-        "time": "2018-07-12 10:23:15",
+        "time": "2018-07-12T10:23:15+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1136,35 +1136,156 @@
         ]
     },
     {
-        "name": "guzzlehttp/psr7",
-        "version": "1.4.2",
-        "version_normalized": "1.4.2.0",
+        "name": "guzzlehttp/guzzle",
+        "version": "6.3.3",
+        "version_normalized": "6.3.3.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/guzzle/psr7.git",
-            "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
+            "url": "https://github.com/guzzle/guzzle.git",
+            "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
-            "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+            "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/promises": "^1.0",
+            "guzzlehttp/psr7": "^1.4",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+            "psr/log": "^1.0"
+        },
+        "suggest": {
+            "psr/log": "Required for using the Log middleware"
+        },
+        "time": "2018-04-22T15:46:56+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "6.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/functions_include.php"
+            ],
+            "psr-4": {
+                "GuzzleHttp\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle is a PHP HTTP client library",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ]
+    },
+    {
+        "name": "guzzlehttp/promises",
+        "version": "v1.3.1",
+        "version_normalized": "1.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/promises.git",
+            "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+            "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0"
+        },
+        "time": "2016-12-20T10:07:11+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Promise\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle promises library",
+        "keywords": [
+            "promise"
+        ]
+    },
+    {
+        "name": "guzzlehttp/psr7",
+        "version": "1.5.2",
+        "version_normalized": "1.5.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/psr7.git",
+            "reference": "9f83dded91781a01c63574e387eaa769be769115"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/psr7/zipball/9f83dded91781a01c63574e387eaa769be769115",
+            "reference": "9f83dded91781a01c63574e387eaa769be769115",
             "shasum": ""
         },
         "require": {
             "php": ">=5.4.0",
-            "psr/http-message": "~1.0"
+            "psr/http-message": "~1.0",
+            "ralouphie/getallheaders": "^2.0.5"
         },
         "provide": {
             "psr/http-message-implementation": "1.0"
         },
         "require-dev": {
-            "phpunit/phpunit": "~4.0"
+            "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.8"
         },
-        "time": "2017-03-20 17:10:46",
+        "time": "2018-12-04T20:46:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.4-dev"
+                "dev-master": "1.5-dev"
             }
         },
         "installation-source": "dist",
@@ -1195,6 +1316,7 @@
         "keywords": [
             "http",
             "message",
+            "psr-7",
             "request",
             "response",
             "stream",
@@ -1221,7 +1343,7 @@
             "bower-asset/jquery-colorbox": "*",
             "yiisoft/yii2": "*"
         },
-        "time": "2016-02-02 10:23:58",
+        "time": "2016-02-02T10:23:58+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -1249,27 +1371,27 @@
     },
     {
         "name": "kartik-v/bootstrap-fileinput",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v4.5.1",
+        "version_normalized": "4.5.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-            "reference": "2d30ec9a4fe57251c4d02c855ea41f14b75a32e4"
+            "reference": "7fbc8473783febfd123178dd00c9f5ee1bf73531"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/2d30ec9a4fe57251c4d02c855ea41f14b75a32e4",
-            "reference": "2d30ec9a4fe57251c4d02c855ea41f14b75a32e4",
+            "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/7fbc8473783febfd123178dd00c9f5ee1bf73531",
+            "reference": "7fbc8473783febfd123178dd00c9f5ee1bf73531",
             "shasum": ""
         },
-        "time": "2018-10-05 12:22:09",
+        "time": "2018-09-25T15:16:57+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "4.5.x-dev"
+                "dev-master": "4.4.x-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "kartik\\plugins\\fileinput\\": ""
@@ -1317,7 +1439,7 @@
             "reference": "7b48a78bda1ded89a55790f4f65bb50c670653d7",
             "shasum": ""
         },
-        "time": "2018-10-04 08:55:01",
+        "time": "2018-10-04T08:55:01+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1363,7 +1485,7 @@
             "reference": "1349e7f5816a65e89bc227098386aac5b2c89363",
             "shasum": ""
         },
-        "time": "2017-08-01 11:43:55",
+        "time": "2017-08-01T11:43:55+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1399,27 +1521,28 @@
     },
     {
         "name": "kartik-v/yii2-krajee-base",
-        "version": "v1.9.9",
-        "version_normalized": "1.9.9.0",
+        "version": "v2.0.4",
+        "version_normalized": "2.0.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-            "reference": "1693374160c24443524ddc23508d2eb2955443f4"
+            "reference": "ec7fc2c5ed76ee29c939ed6fe33bab76eb25499c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/1693374160c24443524ddc23508d2eb2955443f4",
-            "reference": "1693374160c24443524ddc23508d2eb2955443f4",
+            "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/ec7fc2c5ed76ee29c939ed6fe33bab76eb25499c",
+            "reference": "ec7fc2c5ed76ee29c939ed6fe33bab76eb25499c",
             "shasum": ""
         },
-        "require": {
-            "yiisoft/yii2-bootstrap": "@dev"
+        "suggest": {
+            "yiisoft/yii2-bootstrap": "for Krajee extensions to work with Bootstrap 3.x version",
+            "yiisoft/yii2-bootstrap4": "for Krajee extensions to work with Bootstrap 4.x version"
         },
-        "time": "2018-09-27 18:02:35",
+        "time": "2018-12-04T03:40:27+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.9.x-dev"
+                "dev-master": "2.0.x-dev"
             }
         },
         "installation-source": "dist",
@@ -1457,12 +1580,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-markdown.git",
-            "reference": "c608d88d417423f0a89a0a8259777dd5d7107b2b"
+            "reference": "ba9e8ecf30e7d3eda8df28c67f557e18520a0cee"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-markdown/zipball/c608d88d417423f0a89a0a8259777dd5d7107b2b",
-            "reference": "c608d88d417423f0a89a0a8259777dd5d7107b2b",
+            "url": "https://api.github.com/repos/kartik-v/yii2-markdown/zipball/ba9e8ecf30e7d3eda8df28c67f557e18520a0cee",
+            "reference": "ba9e8ecf30e7d3eda8df28c67f557e18520a0cee",
             "shasum": ""
         },
         "require": {
@@ -1470,7 +1593,7 @@
             "michelf/php-markdown": "~1.8",
             "michelf/php-smartypants": "~1.8"
         },
-        "time": "2018-09-21 10:57:01",
+        "time": "2018-11-05T12:29:49+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -1527,7 +1650,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": ">=1.9.8"
         },
-        "time": "2018-09-27 17:51:42",
+        "time": "2018-09-27T17:51:42+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -1581,7 +1704,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2014-11-09 04:56:27",
+        "time": "2014-11-09T04:56:27+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -1632,7 +1755,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2017-03-10 17:08:52",
+        "time": "2017-03-10T17:08:52+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -1689,7 +1812,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": ">=1.9"
         },
-        "time": "2018-09-12 03:12:07",
+        "time": "2018-09-12T03:12:07+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -1729,23 +1852,23 @@
     },
     {
         "name": "kartik-v/yii2-widget-datepicker",
-        "version": "v1.4.6",
-        "version_normalized": "1.4.6.0",
+        "version": "v1.4.7",
+        "version_normalized": "1.4.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-widget-datepicker.git",
-            "reference": "01a5940fb1b70b39b7916a4e68768f8626024ddc"
+            "reference": "aadeb08fe0199a62bb26940cdccafc2c169edc69"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/01a5940fb1b70b39b7916a4e68768f8626024ddc",
-            "reference": "01a5940fb1b70b39b7916a4e68768f8626024ddc",
+            "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/aadeb08fe0199a62bb26940cdccafc2c169edc69",
+            "reference": "aadeb08fe0199a62bb26940cdccafc2c169edc69",
             "shasum": ""
         },
         "require": {
-            "kartik-v/yii2-krajee-base": "~1.9"
+            "kartik-v/yii2-krajee-base": ">=2.0.0"
         },
-        "time": "2018-08-29 12:10:45",
+        "time": "2018-10-09T11:34:49+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -1785,23 +1908,23 @@
     },
     {
         "name": "kartik-v/yii2-widget-datetimepicker",
-        "version": "v1.4.7",
-        "version_normalized": "1.4.7.0",
+        "version": "v1.4.8",
+        "version_normalized": "1.4.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-widget-datetimepicker.git",
-            "reference": "22d8c40665d59b76383e658de6ef2c187ed0da14"
+            "reference": "6f89a4ed78fc95a0679c5bb99dd353e3dc86c7f8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-widget-datetimepicker/zipball/22d8c40665d59b76383e658de6ef2c187ed0da14",
-            "reference": "22d8c40665d59b76383e658de6ef2c187ed0da14",
+            "url": "https://api.github.com/repos/kartik-v/yii2-widget-datetimepicker/zipball/6f89a4ed78fc95a0679c5bb99dd353e3dc86c7f8",
+            "reference": "6f89a4ed78fc95a0679c5bb99dd353e3dc86c7f8",
             "shasum": ""
         },
         "require": {
-            "kartik-v/yii2-krajee-base": "~1.9"
+            "kartik-v/yii2-krajee-base": ">=2.0.0"
         },
-        "time": "2018-08-29 11:42:11",
+        "time": "2018-10-09T11:39:13+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -1841,29 +1964,34 @@
     },
     {
         "name": "kartik-v/yii2-widget-depdrop",
-        "version": "v1.0.4",
-        "version_normalized": "1.0.4.0",
+        "version": "v1.0.5",
+        "version_normalized": "1.0.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-widget-depdrop.git",
-            "reference": "6918ca6f7d7be153c80f6aa9c261f9b333293e9c"
+            "reference": "0598b220e62350b2f0a6372def96358e3b660f10"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-widget-depdrop/zipball/6918ca6f7d7be153c80f6aa9c261f9b333293e9c",
-            "reference": "6918ca6f7d7be153c80f6aa9c261f9b333293e9c",
+            "url": "https://api.github.com/repos/kartik-v/yii2-widget-depdrop/zipball/0598b220e62350b2f0a6372def96358e3b660f10",
+            "reference": "0598b220e62350b2f0a6372def96358e3b660f10",
             "shasum": ""
         },
         "require": {
             "kartik-v/dependent-dropdown": "~1.4",
-            "kartik-v/yii2-krajee-base": "~1.7"
+            "kartik-v/yii2-krajee-base": ">=2.0.0"
         },
-        "time": "2016-01-10 17:30:48",
+        "time": "2018-10-09T11:43:32+00:00",
         "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "kartik\\depdrop\\": ""
+                "kartik\\depdrop\\": "src"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -1909,7 +2037,7 @@
             "kartik-v/bootstrap-fileinput": "~4.4",
             "kartik-v/yii2-krajee-base": ">=1.9"
         },
-        "time": "2018-09-19 13:09:42",
+        "time": "2018-09-19T13:09:42+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -1965,7 +2093,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2015-05-03 08:23:04",
+        "time": "2015-05-03T08:23:04+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -2016,7 +2144,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": ">=1.9"
         },
-        "time": "2018-09-07 10:05:08",
+        "time": "2018-09-07T10:05:08+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2073,7 +2201,7 @@
             "kartik-v/bootstrap-star-rating": "~4.0",
             "kartik-v/yii2-krajee-base": ">=1.9"
         },
-        "time": "2018-09-16 09:30:44",
+        "time": "2018-09-16T09:30:44+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2130,7 +2258,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": ">=1.9"
         },
-        "time": "2018-09-07 08:11:16",
+        "time": "2018-09-07T08:11:16+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2185,7 +2313,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2014-11-09 08:07:23",
+        "time": "2014-11-09T08:07:23+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -2220,33 +2348,38 @@
     },
     {
         "name": "kartik-v/yii2-widget-spinner",
-        "version": "v1.0.0",
-        "version_normalized": "1.0.0.0",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-widget-spinner.git",
-            "reference": "3132ba14d58e0564d17f3b846b04c42aa72bdde3"
+            "reference": "eb10dad17a107bf14f173c99994770ca23c548a6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-widget-spinner/zipball/3132ba14d58e0564d17f3b846b04c42aa72bdde3",
-            "reference": "3132ba14d58e0564d17f3b846b04c42aa72bdde3",
+            "url": "https://api.github.com/repos/kartik-v/yii2-widget-spinner/zipball/eb10dad17a107bf14f173c99994770ca23c548a6",
+            "reference": "eb10dad17a107bf14f173c99994770ca23c548a6",
             "shasum": ""
         },
         "require": {
-            "kartik-v/yii2-krajee-base": "*"
+            "kartik-v/yii2-krajee-base": ">=2.0.0"
         },
-        "time": "2014-11-09 05:02:05",
+        "time": "2018-10-09T11:54:03+00:00",
         "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "kartik\\spinner\\": ""
+                "kartik\\spinner\\": "src"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "BSD 3-Clause"
+            "BSD-3-Clause"
         ],
         "authors": [
             {
@@ -2286,7 +2419,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2016-01-10 16:47:35",
+        "time": "2016-01-10T16:47:35+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -2322,23 +2455,23 @@
     },
     {
         "name": "kartik-v/yii2-widget-timepicker",
-        "version": "v1.0.3",
-        "version_normalized": "1.0.3.0",
+        "version": "v1.0.4",
+        "version_normalized": "1.0.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-widget-timepicker.git",
-            "reference": "203aeb9123e7fa9a3c584d206793d82abe96d469"
+            "reference": "c1dacfc3712bedf4f694d878279189e440a24b21"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-widget-timepicker/zipball/203aeb9123e7fa9a3c584d206793d82abe96d469",
-            "reference": "203aeb9123e7fa9a3c584d206793d82abe96d469",
+            "url": "https://api.github.com/repos/kartik-v/yii2-widget-timepicker/zipball/c1dacfc3712bedf4f694d878279189e440a24b21",
+            "reference": "c1dacfc3712bedf4f694d878279189e440a24b21",
             "shasum": ""
         },
         "require": {
-            "kartik-v/yii2-krajee-base": "*"
+            "kartik-v/yii2-krajee-base": ">=2.0.0"
         },
-        "time": "2017-01-08 06:36:24",
+        "time": "2018-10-09T11:58:19+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2348,12 +2481,12 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "kartik\\time\\": ""
+                "kartik\\time\\": "src"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "BSD 3-Clause"
+            "BSD-3-Clause"
         ],
         "authors": [
             {
@@ -2394,7 +2527,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": ">=1.9"
         },
-        "time": "2018-09-05 11:59:34",
+        "time": "2018-09-05T11:59:34+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2435,23 +2568,23 @@
     },
     {
         "name": "kartik-v/yii2-widget-typeahead",
-        "version": "v1.0.2",
-        "version_normalized": "1.0.2.0",
+        "version": "v1.0.3",
+        "version_normalized": "1.0.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-widget-typeahead.git",
-            "reference": "8fcf3c122bdd63545f462a137ac9acacba60f8d6"
+            "reference": "f8a00c0264e2572d9601540efc5fdf7e46dbbfe8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-widget-typeahead/zipball/8fcf3c122bdd63545f462a137ac9acacba60f8d6",
-            "reference": "8fcf3c122bdd63545f462a137ac9acacba60f8d6",
+            "url": "https://api.github.com/repos/kartik-v/yii2-widget-typeahead/zipball/f8a00c0264e2572d9601540efc5fdf7e46dbbfe8",
+            "reference": "f8a00c0264e2572d9601540efc5fdf7e46dbbfe8",
             "shasum": ""
         },
         "require": {
-            "kartik-v/yii2-krajee-base": "~1.8"
+            "kartik-v/yii2-krajee-base": ">=2.0.0"
         },
-        "time": "2018-08-05 14:19:09",
+        "time": "2018-10-09T12:02:22+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2490,17 +2623,17 @@
     },
     {
         "name": "kartik-v/yii2-widgets",
-        "version": "v3.4.0",
-        "version_normalized": "3.4.0.0",
+        "version": "v3.4.1",
+        "version_normalized": "3.4.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-widgets.git",
-            "reference": "f435d5e96c4848844bdfa9cee58249ccfb3e2dd2"
+            "reference": "e5a030d700243a90eccf96a070380bd3b76e17a3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-widgets/zipball/f435d5e96c4848844bdfa9cee58249ccfb3e2dd2",
-            "reference": "f435d5e96c4848844bdfa9cee58249ccfb3e2dd2",
+            "url": "https://api.github.com/repos/kartik-v/yii2-widgets/zipball/e5a030d700243a90eccf96a070380bd3b76e17a3",
+            "reference": "e5a030d700243a90eccf96a070380bd3b76e17a3",
             "shasum": ""
         },
         "require": {
@@ -2524,17 +2657,22 @@
             "kartik-v/yii2-widget-touchspin": "*",
             "kartik-v/yii2-widget-typeahead": "*"
         },
-        "time": "2014-11-09 19:54:17",
+        "time": "2018-10-09T17:40:19+00:00",
         "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "kartik\\widgets\\": ""
+                "kartik\\widgets\\": "src"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "BSD 3-Clause"
+            "BSD-3-Clause"
         ],
         "authors": [
             {
@@ -2554,17 +2692,17 @@
     },
     {
         "name": "lcobucci/jwt",
-        "version": "3.2.4",
-        "version_normalized": "3.2.4.0",
+        "version": "3.2.5",
+        "version_normalized": "3.2.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/lcobucci/jwt.git",
-            "reference": "c9704b751315d21735dc98d78d4f37bd73596da7"
+            "reference": "82be04b4753f8b7693b62852b7eab30f97524f9b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/lcobucci/jwt/zipball/c9704b751315d21735dc98d78d4f37bd73596da7",
-            "reference": "c9704b751315d21735dc98d78d4f37bd73596da7",
+            "url": "https://api.github.com/repos/lcobucci/jwt/zipball/82be04b4753f8b7693b62852b7eab30f97524f9b",
+            "reference": "82be04b4753f8b7693b62852b7eab30f97524f9b",
             "shasum": ""
         },
         "require": {
@@ -2582,7 +2720,7 @@
         "suggest": {
             "mdanter/ecc": "Required to use Elliptic Curves based algorithms."
         },
-        "time": "2018-08-03 11:23:50",
+        "time": "2018-11-11T12:22:26+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2603,7 +2741,7 @@
             {
                 "name": "Luís Otávio Cobucci Oblonczyk",
                 "email": "lcobucci@gmail.com",
-                "role": "Developer"
+                "role": "developer"
             }
         ],
         "description": "A simple library to work with JSON Web Token and JSON Web Signature",
@@ -2614,17 +2752,17 @@
     },
     {
         "name": "mdmsoft/yii2-admin",
-        "version": "2.8",
-        "version_normalized": "2.8.0.0",
+        "version": "2.9",
+        "version_normalized": "2.9.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/mdmsoft/yii2-admin.git",
-            "reference": "48298cb2891f728ae93e59f75802607f0ed910f5"
+            "reference": "59e65542b1dc1abcf14c62588ea4ae128e08036c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/48298cb2891f728ae93e59f75802607f0ed910f5",
-            "reference": "48298cb2891f728ae93e59f75802607f0ed910f5",
+            "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/59e65542b1dc1abcf14c62588ea4ae128e08036c",
+            "reference": "59e65542b1dc1abcf14c62588ea4ae128e08036c",
             "shasum": ""
         },
         "require": {
@@ -2636,7 +2774,7 @@
         "suggest": {
             "yiisoft/yii2-bootstrap": "Used when using layout 'left-menu', 'right-menu' or 'top-menu'"
         },
-        "time": "2017-10-04 02:54:53",
+        "time": "2018-11-12T12:35:44+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2690,7 +2828,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2018-01-15 00:49:33",
+        "time": "2018-01-15T00:49:33+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -2738,7 +2876,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-12-13 01:01:17",
+        "time": "2016-12-13T01:01:17+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -2773,6 +2911,98 @@
         ]
     },
     {
+        "name": "microsoft/azure-storage-blob",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Azure/azure-storage-blob-php.git",
+            "reference": "6a89f277e876056cc80bd867f7d6104557ee26a4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Azure/azure-storage-blob-php/zipball/6a89f277e876056cc80bd867f7d6104557ee26a4",
+            "reference": "6a89f277e876056cc80bd867f7d6104557ee26a4",
+            "shasum": ""
+        },
+        "require": {
+            "microsoft/azure-storage-common": "~1.2.0",
+            "php": ">=5.6.0"
+        },
+        "time": "2018-08-02T11:05:31+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MicrosoftAzure\\Storage\\Blob\\": "src/Blob"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Azure Storage PHP Client Library",
+                "email": "dmsh@microsoft.com"
+            }
+        ],
+        "description": "This project provides a set of PHP client libraries that make it easy to access Microsoft Azure Storage Blob APIs.",
+        "keywords": [
+            "azure",
+            "blob",
+            "php",
+            "sdk",
+            "storage"
+        ]
+    },
+    {
+        "name": "microsoft/azure-storage-common",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Azure/azure-storage-common-php.git",
+            "reference": "5a721c15a4eba9233e423203bee168e47c7f8682"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Azure/azure-storage-common-php/zipball/5a721c15a4eba9233e423203bee168e47c7f8682",
+            "reference": "5a721c15a4eba9233e423203bee168e47c7f8682",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/guzzle": "~6.0",
+            "php": ">=5.6.0"
+        },
+        "time": "2018-08-02T10:54:53+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MicrosoftAzure\\Storage\\Common\\": "src/Common"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Azure Storage PHP Client Library",
+                "email": "dmsh@microsoft.com"
+            }
+        ],
+        "description": "This project provides a set of common code shared by Azure Storage Blob, Table, Queue and File PHP client libraries.",
+        "keywords": [
+            "azure",
+            "common",
+            "php",
+            "sdk",
+            "storage"
+        ]
+    },
+    {
         "name": "moontoast/math",
         "version": "1.1.2",
         "version_normalized": "1.1.2.0",
@@ -2797,7 +3027,7 @@
             "satooshi/php-coveralls": "^0.6.1",
             "squizlabs/php_codesniffer": "^2.3"
         },
-        "time": "2017-02-16 16:54:46",
+        "time": "2017-02-16T16:54:46+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -2846,7 +3076,7 @@
             "doctrine/common": "^2.6",
             "phpunit/phpunit": "^4.1"
         },
-        "time": "2017-10-19 19:58:43",
+        "time": "2017-10-19T19:58:43+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -2877,12 +3107,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/Nemmo/yii2-attachments.git",
-            "reference": "6d1dea5673b30e8d5f024bf101446da0f0b52483"
+            "reference": "6f66ccd9f0427ba32e57fa52884c26f922ed17c9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Nemmo/yii2-attachments/zipball/6d1dea5673b30e8d5f024bf101446da0f0b52483",
-            "reference": "6d1dea5673b30e8d5f024bf101446da0f0b52483",
+            "url": "https://api.github.com/repos/Nemmo/yii2-attachments/zipball/6f66ccd9f0427ba32e57fa52884c26f922ed17c9",
+            "reference": "6f66ccd9f0427ba32e57fa52884c26f922ed17c9",
             "shasum": ""
         },
         "require": {
@@ -2895,7 +3125,7 @@
             "phpunit/dbunit": "~1.0",
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2018-03-26 10:10:21",
+        "time": "2018-11-15T02:05:59+00:00",
         "type": "yii2-extension",
         "extra": {
             "asset-installer-paths": {
@@ -2952,7 +3182,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.6"
         },
-        "time": "2017-09-11 18:02:19",
+        "time": "2017-09-11T18:02:19+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3012,7 +3242,7 @@
             "mockery/mockery": "^0.9.4",
             "phpunit/phpunit": "^4.4"
         },
-        "time": "2017-11-10 14:09:06",
+        "time": "2017-11-10T14:09:06+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3057,7 +3287,7 @@
             "mockery/mockery": "^0.9.4",
             "phpunit/phpunit": "^5.2||^4.8.24"
         },
-        "time": "2017-07-14 14:27:02",
+        "time": "2017-07-14T14:27:02+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3098,7 +3328,7 @@
             "reference": "0464787bfa7cd13576c5a1e318709768798bec6a",
             "shasum": ""
         },
-        "time": "2016-04-07 12:29:16",
+        "time": "2016-04-07T12:29:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3149,7 +3379,7 @@
             "phpspec/phpspec": "^2.5|^3.2",
             "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5 || ^7.1"
         },
-        "time": "2018-08-05 17:53:17",
+        "time": "2018-08-05T17:53:17+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3221,7 +3451,7 @@
         "suggest": {
             "ext-xdebug": "^2.5.1"
         },
-        "time": "2017-04-02 07:44:40",
+        "time": "2017-04-02T07:44:40+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3271,7 +3501,7 @@
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2017-11-27 13:52:08",
+        "time": "2017-11-27T13:52:08+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3320,7 +3550,7 @@
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2015-06-21 13:50:34",
+        "time": "2015-06-21T13:50:34+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3366,7 +3596,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
         },
-        "time": "2017-02-26 11:10:40",
+        "time": "2017-02-26T11:10:40+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3418,7 +3648,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.2"
         },
-        "time": "2017-12-04 08:55:13",
+        "time": "2017-12-04T08:55:13+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3496,7 +3726,7 @@
             "ext-xdebug": "*",
             "phpunit/php-invoker": "~1.1"
         },
-        "time": "2018-02-01 05:50:59",
+        "time": "2018-02-01T05:50:59+00:00",
         "bin": [
             "phpunit"
         ],
@@ -3561,7 +3791,7 @@
         "suggest": {
             "ext-soap": "*"
         },
-        "time": "2017-06-30 09:13:00",
+        "time": "2017-06-30T09:13:00+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3610,7 +3840,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-08-06 14:39:51",
+        "time": "2016-08-06T14:39:51+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3646,23 +3876,23 @@
     },
     {
         "name": "psr/log",
-        "version": "1.0.2",
-        "version_normalized": "1.0.2.0",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/php-fig/log.git",
-            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
+            "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+            "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-10-10 12:19:37",
+        "time": "2018-11-20T15:27:04+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3692,6 +3922,48 @@
             "psr",
             "psr-3"
         ]
+    },
+    {
+        "name": "ralouphie/getallheaders",
+        "version": "2.0.5",
+        "version_normalized": "2.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ralouphie/getallheaders.git",
+            "reference": "5601c8a83fbba7ef674a7369456d12f1e0d0eafa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ralouphie/getallheaders/zipball/5601c8a83fbba7ef674a7369456d12f1e0d0eafa",
+            "reference": "5601c8a83fbba7ef674a7369456d12f1e0d0eafa",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~3.7.0",
+            "satooshi/php-coveralls": ">=1.0"
+        },
+        "time": "2016-02-11T07:05:27+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/getallheaders.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ralph Khattar",
+                "email": "ralph.khattar@gmail.com"
+            }
+        ],
+        "description": "A polyfill for getallheaders."
     },
     {
         "name": "ramsey/uuid",
@@ -3730,7 +4002,7 @@
             "ramsey/uuid-console": "A console application for generating UUIDs with ramsey/uuid",
             "ramsey/uuid-doctrine": "Allows the use of Ramsey\\Uuid\\Uuid as Doctrine field type."
         },
-        "time": "2015-10-21 16:27:25",
+        "time": "2015-10-21T16:27:25+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3785,7 +4057,7 @@
             "php": ">=5.4.0",
             "yiisoft/yii2": "2.0.*"
         },
-        "time": "2017-01-11 14:05:47",
+        "time": "2017-01-11T14:05:47+00:00",
         "type": "yii2-extension",
         "extra": {
             "asset-installer-paths": {
@@ -3840,7 +4112,7 @@
         "require-dev": {
             "phpunit/phpunit": "^5.7 || ^6.0"
         },
-        "time": "2017-03-04 06:30:41",
+        "time": "2017-03-04T06:30:41+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3889,7 +4161,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.4"
         },
-        "time": "2017-01-29 09:50:25",
+        "time": "2017-01-29T09:50:25+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3953,7 +4225,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
         },
-        "time": "2017-05-22 07:24:03",
+        "time": "2017-05-22T07:24:03+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4007,7 +4279,7 @@
         "require-dev": {
             "phpunit/phpunit": "^5.0"
         },
-        "time": "2016-11-26 07:53:53",
+        "time": "2016-11-26T07:53:53+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4061,7 +4333,7 @@
             "ext-mbstring": "*",
             "phpunit/phpunit": "~4.4"
         },
-        "time": "2016-11-19 08:54:04",
+        "time": "2016-11-19T08:54:04+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4131,7 +4403,7 @@
         "suggest": {
             "ext-uopz": "*"
         },
-        "time": "2015-10-12 03:26:01",
+        "time": "2015-10-12T03:26:01+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4182,7 +4454,7 @@
         "require-dev": {
             "phpunit/phpunit": "~5"
         },
-        "time": "2017-02-18 15:18:39",
+        "time": "2017-02-18T15:18:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4229,7 +4501,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.4"
         },
-        "time": "2016-11-19 07:33:16",
+        "time": "2016-11-19T07:33:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4281,7 +4553,7 @@
         "require": {
             "php": ">=5.6.0"
         },
-        "time": "2015-07-28 20:34:47",
+        "time": "2015-07-28T20:34:47+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4325,7 +4597,7 @@
         "require": {
             "php": ">=5.6"
         },
-        "time": "2016-10-03 07:35:21",
+        "time": "2016-10-03T07:35:21+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4377,7 +4649,7 @@
             "phpdocumentor/reflection-docblock": "3.2.2",
             "phpunit/phpunit": "^4.8"
         },
-        "time": "2018-08-06 05:30:35",
+        "time": "2018-08-06T05:30:35+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -4410,7 +4682,7 @@
             "mockery/mockery": "~0.9.1",
             "symfony/phpunit-bridge": "~3.2"
         },
-        "time": "2018-07-31 09:26:32",
+        "time": "2018-07-31T09:26:32+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4446,17 +4718,17 @@
     },
     {
         "name": "symfony/browser-kit",
-        "version": "v3.4.17",
-        "version_normalized": "3.4.17.0",
+        "version": "v3.4.20",
+        "version_normalized": "3.4.20.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/browser-kit.git",
-            "reference": "f6668d1a6182d5a8dec65a1c863a4c1d963816c0"
+            "reference": "49465af22d94c8d427c51facbf8137eb285b9726"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/browser-kit/zipball/f6668d1a6182d5a8dec65a1c863a4c1d963816c0",
-            "reference": "f6668d1a6182d5a8dec65a1c863a4c1d963816c0",
+            "url": "https://api.github.com/repos/symfony/browser-kit/zipball/49465af22d94c8d427c51facbf8137eb285b9726",
+            "reference": "49465af22d94c8d427c51facbf8137eb285b9726",
             "shasum": ""
         },
         "require": {
@@ -4470,7 +4742,7 @@
         "suggest": {
             "symfony/process": ""
         },
-        "time": "2018-07-26 09:06:28",
+        "time": "2018-11-26T10:17:44+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4505,17 +4777,17 @@
     },
     {
         "name": "symfony/console",
-        "version": "v3.4.17",
-        "version_normalized": "3.4.17.0",
+        "version": "v3.4.20",
+        "version_normalized": "3.4.20.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/console.git",
-            "reference": "3b2b415d4c48fbefca7dc742aa0a0171bfae4e0b"
+            "reference": "8f80fc39bbc3b7c47ee54ba7aa2653521ace94bb"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/console/zipball/3b2b415d4c48fbefca7dc742aa0a0171bfae4e0b",
-            "reference": "3b2b415d4c48fbefca7dc742aa0a0171bfae4e0b",
+            "url": "https://api.github.com/repos/symfony/console/zipball/8f80fc39bbc3b7c47ee54ba7aa2653521ace94bb",
+            "reference": "8f80fc39bbc3b7c47ee54ba7aa2653521ace94bb",
             "shasum": ""
         },
         "require": {
@@ -4541,7 +4813,7 @@
             "symfony/lock": "",
             "symfony/process": ""
         },
-        "time": "2018-10-02 16:33:53",
+        "time": "2018-11-26T12:48:07+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4576,23 +4848,23 @@
     },
     {
         "name": "symfony/css-selector",
-        "version": "v3.4.17",
-        "version_normalized": "3.4.17.0",
+        "version": "v3.4.20",
+        "version_normalized": "3.4.20.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/css-selector.git",
-            "reference": "3503415d4aafabc31cd08c3a4ebac7f43fde8feb"
+            "reference": "345b9a48595d1ab9630db791dbc3e721bf0233e8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/css-selector/zipball/3503415d4aafabc31cd08c3a4ebac7f43fde8feb",
-            "reference": "3503415d4aafabc31cd08c3a4ebac7f43fde8feb",
+            "url": "https://api.github.com/repos/symfony/css-selector/zipball/345b9a48595d1ab9630db791dbc3e721bf0233e8",
+            "reference": "345b9a48595d1ab9630db791dbc3e721bf0233e8",
             "shasum": ""
         },
         "require": {
             "php": "^5.5.9|>=7.0.8"
         },
-        "time": "2018-10-02 16:33:53",
+        "time": "2018-11-11T19:48:54+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4631,17 +4903,17 @@
     },
     {
         "name": "symfony/debug",
-        "version": "v3.4.17",
-        "version_normalized": "3.4.17.0",
+        "version": "v3.4.20",
+        "version_normalized": "3.4.20.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/debug.git",
-            "reference": "0a612e9dfbd2ccce03eb174365f31ecdca930ff6"
+            "reference": "a2233f555ddf55e5600f386fba7781cea1cb82d3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/debug/zipball/0a612e9dfbd2ccce03eb174365f31ecdca930ff6",
-            "reference": "0a612e9dfbd2ccce03eb174365f31ecdca930ff6",
+            "url": "https://api.github.com/repos/symfony/debug/zipball/a2233f555ddf55e5600f386fba7781cea1cb82d3",
+            "reference": "a2233f555ddf55e5600f386fba7781cea1cb82d3",
             "shasum": ""
         },
         "require": {
@@ -4654,7 +4926,7 @@
         "require-dev": {
             "symfony/http-kernel": "~2.8|~3.0|~4.0"
         },
-        "time": "2018-10-02 16:33:53",
+        "time": "2018-11-27T12:43:10+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4689,17 +4961,17 @@
     },
     {
         "name": "symfony/dom-crawler",
-        "version": "v3.4.17",
-        "version_normalized": "3.4.17.0",
+        "version": "v3.4.20",
+        "version_normalized": "3.4.20.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/dom-crawler.git",
-            "reference": "c705bee03ade5b47c087807dd9ffaaec8dda2722"
+            "reference": "b6e94248eb4f8602a5825301b0bea1eb8cc82cfa"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/c705bee03ade5b47c087807dd9ffaaec8dda2722",
-            "reference": "c705bee03ade5b47c087807dd9ffaaec8dda2722",
+            "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/b6e94248eb4f8602a5825301b0bea1eb8cc82cfa",
+            "reference": "b6e94248eb4f8602a5825301b0bea1eb8cc82cfa",
             "shasum": ""
         },
         "require": {
@@ -4713,7 +4985,7 @@
         "suggest": {
             "symfony/css-selector": ""
         },
-        "time": "2018-10-02 12:28:39",
+        "time": "2018-11-26T10:17:44+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4748,17 +5020,17 @@
     },
     {
         "name": "symfony/event-dispatcher",
-        "version": "v3.4.17",
-        "version_normalized": "3.4.17.0",
+        "version": "v3.4.20",
+        "version_normalized": "3.4.20.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
-            "reference": "b2e1f19280c09a42dc64c0b72b80fe44dd6e88fb"
+            "reference": "cc35e84adbb15c26ae6868e1efbf705a917be6b5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/b2e1f19280c09a42dc64c0b72b80fe44dd6e88fb",
-            "reference": "b2e1f19280c09a42dc64c0b72b80fe44dd6e88fb",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/cc35e84adbb15c26ae6868e1efbf705a917be6b5",
+            "reference": "cc35e84adbb15c26ae6868e1efbf705a917be6b5",
             "shasum": ""
         },
         "require": {
@@ -4778,7 +5050,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2018-07-26 09:06:28",
+        "time": "2018-11-30T18:07:24+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4813,23 +5085,23 @@
     },
     {
         "name": "symfony/finder",
-        "version": "v3.4.17",
-        "version_normalized": "3.4.17.0",
+        "version": "v3.4.20",
+        "version_normalized": "3.4.20.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/finder.git",
-            "reference": "54ba444dddc5bd5708a34bd095ea67c6eb54644d"
+            "reference": "6cf2be5cbd0e87aa35c01f80ae0bf40b6798e442"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/finder/zipball/54ba444dddc5bd5708a34bd095ea67c6eb54644d",
-            "reference": "54ba444dddc5bd5708a34bd095ea67c6eb54644d",
+            "url": "https://api.github.com/repos/symfony/finder/zipball/6cf2be5cbd0e87aa35c01f80ae0bf40b6798e442",
+            "reference": "6cf2be5cbd0e87aa35c01f80ae0bf40b6798e442",
             "shasum": ""
         },
         "require": {
             "php": "^5.5.9|>=7.0.8"
         },
-        "time": "2018-10-03 08:46:40",
+        "time": "2018-11-11T19:48:54+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4864,8 +5136,8 @@
     },
     {
         "name": "symfony/polyfill-ctype",
-        "version": "v1.9.0",
-        "version_normalized": "1.9.0.0",
+        "version": "v1.10.0",
+        "version_normalized": "1.10.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -4883,7 +5155,7 @@
         "suggest": {
             "ext-ctype": "For best performance"
         },
-        "time": "2018-08-06 14:22:27",
+        "time": "2018-08-06T14:22:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4924,17 +5196,17 @@
     },
     {
         "name": "symfony/polyfill-mbstring",
-        "version": "v1.9.0",
-        "version_normalized": "1.9.0.0",
+        "version": "v1.10.0",
+        "version_normalized": "1.10.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-mbstring.git",
-            "reference": "d0cd638f4634c16d8df4508e847f14e9e43168b8"
+            "reference": "c79c051f5b3a46be09205c73b80b346e4153e494"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/d0cd638f4634c16d8df4508e847f14e9e43168b8",
-            "reference": "d0cd638f4634c16d8df4508e847f14e9e43168b8",
+            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/c79c051f5b3a46be09205c73b80b346e4153e494",
+            "reference": "c79c051f5b3a46be09205c73b80b346e4153e494",
             "shasum": ""
         },
         "require": {
@@ -4943,7 +5215,7 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2018-08-06 14:22:27",
+        "time": "2018-09-21T13:07:52+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4985,17 +5257,17 @@
     },
     {
         "name": "symfony/yaml",
-        "version": "v3.4.17",
-        "version_normalized": "3.4.17.0",
+        "version": "v3.4.20",
+        "version_normalized": "3.4.20.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/yaml.git",
-            "reference": "640b6c27fed4066d64b64d5903a86043f4a4de7f"
+            "reference": "291e13d808bec481eab83f301f7bff3e699ef603"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/yaml/zipball/640b6c27fed4066d64b64d5903a86043f4a4de7f",
-            "reference": "640b6c27fed4066d64b64d5903a86043f4a4de7f",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/291e13d808bec481eab83f301f7bff3e699ef603",
+            "reference": "291e13d808bec481eab83f301f7bff3e699ef603",
             "shasum": ""
         },
         "require": {
@@ -5011,7 +5283,7 @@
         "suggest": {
             "symfony/console": "For validating YAML files using the lint command"
         },
-        "time": "2018-10-02 16:33:53",
+        "time": "2018-11-11T19:48:54+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5068,7 +5340,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.0"
         },
-        "time": "2018-09-19 23:21:55",
+        "time": "2018-09-19T23:21:55+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -5116,7 +5388,7 @@
             "phpunit/phpunit": "^4.6",
             "sebastian/version": "^1.0.1"
         },
-        "time": "2018-01-29 19:49:41",
+        "time": "2018-01-29T19:49:41+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5174,7 +5446,7 @@
             "php": ">=5.4.0",
             "yiisoft/yii2-composer": "~2.0.4"
         },
-        "time": "2018-03-21 18:36:53",
+        "time": "2018-03-21T18:36:53+00:00",
         "bin": [
             "yii"
         ],
@@ -5267,7 +5539,7 @@
             "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
             "yiisoft/yii2": "~2.0.6"
         },
-        "time": "2018-02-16 10:41:52",
+        "time": "2018-02-16T10:41:52+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -5331,7 +5603,7 @@
         "require-dev": {
             "composer/composer": "^1.0"
         },
-        "time": "2018-07-05 15:44:47",
+        "time": "2018-07-05T15:44:47+00:00",
         "type": "composer-plugin",
         "extra": {
             "class": "yii\\composer\\Plugin",
@@ -5385,7 +5657,7 @@
             "yiisoft/yii2": "~2.0.13",
             "yiisoft/yii2-bootstrap": "~2.0.0"
         },
-        "time": "2018-09-23 21:41:04",
+        "time": "2018-09-23T21:41:04+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -5434,7 +5706,7 @@
             "fzaninotto/faker": "~1.4",
             "yiisoft/yii2": "~2.0.0"
         },
-        "time": "2018-02-19 20:27:10",
+        "time": "2018-02-19T20:27:10+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -5466,17 +5738,17 @@
     },
     {
         "name": "yiisoft/yii2-gii",
-        "version": "2.0.7",
-        "version_normalized": "2.0.7.0",
+        "version": "2.0.8",
+        "version_normalized": "2.0.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/yiisoft/yii2-gii.git",
-            "reference": "9ec1374d0844f448d2af29c707f77c9f8d1375c8"
+            "reference": "c02adc552bcf3a0ef6f3694a9dcbf209f4885ab1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/9ec1374d0844f448d2af29c707f77c9f8d1375c8",
-            "reference": "9ec1374d0844f448d2af29c707f77c9f8d1375c8",
+            "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/c02adc552bcf3a0ef6f3694a9dcbf209f4885ab1",
+            "reference": "c02adc552bcf3a0ef6f3694a9dcbf209f4885ab1",
             "shasum": ""
         },
         "require": {
@@ -5485,15 +5757,11 @@
             "yiisoft/yii2": "~2.0.14",
             "yiisoft/yii2-bootstrap": "~2.0.0"
         },
-        "time": "2018-05-02 22:05:25",
+        "time": "2018-12-08T10:07:49+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
                 "dev-master": "2.0.x-dev"
-            },
-            "asset-installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
             }
         },
         "installation-source": "dist",
@@ -5538,7 +5806,7 @@
             "bower-asset/jquery-ui": "~1.12.1",
             "yiisoft/yii2": "~2.0.4"
         },
-        "time": "2017-11-25 15:32:29",
+        "time": "2017-11-25T15:32:29+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -5586,7 +5854,7 @@
             "swiftmailer/swiftmailer": "~5.0",
             "yiisoft/yii2": "~2.0.4"
         },
-        "time": "2017-05-01 08:29:00",
+        "time": "2017-05-01T08:29:00+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -5617,218 +5885,6 @@
             "swift",
             "swiftmailer",
             "yii2"
-        ]
-    },
-    {
-        "name": "guzzlehttp/promises",
-        "version": "v1.3.1",
-        "version_normalized": "1.3.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/guzzle/promises.git",
-            "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
-            "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^4.0"
-        },
-        "time": "2016-12-20 10:07:11",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.4-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "GuzzleHttp\\Promise\\": "src/"
-            },
-            "files": [
-                "src/functions_include.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Michael Dowling",
-                "email": "mtdowling@gmail.com",
-                "homepage": "https://github.com/mtdowling"
-            }
-        ],
-        "description": "Guzzle promises library",
-        "keywords": [
-            "promise"
-        ]
-    },
-    {
-        "name": "guzzlehttp/guzzle",
-        "version": "6.3.3",
-        "version_normalized": "6.3.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/guzzle/guzzle.git",
-            "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
-            "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
-            "shasum": ""
-        },
-        "require": {
-            "guzzlehttp/promises": "^1.0",
-            "guzzlehttp/psr7": "^1.4",
-            "php": ">=5.5"
-        },
-        "require-dev": {
-            "ext-curl": "*",
-            "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
-            "psr/log": "^1.0"
-        },
-        "suggest": {
-            "psr/log": "Required for using the Log middleware"
-        },
-        "time": "2018-04-22 15:46:56",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "6.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "src/functions_include.php"
-            ],
-            "psr-4": {
-                "GuzzleHttp\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Michael Dowling",
-                "email": "mtdowling@gmail.com",
-                "homepage": "https://github.com/mtdowling"
-            }
-        ],
-        "description": "Guzzle is a PHP HTTP client library",
-        "homepage": "http://guzzlephp.org/",
-        "keywords": [
-            "client",
-            "curl",
-            "framework",
-            "http",
-            "http client",
-            "rest",
-            "web service"
-        ]
-    },
-    {
-        "name": "microsoft/azure-storage-common",
-        "version": "1.2.0",
-        "version_normalized": "1.2.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Azure/azure-storage-common-php.git",
-            "reference": "5a721c15a4eba9233e423203bee168e47c7f8682"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Azure/azure-storage-common-php/zipball/5a721c15a4eba9233e423203bee168e47c7f8682",
-            "reference": "5a721c15a4eba9233e423203bee168e47c7f8682",
-            "shasum": ""
-        },
-        "require": {
-            "guzzlehttp/guzzle": "~6.0",
-            "php": ">=5.6.0"
-        },
-        "time": "2018-08-02 10:54:53",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "MicrosoftAzure\\Storage\\Common\\": "src/Common"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Azure Storage PHP Client Library",
-                "email": "dmsh@microsoft.com"
-            }
-        ],
-        "description": "This project provides a set of common code shared by Azure Storage Blob, Table, Queue and File PHP client libraries.",
-        "keywords": [
-            "azure",
-            "common",
-            "php",
-            "sdk",
-            "storage"
-        ]
-    },
-    {
-        "name": "microsoft/azure-storage-blob",
-        "version": "1.2.0",
-        "version_normalized": "1.2.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Azure/azure-storage-blob-php.git",
-            "reference": "6a89f277e876056cc80bd867f7d6104557ee26a4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Azure/azure-storage-blob-php/zipball/6a89f277e876056cc80bd867f7d6104557ee26a4",
-            "reference": "6a89f277e876056cc80bd867f7d6104557ee26a4",
-            "shasum": ""
-        },
-        "require": {
-            "microsoft/azure-storage-common": "~1.2.0",
-            "php": ">=5.6.0"
-        },
-        "time": "2018-08-02 11:05:31",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "MicrosoftAzure\\Storage\\Blob\\": "src/Blob"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Azure Storage PHP Client Library",
-                "email": "dmsh@microsoft.com"
-            }
-        ],
-        "description": "This project provides a set of PHP client libraries that make it easy to access Microsoft Azure Storage Blob APIs.",
-        "keywords": [
-            "azure",
-            "blob",
-            "php",
-            "sdk",
-            "storage"
         ]
     }
 ]

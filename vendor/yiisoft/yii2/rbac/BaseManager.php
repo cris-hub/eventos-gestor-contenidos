@@ -193,13 +193,11 @@ abstract class BaseManager extends Component implements ManagerInterface
     /**
      * {@inheritdoc}
      */
-
-
-    
-        public function getRoles()
+    public function getRoles()
     {
         return $this->getItems(Item::TYPE_ROLE);
     }
+
     /**
      * Set default roles
      * @param string[]|\Closure $roles either array of roles or a callable returning it

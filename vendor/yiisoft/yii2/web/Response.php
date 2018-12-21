@@ -482,16 +482,10 @@ class Response extends \yii\base\Response
         if ($attachmentName === null) {
             $attachmentName = basename($filePath);
         }
-        $handle = fopen($filePath, 'r');
+        $handle = fopen($filePath, 'rb');
         $this->sendStreamAsFile($handle, $attachmentName, $options);
-        
-        return $this;
-    }
 
-    public function sendFile2($filePath)
-    {
-        $handle = fopen($filePath, 'r');
-        return $handle;
+        return $this;
     }
 
     /**

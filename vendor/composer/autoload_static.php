@@ -4,14 +4,17 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b
+class ComposerStaticInit5e9181487e74e68d1b79bf9998ea92fb
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
     );
@@ -120,6 +123,8 @@ class ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b
         'M' => 
         array (
             'Moontoast\\Math\\' => 15,
+            'MicrosoftAzure\\Storage\\Common\\' => 30,
+            'MicrosoftAzure\\Storage\\Blob\\' => 28,
             'Michelf\\' => 8,
         ),
         'L' => 
@@ -129,6 +134,8 @@ class ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
+            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\' => 11,
         ),
         'F' => 
         array (
@@ -209,7 +216,7 @@ class ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b
         ),
         'kartik\\widgets\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widgets',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widgets/src',
         ),
         'kartik\\typeahead\\' => 
         array (
@@ -221,7 +228,7 @@ class ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b
         ),
         'kartik\\time\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-timepicker',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-timepicker/src',
         ),
         'kartik\\switchinput\\' => 
         array (
@@ -229,7 +236,7 @@ class ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b
         ),
         'kartik\\spinner\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner/src',
         ),
         'kartik\\sidenav\\' => 
         array (
@@ -273,7 +280,7 @@ class ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b
         ),
         'kartik\\depdrop\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-depdrop',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-depdrop/src',
         ),
         'kartik\\datetime\\' => 
         array (
@@ -375,6 +382,14 @@ class ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b
         array (
             0 => __DIR__ . '/..' . '/moontoast/math/src/Moontoast/Math',
         ),
+        'MicrosoftAzure\\Storage\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/microsoft/azure-storage-common/src/Common',
+        ),
+        'MicrosoftAzure\\Storage\\Blob\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/microsoft/azure-storage-blob/src/Blob',
+        ),
         'Michelf\\' => 
         array (
             0 => __DIR__ . '/..' . '/michelf/php-markdown/Michelf',
@@ -386,6 +401,14 @@ class ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GuzzleHttp\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
         'Faker\\' => 
         array (
@@ -941,10 +964,10 @@ class ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit08b719bb24c9141e79f8016574ee2c9b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5e9181487e74e68d1b79bf9998ea92fb::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5e9181487e74e68d1b79bf9998ea92fb::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit5e9181487e74e68d1b79bf9998ea92fb::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit5e9181487e74e68d1b79bf9998ea92fb::$classMap;
 
         }, null, ClassLoader::class);
     }

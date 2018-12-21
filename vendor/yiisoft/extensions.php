@@ -3,6 +3,15 @@
 $vendorDir = dirname(__DIR__);
 
 return array (
+  'kartik-v/yii2-krajee-base' => 
+  array (
+    'name' => 'kartik-v/yii2-krajee-base',
+    'version' => '2.0.4.0',
+    'alias' => 
+    array (
+      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base/src',
+    ),
+  ),
   'yiisoft/yii2-bootstrap' => 
   array (
     'name' => 'yiisoft/yii2-bootstrap',
@@ -10,15 +19,6 @@ return array (
     'alias' => 
     array (
       '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap/src',
-    ),
-  ),
-  'kartik-v/yii2-krajee-base' => 
-  array (
-    'name' => 'kartik-v/yii2-krajee-base',
-    'version' => '1.9.9.0',
-    'alias' => 
-    array (
-      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base/src',
     ),
   ),
   'kartik-v/yii2-widget-fileinput' => 
@@ -105,7 +105,7 @@ return array (
   'mdmsoft/yii2-admin' => 
   array (
     'name' => 'mdmsoft/yii2-admin',
-    'version' => '2.8.0.0',
+    'version' => '2.9.0.0',
     'alias' => 
     array (
       '@mdm/admin' => $vendorDir . '/mdmsoft/yii2-admin',
@@ -123,7 +123,7 @@ return array (
   'kartik-v/yii2-widget-typeahead' => 
   array (
     'name' => 'kartik-v/yii2-widget-typeahead',
-    'version' => '1.0.2.0',
+    'version' => '1.0.3.0',
     'alias' => 
     array (
       '@kartik/typeahead' => $vendorDir . '/kartik-v/yii2-widget-typeahead/src',
@@ -141,10 +141,10 @@ return array (
   'kartik-v/yii2-widget-timepicker' => 
   array (
     'name' => 'kartik-v/yii2-widget-timepicker',
-    'version' => '1.0.3.0',
+    'version' => '1.0.4.0',
     'alias' => 
     array (
-      '@kartik/time' => $vendorDir . '/kartik-v/yii2-widget-timepicker',
+      '@kartik/time' => $vendorDir . '/kartik-v/yii2-widget-timepicker/src',
     ),
   ),
   'kartik-v/yii2-widget-switchinput' => 
@@ -159,10 +159,10 @@ return array (
   'kartik-v/yii2-widget-spinner' => 
   array (
     'name' => 'kartik-v/yii2-widget-spinner',
-    'version' => '1.0.0.0',
+    'version' => '1.0.1.0',
     'alias' => 
     array (
-      '@kartik/spinner' => $vendorDir . '/kartik-v/yii2-widget-spinner',
+      '@kartik/spinner' => $vendorDir . '/kartik-v/yii2-widget-spinner/src',
     ),
   ),
   'kartik-v/yii2-widget-sidenav' => 
@@ -213,16 +213,16 @@ return array (
   'kartik-v/yii2-widget-depdrop' => 
   array (
     'name' => 'kartik-v/yii2-widget-depdrop',
-    'version' => '1.0.4.0',
+    'version' => '1.0.5.0',
     'alias' => 
     array (
-      '@kartik/depdrop' => $vendorDir . '/kartik-v/yii2-widget-depdrop',
+      '@kartik/depdrop' => $vendorDir . '/kartik-v/yii2-widget-depdrop/src',
     ),
   ),
   'kartik-v/yii2-widget-datetimepicker' => 
   array (
     'name' => 'kartik-v/yii2-widget-datetimepicker',
-    'version' => '1.4.7.0',
+    'version' => '1.4.8.0',
     'alias' => 
     array (
       '@kartik/datetime' => $vendorDir . '/kartik-v/yii2-widget-datetimepicker/src',
@@ -231,7 +231,7 @@ return array (
   'kartik-v/yii2-widget-datepicker' => 
   array (
     'name' => 'kartik-v/yii2-widget-datepicker',
-    'version' => '1.4.6.0',
+    'version' => '1.4.7.0',
     'alias' => 
     array (
       '@kartik/date' => $vendorDir . '/kartik-v/yii2-widget-datepicker/src',
@@ -276,10 +276,10 @@ return array (
   'kartik-v/yii2-widgets' => 
   array (
     'name' => 'kartik-v/yii2-widgets',
-    'version' => '3.4.0.0',
+    'version' => '3.4.1.0',
     'alias' => 
     array (
-      '@kartik/widgets' => $vendorDir . '/kartik-v/yii2-widgets',
+      '@kartik/widgets' => $vendorDir . '/kartik-v/yii2-widgets/src',
     ),
   ),
   'thamtech/yii2-uuid' => 
@@ -303,7 +303,7 @@ return array (
   'yiisoft/yii2-gii' => 
   array (
     'name' => 'yiisoft/yii2-gii',
-    'version' => '2.0.7.0',
+    'version' => '2.0.8.0',
     'alias' => 
     array (
       '@yii/gii' => $vendorDir . '/yiisoft/yii2-gii/src',
