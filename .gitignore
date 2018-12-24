@@ -5,7 +5,7 @@ themes/classic/views/
 
 # phpstorm project files
 .idea
-/vendor
+vendor/
 # netbeans project files
 #nbproject
 
@@ -18,7 +18,7 @@ themes/classic/views/
 Thumbs.db
 uploadds/
 # composer vendor dir
-#/vendor
+/vendor
 
 # composer itself is not needed
 #composer.phar
