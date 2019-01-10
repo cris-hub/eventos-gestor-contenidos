@@ -1,11 +1,20 @@
 version: '3.5'
 services:
-  container_api:
-    container_name: api-colsubsidio
+ gestor_contenidos_service:
+    container_name: hotels-gestor-contenidos
+    image:  crishubprojects/hotels-gestor-contenidos:latest
+    expose:
+      - "8081:81"
     build:
-      context: ./
+      context: ./hotels-gestor-contenidos
       dockerfile: ./Dockerfile
-    ports:
-    - 8100:80
+    networks:
+      - network  
+    volumes: 
+      - ./hotels-gestor-contenidos:/var/www/html/gestor
+    restart: always  
     environment:
-    - "TZ=America/Bogota"
+      - "TZ=America/Bogota"   
+
+networks:
+  network:      
