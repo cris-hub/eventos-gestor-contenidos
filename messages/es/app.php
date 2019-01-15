@@ -76,11 +76,14 @@ return [
     'Module' => 'Módulo',
     //Room ---------------------------------------------------------------------
     'Rooms' => 'Habitaciones',
+    'Packages' => 'Paquetes',
     'Room' => 'Habitación',
     'Create Room' => 'Crear Habitación',
+    'Create Package' => 'Crear Paquete',
     'Capacity People' => 'Capacidad máxima',
     'Aditional Information' => 'Información adicional',
     'Update Room: ' => 'Actualizar Habitación: ',
+    'Update Package: ' => 'Actualizar Habitación: ',
     //Users---------------------------------------------------------------------
     'Create User' => 'Crear Usuario',
     'username' => 'Usuario',
