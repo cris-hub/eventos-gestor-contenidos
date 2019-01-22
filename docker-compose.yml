@@ -1,20 +1,41 @@
-version: '3.5'
+version: '2'
 services:
- gestor_contenidos_service:
-    container_name: hotels-gestor-contenidos
-    image:  crishubprojects/hotels-gestor-contenidos:latest
+  gestor_contenidos_service:
+    image:  crishubprojects/eventos-gestor-contenidos:latest
     expose:
-      - "8081:81"
+      - "80"
     build:
-      context: ./hotels-gestor-contenidos
+      context: ./
       dockerfile: ./Dockerfile
     networks:
-      - network  
-    volumes: 
-      - ./hotels-gestor-contenidos:/var/www/html/gestor
-    restart: always  
+      - network
+    volumes:
+      - gestor-contenidos:/var/www/html/gestor
+      - gestor-contenidos-logs:/var/log
+    restart: always
     environment:
-      - "TZ=America/Bogota"   
+      - "TZ=America/Bogota"
+  proxy_service:
+    image:  crishubprojects/eventos-gestor-contenidos-proxy:latest
+    ports:
+      - "80:80"
+    build:
+     context: ./
+     dockerfile: ./Dockerfile
+    networks:
+      - network
+    volumes:
+      - "proxy-config:/etc/nginx"
+      - proxy-logs:/var/log
+    links:
+      - gestor_contenidos_service
+    restart: always
 
+volumes:
+  gestor-contenidos:
+  gestor-contenidos-logs:
+  proxy-config:
+  proxy-logs:
 networks:
-  network:      
+  network:
+
