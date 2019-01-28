@@ -17,6 +17,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
     
+    <?= $form->field($model, 'type_package') ?>
+
     <?= $form->field($model, 'type_room') ?>
 
     <?= $form->field($model, 'slug') ?>

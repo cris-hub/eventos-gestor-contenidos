@@ -11,7 +11,7 @@ use yii\behaviors\BlameableBehavior;
  * This is the model class for table "room".
  *
  * @property int $id
- * @property string $type_room
+ * @property string $type_package
  * @property string $slug
  * @property string $description
  * @property int $capacity_people

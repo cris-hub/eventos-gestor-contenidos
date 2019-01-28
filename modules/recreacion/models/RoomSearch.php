@@ -18,7 +18,7 @@ class RoomSearch extends Room {
     public function rules() {
         return [
             [['id', 'capacity_people', 'hotel_id'], 'integer'],
-            [['name', 'type_room', 'slug', 'description', 'aditional_information',
+            [['name', 'type_package', 'type_room','slug', 'description', 'aditional_information',
             'status', 'created', 'created_by', 'modified', 'modified_by'], 'safe'],
         ];
     }
@@ -65,6 +65,7 @@ class RoomSearch extends Room {
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
+                ->andFilterWhere(['like', 'type_package', $this->type_package])
                 ->andFilterWhere(['like', 'type_room', $this->type_room])
                 ->andFilterWhere(['like', 'slug', $this->slug])
                 ->andFilterWhere(['like', 'description', $this->description])
