@@ -15,7 +15,6 @@ use app\modules\recreacion\models\City;
 use app\modules\recreacion\models\Category;
 use app\modules\recreacion\models\Room;
 use yii\helpers\HtmlPurifier;
-use yii\filters\auth\QueryParamAuth;
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\HttpBearerAuth;
 use yii\filters\auth\CompositeAuth;
@@ -418,10 +417,21 @@ class ResthotelController extends ActiveController {
                         $model->slug = $room->slug;
                         $model->capacity_people = $room->capacity_people;
                         $model->aditional_information = $room->aditional_information;
+                        $model->type_package = $room->type_package;
+                        $package = new \stdClass();
+                        $package->roomPackage = \app\modules\recreacion\models\Package::find()->where('type_package=:id and status=:status', [':id' => $model->type_package, ':status' => self::ACTIVE])->one();
+                        $temp = $package->roomPackage;
+                        $images = [];
+                        foreach ($temp->files as $file) {
+                            $images[] = ['url' => $this->getUrlImage($file->path)];
+                        }
+                        $package->images = $images;
+                        $model->package = $package;
                         $images = [];
                         foreach ($room->files as $file) {
                             $images[] = ['url' => $this->getUrlImage($file->path)];
                         }
+
                         $model->images = $images;
                         $response[] = $model;
                     }
@@ -432,7 +442,7 @@ class ResthotelController extends ActiveController {
             \Yii::error(__FILE__ . ':' . __LINE__ . '{'
                     . print_r(' {ERROR [' . $exc->getMessage()
                             . '}', true) . '}', 'REST');
-            return ['error' => true, 'msg' => Yii::$app->params['errorRest']];
+            return ['error' => true, 'info' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
         }
     }
 
@@ -512,12 +522,12 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    private function getUrlImage($path){
+    private function getUrlImage($path) {
         $urlBlob = "https://bscolsubsidiotest.blob.core.windows.net/colsubsidioportalsalud/";
         $siteUrl = $this->getSiteurl();
-        $tempPath = str_replace(\Yii::$app->basePath, $urlBlob .'/..', $path);
+        $tempPath = str_replace(\Yii::$app->basePath, $urlBlob . '/..', $path);
         return str_replace('\\', '/', $tempPath);
-        }
+    }
 
     public function actionGetimagebanner() {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;

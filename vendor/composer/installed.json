@@ -190,29 +190,6 @@
         ]
     },
     {
-        "name": "bower-asset/fontawesome",
-        "version": "v4.3.0",
-        "version_normalized": "4.3.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/FortAwesome/Font-Awesome.git",
-            "reference": "41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0",
-            "reference": "41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0",
-            "shasum": null
-        },
-        "type": "bower-asset",
-        "installation-source": "dist",
-        "license": [
-            "OFL-1.1",
-            "MIT",
-            "CC-BY-3.0"
-        ]
-    },
-    {
         "name": "bower-asset/inputmask",
         "version": "3.3.11",
         "version_normalized": "3.3.11.0",
@@ -1057,6 +1034,56 @@
         ]
     },
     {
+        "name": "fortawesome/font-awesome",
+        "version": "v4.7.0",
+        "version_normalized": "4.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/FortAwesome/Font-Awesome.git",
+            "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/a8386aae19e200ddb0f6845b5feeee5eb7013687",
+            "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687",
+            "shasum": ""
+        },
+        "require-dev": {
+            "jekyll": "1.0.2",
+            "lessc": "1.4.2"
+        },
+        "time": "2016-10-24T15:52:54+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.6.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "OFL-1.1",
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Dave Gandy",
+                "email": "dave@fontawesome.io",
+                "homepage": "http://twitter.com/davegandy",
+                "role": "Developer"
+            }
+        ],
+        "description": "The iconic font and CSS framework",
+        "homepage": "http://fontawesome.io/",
+        "keywords": [
+            "FontAwesome",
+            "awesome",
+            "bootstrap",
+            "font",
+            "icon"
+        ]
+    },
+    {
         "name": "fzaninotto/faker",
         "version": "v1.8.0",
         "version_normalized": "1.8.0.0",
@@ -1344,8 +1371,8 @@
     },
     {
         "name": "kartik-v/bootstrap-fileinput",
-        "version": "v4.5.2",
-        "version_normalized": "4.5.2.0",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
@@ -1364,7 +1391,7 @@
                 "dev-master": "4.5.x-dev"
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "kartik\\plugins\\fileinput\\": ""
@@ -4012,25 +4039,25 @@
     },
     {
         "name": "rmrevin/yii2-fontawesome",
-        "version": "2.10.3",
-        "version_normalized": "2.10.3.0",
+        "version": "2.17.1",
+        "version_normalized": "2.17.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/rmrevin/yii2-fontawesome.git",
-            "reference": "ce4dd62a048090f3d98822d4bc9401bfcdde1f98"
+            "reference": "65ce306da864f4d558348aeba040ed7876878090"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/ce4dd62a048090f3d98822d4bc9401bfcdde1f98",
-            "reference": "ce4dd62a048090f3d98822d4bc9401bfcdde1f98",
+            "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/65ce306da864f4d558348aeba040ed7876878090",
+            "reference": "65ce306da864f4d558348aeba040ed7876878090",
             "shasum": ""
         },
         "require": {
-            "bower-asset/fontawesome": "4.3.*",
+            "fortawesome/font-awesome": "~4.7",
             "php": ">=5.4.0",
             "yiisoft/yii2": "2.0.*"
         },
-        "time": "2015-06-23T13:06:14+00:00",
+        "time": "2017-01-11T14:05:47+00:00",
         "type": "yii2-extension",
         "extra": {
             "asset-installer-paths": {
@@ -4050,9 +4077,9 @@
         ],
         "authors": [
             {
-                "name": "Roman Revin",
-                "email": "xgismox@gmail.com",
-                "homepage": "http://rmrevin.ru/"
+                "name": "Revin Roman",
+                "email": "roman@rmrevin.com",
+                "homepage": "https://rmrevin.com/"
             }
         ],
         "description": "Asset Bundle for Yii2 with Font Awesome",

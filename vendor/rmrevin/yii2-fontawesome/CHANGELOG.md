@@ -1,3 +1,86 @@
+2017-01-11 - 2.17.1
+-------------------
+* Downgrade minimum php to `5.4`
+
+2016-10-25 - 2.17.0
+-------------------
+* `Font Awesome` updated to version `4.7`.
+* Update minimum php to `5.5`
+* These deprecated classes are now removed:
+  * `rmrevin\yii\fontawesome\CDNAssetBundle`
+* These deprecated methods are now removed:
+  * `rmrevin\yii\fontawesome\component\Icon::ul`
+  * `rmrevin\yii\fontawesome\component\Icon::fixed_width`
+  * `rmrevin\yii\fontawesome\component\Icon::pull_left`
+  * `rmrevin\yii\fontawesome\component\Icon::pull_right`
+* In method `rmrevin\yii\fontawesome\component\UnorderedList::item` changed interface (removed `$icon` param).
+* These directories are now deprecated:
+  * `./assets`
+* These fields and methods are now deprecated:
+  * `rmrevin\yii\fontawesome\component\Icon::$defaultTag`
+  * `rmrevin\yii\fontawesome\component\Icon::$tag`
+  * `rmrevin\yii\fontawesome\component\Icon::tag()`
+  * `rmrevin\yii\fontawesome\component\Icon::render()`
+  * `rmrevin\yii\fontawesome\component\Stack::$defaultTag`
+  * `rmrevin\yii\fontawesome\component\Stack::$tag`
+  * `rmrevin\yii\fontawesome\component\Stack::tag()`
+  * `rmrevin\yii\fontawesome\component\Stack::render()`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::$defaultTag`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::$tag`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::tag()`
+  * `rmrevin\yii\fontawesome\component\UnorderedList::render()`
+* Refactoring class `rmrevin\yii\fontawesome\component\UnorderedList`.
+
+2016-08-31 - 2.16.1
+-------------------
+* Fix options in li item.
+* Update readme.
+
+2016-08-31 - 2.16.0
+-------------------
+* Enh #22: Added FA:ul() method.
+* Refactoring.
+
+2016-08-19 - 2.15.2
+-------------------
+* Update icon name constants to version 4.6.3.
+
+2016-05-29 - 2.15.1
+-------------------
+* Added option to skip the icon.
+* Added option to change the order of icons in the stack.
+
+2016-05-22 - 2.15.0
+-------------------
+* Remove bower package.
+
+2016-04-16 - 2.14.0
+-------------------
+* `Font Awesome` updated to version `4.6`.
+
+2015-11-26 - 2.13.0
+-------------------
+* `Font Awesome` updated to version `4.5`.
+
+2015-11-20 - 2.12.2
+-------------------
+* Add shortcuts methods `i()` for `FA::icon()` and `FA::s()` for `FA::stack()`
+* Update readme
+
+2015-11-09 - 2.12.1
+-------------------
+* Variable `FA::$cssPrefix` transferred to the class `FontAwesome`.
+* Refactoring.
+* Update tests.
+
+2015-08-15 - 2.12.0
+-------------------
+* `Font Awesome` updated to version `4.4`.
+
+2015-06-29 - 2.11.0
+-------------------
+* Added the ability to change the tag for icons.
+
 2015-06-23 - 2.10.3
 -------------------
 * Change `cnd` url to cloudflare.
@@ -55,7 +138,7 @@
 
 2015-01-26 - 2.7.0
 ------------------
-* Font Awesome updated to version 4.3.
+* `Font Awesome` updated to version `4.3`.
 * Update icons constants list.
 * Update readme.
 

@@ -23,14 +23,13 @@
         "almasaeed2010/adminlte": "~2.4",
         "yiisoft/yii2-jui": "^2.0",
         "kartik-v/yii2-widgets": "*",
-        "kartik-v/bootstrap-fileinput": "*",
+        "kartik-v/bootstrap-fileinput": "dev-master",
         "nemmo/yii2-attachments": "dev-master",
         "kartik-v/yii2-markdown": "dev-master",
         "2amigos/yii2-ckeditor-widget": "^2.1",
         "sizeg/yii2-jwt": "^1.1",
         "thamtech/yii2-uuid": "^1.1",
-        "microsoft/azure-storage-blob": "~1.0",
-        "rmrevin/yii2-fontawesome": "2.10.*"
+        "microsoft/azure-storage-blob": "~1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

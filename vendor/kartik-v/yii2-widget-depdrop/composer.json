@@ -22,17 +22,12 @@
     }
   ],
   "require": {
-    "kartik-v/yii2-krajee-base": ">=2.0.0",
+    "kartik-v/yii2-krajee-base": "~1.7",
     "kartik-v/dependent-dropdown": "~1.4"
   },
   "autoload": {
     "psr-4": {
-      "kartik\\depdrop\\": "src"
-    }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.0.x-dev"
+      "kartik\\depdrop\\": ""
     }
   }
 }
