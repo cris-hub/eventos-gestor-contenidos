@@ -17,8 +17,11 @@ use nemmo\attachments\components\AttachmentsInput;
     <div class="box-body">
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
         
+<<<<<<< HEAD
     <?= $form->field($model, 'type_package')->textInput(['maxlength' => true]) ?>
     
+=======
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
     <?= $form->field($model, 'type_room')->textInput(['maxlength' => true]) ?>
         
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>

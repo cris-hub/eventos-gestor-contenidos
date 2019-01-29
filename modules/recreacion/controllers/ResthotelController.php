@@ -15,6 +15,10 @@ use app\modules\recreacion\models\City;
 use app\modules\recreacion\models\Category;
 use app\modules\recreacion\models\Room;
 use yii\helpers\HtmlPurifier;
+<<<<<<< HEAD
+=======
+use yii\filters\auth\QueryParamAuth;
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\HttpBearerAuth;
 use yii\filters\auth\CompositeAuth;
@@ -417,6 +421,7 @@ class ResthotelController extends ActiveController {
                         $model->slug = $room->slug;
                         $model->capacity_people = $room->capacity_people;
                         $model->aditional_information = $room->aditional_information;
+<<<<<<< HEAD
                         $model->type_package = $room->type_package;
                         $package = new \stdClass();
                         $package->roomPackage = \app\modules\recreacion\models\Package::find()->where('type_package=:id and status=:status', [':id' => $model->type_package, ':status' => self::ACTIVE])->one();
@@ -427,11 +432,16 @@ class ResthotelController extends ActiveController {
                         }
                         $package->images = $images;
                         $model->package = $package;
+=======
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
                         $images = [];
                         foreach ($room->files as $file) {
                             $images[] = ['url' => $this->getUrlImage($file->path)];
                         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
                         $model->images = $images;
                         $response[] = $model;
                     }
@@ -442,7 +452,11 @@ class ResthotelController extends ActiveController {
             \Yii::error(__FILE__ . ':' . __LINE__ . '{'
                     . print_r(' {ERROR [' . $exc->getMessage()
                             . '}', true) . '}', 'REST');
+<<<<<<< HEAD
             return ['error' => true, 'info' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
+=======
+            return ['error' => true, 'msg' => Yii::$app->params['errorRest']];
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
         }
     }
 
@@ -523,9 +537,14 @@ class ResthotelController extends ActiveController {
      * @link      http://www.ingeneo.com.co
      */
     private function getUrlImage($path) {
+<<<<<<< HEAD
         $urlBlob = "https://bscolsubsidiotest.blob.core.windows.net/colsubsidioportalsalud/";
         $siteUrl = $this->getSiteurl();
         $tempPath = str_replace(\Yii::$app->basePath, $urlBlob . '/..', $path);
+=======
+        $siteUrl = $this->getSiteurl();
+        $tempPath = str_replace(\Yii::$app->basePath, $siteUrl . \yii\helpers\Url::base() . '/..', $path);
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
         return str_replace('\\', '/', $tempPath);
     }
 

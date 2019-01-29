@@ -76,6 +76,7 @@ return [
     'Module' => 'Módulo',
     //Room ---------------------------------------------------------------------
     'Rooms' => 'Habitaciones',
+<<<<<<< HEAD
     'Packages' => 'Paquetes',
     'Room' => 'Habitación',
     'Create Room' => 'Crear Habitación',
@@ -84,6 +85,13 @@ return [
     'Aditional Information' => 'Información adicional',
     'Update Room: ' => 'Actualizar Habitación: ',
     'Update Package: ' => 'Actualizar Habitación: ',
+=======
+    'Room' => 'Habitación',
+    'Create Room' => 'Crear Habitación',
+    'Capacity People' => 'Capacidad máxima',
+    'Aditional Information' => 'Información adicional',
+    'Update Room: ' => 'Actualizar Habitación: ',
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
     //Users---------------------------------------------------------------------
     'Create User' => 'Crear Usuario',
     'username' => 'Usuario',

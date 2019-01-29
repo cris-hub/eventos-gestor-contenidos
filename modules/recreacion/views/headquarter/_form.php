@@ -4,7 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use nemmo\attachments\components\AttachmentsInput;
+<<<<<<< HEAD
 use dosamigos\ckeditor\CKEditor;
+=======
+
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
 /* @var $this yii\web\View */
 /* @var $model app\modules\recreacion\models\Headquarter */
 /* @var $form yii\widgets\ActiveForm */
@@ -18,6 +22,7 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
+<<<<<<< HEAD
     <?= $form->field($model, 'description')->widget(CKEditor::className(), [
             'options' => ['rows' => 6],
             'preset' => 'custom',
@@ -28,6 +33,9 @@ use dosamigos\ckeditor\CKEditor;
             ]
         ])
          ?>
+=======
+    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
 
     <?= $form->field($model, 'emails')->textarea(['rows' => 6]) ?>
 

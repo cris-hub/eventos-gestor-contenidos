@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: '2'
 services:
   gestor_contenidos_service:
@@ -39,3 +40,16 @@ volumes:
 networks:
   network:
 
+=======
+version: '3.5'
+services:
+  container_api:
+    container_name: api-colsubsidio
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+    - 8100:80
+    environment:
+    - "TZ=America/Bogota"
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a

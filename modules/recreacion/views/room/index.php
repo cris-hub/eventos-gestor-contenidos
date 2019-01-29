@@ -33,7 +33,10 @@ $arrayHotels = ArrayHelper::map($hotels, 'id', 'name');
             'columns' => [
 //            ['class' => 'yii\grid\SerialColumn'],
                 'id',
+<<<<<<< HEAD
                 'type_package',
+=======
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
                 'type_room',
                 'name',
                 [
