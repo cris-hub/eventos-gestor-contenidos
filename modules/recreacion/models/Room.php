@@ -11,10 +11,7 @@ use yii\behaviors\BlameableBehavior;
  * This is the model class for table "room".
  *
  * @property int $id
-<<<<<<< HEAD
  * @property string $type_package
-=======
->>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
  * @property string $type_room
  * @property string $slug
  * @property string $description
@@ -70,15 +67,12 @@ class Room extends ActiveRecord {
      */
     public function rules() {
         return [
-<<<<<<< HEAD
             [['type_package','type_room', 'name', 'slug', 'description', 'capacity_people', 'hotel_id'], 'required'],
-=======
-            [['type_room', 'name', 'slug', 'description', 'capacity_people', 'hotel_id'], 'required'],
->>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
             [['description', 'status'], 'string'],
             [['capacity_people', 'hotel_id'], 'integer'],
             [['created', 'modified'], 'safe'],
             [['name'], 'string', 'max' => 150],
+            [['type_package'], 'string', 'max' => 500],
             [['slug', 'aditional_information', 'created_by', 'modified_by'], 'string', 'max' => 45],
             [['hotel_id'], 'exist', 'skipOnError' => true, 'targetClass' => Hotel::className(), 'targetAttribute' => ['hotel_id' => 'id']],
         ];
@@ -90,12 +84,8 @@ class Room extends ActiveRecord {
     public function attributeLabels() {
         return [
             'id' => Yii::t('app', 'ID'),
-<<<<<<< HEAD
             'type_package' => Yii::t('app', 'Tipo de paquete'),
             'type_room' => Yii::t('app', 'Tipo de habitacion'),
-=======
-            'type_room' => Yii::t('app', 'Tipo de habitación'),
->>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
             'name' => Yii::t('app', 'Name'),
             'slug' => Yii::t('app', 'Slug'),
             'description' => Yii::t('app', 'Description'),

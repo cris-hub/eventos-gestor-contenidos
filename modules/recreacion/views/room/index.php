@@ -33,10 +33,17 @@ $arrayHotels = ArrayHelper::map($hotels, 'id', 'name');
             'columns' => [
 //            ['class' => 'yii\grid\SerialColumn'],
                 'id',
-<<<<<<< HEAD
-                'type_package',
-=======
->>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
+                 [
+                    'attribute' => 'type_package',
+                    'format' => 'html',
+                    'value' => function($data) {
+                        if (!empty($data->type_package)) {
+                            return substr($data->type_package, 0, 250) . '...';
+                        } else {
+                            return substr($data->type_package, 0, 150);
+                        }
+                    }
+                ],
                 'type_room',
                 'name',
                 [

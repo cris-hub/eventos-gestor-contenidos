@@ -17,11 +17,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
     
-<<<<<<< HEAD
     <?= $form->field($model, 'type_package') ?>
 
-=======
->>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
     <?= $form->field($model, 'type_room') ?>
 
     <?= $form->field($model, 'slug') ?>

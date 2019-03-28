@@ -7,11 +7,7 @@ use app\modules\recreacion\models\EventType;
 use nemmo\attachments\components\AttachmentsInput;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
-<<<<<<< HEAD
 use dosamigos\ckeditor\CKEditor;
-=======
-
->>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $searchModel mdm\admin\models\searchs\Assignment */
@@ -33,7 +29,6 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-<<<<<<< HEAD
     <?= $form->field($model, 'description')->widget(CKEditor::className(), [
             'options' => ['rows' => 6],
             'preset' => 'custom',
@@ -44,9 +39,6 @@ use dosamigos\ckeditor\CKEditor;
             ]
         ])
          ?>
-=======
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
->>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
     <?php
     echo $form->field($model, 'status')->dropDownList(app\components\Util::getlistStatus(), ['prompt' => "Seleccione..."]);
     ?>

@@ -166,20 +166,12 @@ class RestheadquarterController extends ActiveController {
         }
     }
 
-<<<<<<< HEAD
     private function getUrlImage($path){
         $urlBlob = "https://bscolsubsidiotest.blob.core.windows.net/colsubsidioportalsalud/";
         $siteUrl = $this->getSiteurl();
         $tempPath = str_replace(\Yii::$app->basePath, $urlBlob .'/..', $path);
         return str_replace('\\', '/', $tempPath);
         }
-=======
-    private function getUrlImage($path) {
-        $siteUrl = $this->getSiteurl();
-        $tempPath = str_replace(\Yii::$app->basePath, $siteUrl . \yii\helpers\Url::base() . '/..', $path);
-        return str_replace('\\', '/', $tempPath);
-    }
->>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
 
     private function getSiteurl() {
         $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ||

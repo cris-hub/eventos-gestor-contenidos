@@ -199,19 +199,11 @@ class RestexperecesController extends ActiveController
      * @link      http://www.ingeneo.com.co
      */
     private function getUrlImage($path){
-<<<<<<< HEAD
         $urlBlob = "https://bscolsubsidiotest.blob.core.windows.net/colsubsidioportalsalud/";
         $siteUrl = $this->getSiteurl();
         $tempPath = str_replace(\Yii::$app->basePath, $urlBlob .'/..', $path);
         return str_replace('\\', '/', $tempPath);
         }
-=======
-        $siteUrl = $this->getSiteurl();
-        $tempPath = str_replace(\Yii::$app->basePath, 
-                    $siteUrl.\yii\helpers\Url::base() .'/..', $path);
-        return str_replace('\\', '/', $tempPath);
-    }
->>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
 
     public function actionGetimagebanner() {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
