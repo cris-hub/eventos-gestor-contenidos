@@ -281,7 +281,7 @@ class ResthotelController extends ActiveController
      * Metodo que permite consultar los hoteles por id
      * 
      * @param integer $id Id del hotel
-     * 
+     *
      * @return json
      * @author    Alexander Arcila <alexander.arcila@ingeneo.com.co>
      * @copyright 2018 INGENEO S.A.S.
@@ -326,10 +326,10 @@ class ResthotelController extends ActiveController
     }
 
     /**
-     * Metodo que permite consultar los hoteles por todos los parametros 
-     * 
+     * Metodo que permite consultar los hoteles por todos los parametros
+     *
      * @param string  $json  Json con los parametros cityId,checkIn,checkOut,guests,hotelId
-     * 
+     *
      * @return json
      * @author    Alexander Arcila <alexander.arcila@ingeneo.com.co>
      * @copyright 2018 INGENEO S.A.S.
@@ -344,7 +344,7 @@ class ResthotelController extends ActiveController
             $response = ['error' => true, 'msg' => 'Parametros incorrectos'];
             if (isset($_POST['json']) && !empty($_POST['json'])) {
                 $post = json_decode($_POST['json']);
-                if (isset($post->cityId) && !empty($post->cityId) && isset($post->checkIn) && !empty($post->checkIn) && isset($post->checkOut) && !empty($post->checkOut) && isset($post->guests) && !empty($post->guests)) {
+                if (isset($post->cityId) && !empty($post->cityId) && isset($post->checkIn) && !empty($post->checkIn) && isset($post->checkOut) && !empty($post->checkOut) && isset($post->guests) && !empty($post->guests) && isset($post->hotelId)) {
                     $response = [];
                     $cityId = HtmlPurifier::process($post->cityId);
                     $hotelId = HtmlPurifier::process($post->hotelId);
@@ -393,9 +393,9 @@ class ResthotelController extends ActiveController
 
     /**
      * Retorna el listado de habitaciones por hotel
-     * 
+     *
      * @param string  $json  Json con los parametros hotelId
-     * 
+     *
      * @return json
      * @author    Alexander Arcila <alexander.arcila@ingeneo.com.co>
      * @copyright 2018 INGENEO S.A.S.
@@ -403,6 +403,8 @@ class ResthotelController extends ActiveController
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
+
+
     public function actionGetroombyhotelid()
     {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
@@ -447,6 +449,8 @@ class ResthotelController extends ActiveController
                             foreach ($iparr as $v) {
                                 $packages = \app\modules\recreacion\models\Package::find()->where("type_package LIKE '%' :id '%'  AND status=:status  ", [':id' => $v, ':status' => self::ACTIVE])->andWhere(['in', 'capacity_people', $guestsIn])->orderby('name')->all();
                                 if (isset($packages)) {
+                                    $model->type_package = $room->type_package;
+                                    $model->guestsIn = $guestsIn;
                                     $model->packageSize = sizeof($packages);
                                     foreach ($packages as $key => $packa) {
                                         $packageToSend = new \stdClass();
@@ -475,8 +479,6 @@ class ResthotelController extends ActiveController
                                     }
                                 }
                             }
-
-
                         } else {
                             $package = new \stdClass();
 
@@ -494,7 +496,179 @@ class ResthotelController extends ActiveController
                                 foreach ($room->files as $file) {
                                     $images[] = ['url' => $this->getUrlImage($file->path)];
                                 }
+                                $model->images = $images;
+                                $response[] = $model;
+                            }
 
+                        }
+
+                    }
+                }
+            }
+
+
+            return $response;
+        } catch (\Exception $exc) {
+            \Yii::error(__FILE__ . ':' . __LINE__ . '{'
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
+            return ['error' => true, 'info' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
+        }
+    }
+
+    public function actionGetpackages()
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        try {
+            $response = ['error' => true, 'msg' => 'Parametros incorrectos'];
+            if (isset($_POST['json']) && !empty($_POST['json'])) {
+                $response = [];
+                $post = json_decode($_POST['json']);
+                if (isset($post->cityId) && !empty($post->cityId) && isset($post->checkIn) && !empty($post->checkIn) && isset($post->checkOut) && !empty($post->checkOut) && isset($post->guests) && !empty($post->guests) && isset($post->hotelId)) {
+                    $hotelId = HtmlPurifier::process($post->hotelId);
+                    $guests = HtmlPurifier::process($post->guests);
+                    $checkIn = HtmlPurifier::process($post->checkIn);
+                    $checkOut = HtmlPurifier::process($post->checkIn);
+
+                    $guestsIn = [];
+                    for ($i = $guests; $i < ($guests + 2); $i++) {
+                        $guestsIn[] = $i;
+                    }
+                    $model = new \stdClass();
+
+                    $packages = \app\modules\recreacion\models\Package::find()->where("status=:status", [':status' => self::ACTIVE])->groupby('name')->orderby('name')->all();
+                    if (isset($packages)) {
+                        $model->guestsIn = $guestsIn;
+                        $model->packageSize = sizeof($packages);
+                        foreach ($packages as $key => $packa) {
+                            $packageToSend = new \stdClass();
+                            $temp = $packa;
+
+                            $images = [];
+                            foreach ($temp->files as $file) {
+                                $images[] = ['url' => $this->getUrlImage($file->path)];
+                            }
+                            $packageToSend->roomPackage = $packages[$key];
+                            $packageToSend->images = $images;
+                            $model->package = $packageToSend;
+
+
+                            $model->images = $images;
+
+                            $model->packageFound[] = $packa->type_package;
+                            $modelreturn = new \stdClass();
+                            $modelreturn = clone ($model);
+                            array_push($response, $modelreturn);
+                        }
+                    }
+                }
+            }
+
+
+
+
+            return $response;
+        } catch (\Exception $exc) {
+            \Yii::error(__FILE__ . ':' . __LINE__ . '{'
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
+            return ['error' => true, 'info' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
+        }
+    }
+
+    public function actionGetroombynamepackage()
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        try {
+            $response = ['error' => true, 'msg' => 'Parametros incorrectos'];
+            if (isset($_POST['json']) && !empty($_POST['json'])) {
+                $response = [];
+                $post = json_decode($_POST['json']);
+                if (isset($post->cityId) && !empty($post->cityId) && isset($post->checkIn) && !empty($post->checkIn) && isset($post->checkOut) && !empty($post->checkOut) && isset($post->guests) && !empty($post->guests) && isset($post->hotelId)) {
+                    $hotelId = HtmlPurifier::process($post->hotelId);
+                    $guests = HtmlPurifier::process($post->guests);
+                    $checkIn = HtmlPurifier::process($post->checkIn);
+                    $checkOut = HtmlPurifier::process($post->checkIn);
+                    $checkOut = HtmlPurifier::process($post->checkIn );
+                    $packageName = HtmlPurifier::process($post->packageName);
+
+                    $guestsIn = [];
+                    for ($i = $guests; $i < ($guests + 2); $i++) {
+                        $guestsIn[] = $i;
+                    }
+
+                    $rooms = Room::find()->where('hotel_id=:hotelId '
+                        . 'and status=:status', [
+                        ':hotelId' => $hotelId,
+                        ':status' => self::ACTIVE
+                    ])
+                        ->andWhere(['in', 'capacity_people', $guestsIn])
+                        ->orderby('name')->all();
+
+                    foreach ($rooms as $room) {
+                        $model = new \stdClass();
+                        $model->id = $room->id;
+                        $model->type_room = $room->type_room;
+                        $model->name = $room->name;
+                        $model->description = $room->description;
+                        $model->slug = $room->slug;
+                        $model->capacity_people = $room->capacity_people;
+                        $model->aditional_information = $room->aditional_information;
+                        $model->type_package = $room->type_package;
+                        $model->guestsIn = $guestsIn;
+                        $iparr = split(",", $model->type_package);
+                        $sizeArray = sizeof($iparr);
+                        if ($sizeArray > 0) {
+                            foreach ($iparr as $v) {
+                                $packages = \app\modules\recreacion\models\Package::find()->where("type_package LIKE '%' :id '%'  AND status=:status AND name=:packageName ", [':id' => $v, ':status' => self::ACTIVE, 'packageName' => $packageName])->orderby('name')->all();
+                                if (isset($packages)) {
+                                    $model->type_package = $room->type_package;
+                                    $model->guestsIn = $guestsIn;
+                                    $model->packageSize = sizeof($packages);
+                                    foreach ($packages as $key => $packa) {
+                                        $packageToSend = new \stdClass();
+                                        $temp = $packa;
+
+                                        $images = [];
+                                        foreach ($temp->files as $file) {
+                                            $images[] = ['url' => $this->getUrlImage($file->path)];
+                                        }
+                                        $packageToSend->roomPackage = $packages[$key];
+                                        $packageToSend->images = $images;
+                                        $model->package = $packageToSend;
+
+                                        $images = [];
+                                        foreach ($room->files as $file) {
+                                            $images[] = ['url' => $this->getUrlImage($file->path)];
+                                        }
+
+
+                                        $model->images = $images;
+
+                                        $model->packageFound[] = $packa->type_package;
+                                        $modelreturn = new \stdClass();
+                                        $modelreturn = clone ($model);
+                                        array_push($response, $modelreturn);
+                                    }
+                                }
+                            }
+                        } else {
+                            $package = new \stdClass();
+
+                            $package->roomPackage = \app\modules\recreacion\models\Package::find()->where('type_package=:id and status=:status', [':id' => $model->type_package, ':status' => self::ACTIVE])->one();
+
+                            if (isset($package->roomPackage)) {
+                                $temp = $package->roomPackage;
+                                $images = [];
+                                foreach ($temp->files as $file) {
+                                    $images[] = ['url' => $this->getUrlImage($file->path)];
+                                }
+                                $package->images = $images;
+                                $model->package = $package;
+                                $images = [];
+                                foreach ($room->files as $file) {
+                                    $images[] = ['url' => $this->getUrlImage($file->path)];
+                                }
                                 $model->images = $images;
                                 $response[] = $model;
                             }
@@ -518,122 +692,11 @@ class ResthotelController extends ActiveController
 
 
 
-
-    public function actionGetpackages()
-    {
-        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        try {
-
-            if (isset($_POST['json']) && !empty($_POST['json'])) {
-                $response = [];
-                $post = json_decode($_POST['json']);
-                if (isset($post->cityId) && !empty($post->cityId) && isset($post->checkIn) && !empty($post->checkIn) && isset($post->checkOut) && !empty($post->checkOut) && isset($post->guests) && !empty($post->guests) && isset($post->hotelId)) {
-                    $hotelId = HtmlPurifier::process($post->hotelId);
-                    $guests = HtmlPurifier::process($post->guests);
-                    $checkIn = HtmlPurifier::process($post->checkIn);
-                    $checkOut = HtmlPurifier::process($post->checkIn);
-
-                    $guestsIn = [];
-                    for ($i = $guests; $i < ($guests + 2); $i++) {
-                        $guestsIn[] = $i;
-                    }
-
-                    $packages = \app\modules\recreacion\models\Package::find()->where("status=:status  ", [':status' => self::ACTIVE])->groupby('name')->orderby('name')->all();
-                    $model = new \stdClass();
-                    if (isset($packages)) {
-                        $model->packageSize = sizeof($packages);
-                        foreach ($packages as $key => $packa) {
-                            $packageToSend = new \stdClass();
-                            $temp = $packa;
-                            $images = [];
-                            foreach ($temp->files as $file) {
-                                $images[] = ['url' => $this->getUrlImage($file->path)];
-                            }
-                            $packageToSend->roomPackage = $packages[$key];
-                            $packageToSend->images = $images;
-                            $model->package = $packageToSend;
-                            $modelreturn = new \stdClass();
-                            $modelreturn = clone ($model);
-                            array_push($response, $modelreturn);
-
-                        }
-
-
-                    }
-
-                }
-                return $response;
-            }
-            $response = ['error' => true, 'msg' => 'Parametros incorrectos', 'params' => $_POST['json']];
-            \Yii::$app->response->statusCode = 500;
-            return $response;
-        } catch (\Exception $exc) {
-            \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                . print_r(' {ERROR [' . $exc->getMessage()
-                . '}', true) . '}', 'REST');
-            return ['error' => true, 'info' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
-        }
-    }
-
-    public function actionGetpackagesbyname()
-    {
-        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        try {
-
-            if (isset($_POST['json']) && !empty($_POST['json'])) {
-                $response = [];
-                $post = json_decode($_POST['json']);
-                if (isset($post->cityId) && !empty($post->cityId) && isset($post->checkIn) && !empty($post->checkIn) && isset($post->checkOut) && !empty($post->checkOut) && isset($post->guests) && !empty($post->guests) && isset($post->hotelId)) {
-                    $hotelId = HtmlPurifier::process($post->hotelId);
-                    $guests = HtmlPurifier::process($post->guests);
-                    $checkIn = HtmlPurifier::process($post->checkIn);
-                    $checkOut = HtmlPurifier::process($post->checkIn);
-
-                    $guestsIn = [];
-                    for ($i = $guests; $i < ($guests + 2); $i++) {
-                        $guestsIn[] = $i;
-                    }
-
-                    $packages = \app\modules\recreacion\models\Package::find()->where("status=:status  ", [':status' => self::ACTIVE])->groupby('name')->orderby('name')->all();
-                    $model = new \stdClass();
-                    if (isset($packages)) {
-                        $model->packageSize = sizeof($packages);
-                        foreach ($packages as $key => $packa) {
-                            $packageToSend = new \stdClass();
-                            $temp = $packa;
-                            $images = [];
-                 
-                            $packageToSend->roomPackage = $packages[$key];
-                            $model->package = $packageToSend;
-                            $modelreturn = new \stdClass();
-                            $modelreturn = clone ($model);
-                            array_push($response, $modelreturn);
-
-                        }
-
-
-                    }
-
-                }
-                return $response;
-            }
-            $response = ['error' => true, 'msg' => 'Parametros incorrectos', 'params' => $_POST['json']];
-            \Yii::$app->response->statusCode = 500;
-            return $response;
-        } catch (\Exception $exc) {
-            \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                . print_r(' {ERROR [' . $exc->getMessage()
-                . '}', true) . '}', 'REST');
-            return ['error' => true, 'info' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
-        }
-    }
-
-
     /**
      * Retorna el listado de habitaciones por hotel
-     * 
+     *
      * @param string  $json  Json con los parametros hotelId
-     * 
+     *
      * @return json
      * @author    Alexander Arcila <alexander.arcila@ingeneo.com.co>
      * @copyright 2018 INGENEO S.A.S.
@@ -677,11 +740,9 @@ class ResthotelController extends ActiveController
         }
     }
 
-
-
     /**
      * Retorna el dominio y el protocolo del servidor
-     * 
+     *
      * @return string
      * @author    Alexander Arcila <alexander.arcila@ingeneo.com.co>
      * @copyright 2018 INGENEO S.A.S.
@@ -698,10 +759,10 @@ class ResthotelController extends ActiveController
     }
 
     /**
-     * Retorna la url de la imagen 
-     * 
+     * Retorna la url de la imagen
+     *
      * @param string $path
-     * 
+     *
      * @return string
      * @author    Alexander Arcila <alexander.arcila@ingeneo.com.co>
      * @copyright 2018 INGENEO S.A.S.
@@ -774,3 +835,4 @@ class ResthotelController extends ActiveController
     }
 
 }
+
