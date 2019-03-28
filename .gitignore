@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+assets/*
+!assets/.gitignore
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
 protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
@@ -5,7 +10,11 @@ themes/classic/views/
 
 # phpstorm project files
 .idea
+<<<<<<< HEAD
 vendor/
+=======
+
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
 # netbeans project files
 #nbproject
 
@@ -16,10 +25,19 @@ vendor/
 
 # windows thumbnail cache
 Thumbs.db
+<<<<<<< HEAD
 uploadds/
 # composer vendor dir
 /vendor
 
+=======
+
+# composer vendor dir
+vendor/
+/vendor/*
+/vendor
+/
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
 # composer itself is not needed
 #composer.phar
 
@@ -40,3 +58,13 @@ tests/_support/_generated
 # file tar
 /*.tar
 /nbproject/private/
+<<<<<<< HEAD
+=======
+
+
+/vendor/kartik-v/bootstrap-fileinput
+/vendor/kartik-v/yii2-markdown
+/vendor/nemmo/yii2-attachments
+
+/vendor/**/.git
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a

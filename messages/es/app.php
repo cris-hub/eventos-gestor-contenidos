@@ -88,5 +88,6 @@ return [
     'Create User' => 'Crear Usuario',
     'username' => 'Usuario',
     '' => '',
-    'Even Name' => 'Nombre Evento'
+    'Even Name' => 'Nombre Evento',
+    'messages' => 'messages',
 ];

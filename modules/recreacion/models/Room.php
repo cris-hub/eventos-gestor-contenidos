@@ -72,6 +72,7 @@ class Room extends ActiveRecord {
             [['capacity_people', 'hotel_id'], 'integer'],
             [['created', 'modified'], 'safe'],
             [['name'], 'string', 'max' => 150],
+            [['type_package'], 'string', 'max' => 500],
             [['slug', 'aditional_information', 'created_by', 'modified_by'], 'string', 'max' => 45],
             [['hotel_id'], 'exist', 'skipOnError' => true, 'targetClass' => Hotel::className(), 'targetAttribute' => ['hotel_id' => 'id']],
         ];

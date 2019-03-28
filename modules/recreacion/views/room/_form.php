@@ -7,17 +7,18 @@ use app\modules\recreacion\models\Hotel;
 use dosamigos\ckeditor\CKEditor;
 use yii\helpers\ArrayHelper;
 use nemmo\attachments\components\AttachmentsInput;
+use mdm\admin\AutocompleteAsset;
+use app\modules\recreacion\models\Package;
+use yii\helpers\Json;
 
-/* @var $this yii\web\View */
-/* @var $model app\modules\recreacion\models\Room */
-/* @var $form yii\widgets\ActiveForm */
+
 ?>
 
 <div class="room-form box box-primary">
     <div class="box-body">
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
-        
-    <?= $form->field($model, 'type_package')->textInput(['maxlength' => true]) ?>
+    <?= Html::activeHiddenInput($model, 'type_package', ['id' => 'type_package_id']); ?>
+    <?= $form->field($model, 'type_package')->textInput(['maxlength' => true,'id' => 'type_package']) ?>
     
     <?= $form->field($model, 'type_room')->textInput(['maxlength' => true]) ?>
         

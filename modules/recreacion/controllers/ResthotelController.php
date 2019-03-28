@@ -23,11 +23,13 @@ use sizeg\jwt\JwtHttpBearerAuth;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use app\modules\recreacion\models\Authapirest;
 use thamtech\uuid\helpers\UuidHelper;
+use app\modules\recreacion\models\Package;
 
 /**
  * ResthotelController implements the CRUD actions for hotel model.
  */
-class ResthotelController extends ActiveController {
+class ResthotelController extends ActiveController
+{
 
     //public $modelClass = 'app\modules\recreacion\models\Hotel';
     public $modelClass = 'app\models\User';
@@ -35,7 +37,8 @@ class ResthotelController extends ActiveController {
     const MODULE = 'Recreacion';
     const ACTIVE = 'active';
 
-    public function init() {
+    public function init()
+    {
         parent::init();
         \Yii::$app->user->enableSession = false;
     }
@@ -44,7 +47,8 @@ class ResthotelController extends ActiveController {
      * 
      * @return string
      */
-    public function behaviors() {
+    public function behaviors()
+    {
         $behaviors = parent::behaviors();
         $behaviors['authenticator'] = [
             'class' => CompositeAuth::className(),
@@ -52,14 +56,17 @@ class ResthotelController extends ActiveController {
                 //HttpBasicAuth::className(),
                 //HttpBearerAuth::className(),
                 //QueryParamAuth::className(),
-                ['class' => JwtHttpBearerAuth::className(),
+                [
+                    'class' => JwtHttpBearerAuth::className(),
                     'auth' => function ($token, $authMethod) {
                         $signer = new \Lcobucci\JWT\Signer\Hmac\Sha256();
                         if ($token->verify($signer, Yii::$app->jwt->key)) {
-                            $token = Yii::$app->jwt->getParser()->parse((string) $token);
+                            $token = Yii::$app->jwt->getParser()->parse((string)$token);
                             $id = $token->getHeader('jti');
-                            $auth = Authapirest::findOne(['username' => $id,
-                                        'module' => self::MODULE]);
+                            $auth = Authapirest::findOne([
+                                'username' => $id,
+                                'module' => self::MODULE
+                            ]);
                             if (!empty($auth)) {
                                 return $auth;
                             }
@@ -85,7 +92,7 @@ class ResthotelController extends ActiveController {
         // re-add authentication filter
         $behaviors['authenticator'] = $auth;
         $behaviors['authenticator']['except'] = ['login'];
-        return$behaviors;
+        return $behaviors;
     }
 
     /**
@@ -98,7 +105,8 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    public function actionLogin() {
+    public function actionLogin()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         try {
             $model = new Authapirest();
@@ -108,15 +116,15 @@ class ResthotelController extends ActiveController {
                 $signer = new Sha256();
                 $expireIn = time() + 3600;
                 $token = Yii::$app->jwt->getBuilder()
-                        ->setIssuer('http://example.com') // Configures the issuer (iss claim)
-                        ->setAudience('http://example.org') // Configures the audience (aud claim)
-                        ->setId($model->username, true) // Configures the id (jti claim)
-                        ->setIssuedAt(time()) //time that the token was issue (iat claim)
+                    ->setIssuer('http://example.com') // Configures the issuer (iss claim)
+                    ->setAudience('http://example.org') // Configures the audience (aud claim)
+                    ->setId($model->username, true) // Configures the id (jti claim)
+                    ->setIssuedAt(time()) //time that the token was issue (iat claim)
                         //->setNotBefore(time() + 0) //time before which the token cannot be accepted (nbf claim)
-                        ->setExpiration($expireIn) // Configures the expiration time of the token (exp claim)
-                        ->set('uid', 1) // Configures a new claim, called "uid"
-                        ->sign($signer, Yii::$app->jwt->key) // creates a signature
-                        ->getToken(); // Retrieves the generated token
+                    ->setExpiration($expireIn) // Configures the expiration time of the token (exp claim)
+                    ->set('uid', 1) // Configures a new claim, called "uid"
+                    ->sign($signer, Yii::$app->jwt->key) // creates a signature
+                    ->getToken(); // Retrieves the generated token
 
                 $responseData = [
                     'access_token' => "$token",
@@ -128,8 +136,8 @@ class ResthotelController extends ActiveController {
             }
         } catch (\Exception $exc) {
             \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                    . print_r(' {ERROR [' . $exc->getMessage()
-                            . '}', true) . '}', 'REST');
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
             return ['error' => true, 'msg' => $exc->getMessage()];
         }
     }
@@ -144,15 +152,16 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    public function actionGetallcities() {
+    public function actionGetallcities()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         try {
             return City::find()->orderby('name')->all();
         } catch (\Exception $exc) {
             \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                    . print_r(' {ERROR [' . $exc->getMessage()
-                            . '}', true) . '}', 'REST');
-            return ['error' => true, 'msg' => Yii::$app->params['errorRest']];
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
+            return ['error' => true, 'exeptions' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
         }
     }
 
@@ -166,15 +175,16 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    public function actionGetallcategories() {
+    public function actionGetallcategories()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         try {
             return Category::find()->orderby('name')->all();
         } catch (\Exception $exc) {
             \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                    . print_r(' {ERROR [' . $exc->getMessage()
-                            . '}', true) . '}', 'REST');
-            return ['error' => true, 'msg' => Yii::$app->params['errorRest']];
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
+            return ['error' => true, 'exeptions' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
         }
     }
 
@@ -190,7 +200,8 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    public function actionGetlisthotelsbycity() {
+    public function actionGetlisthotelsbycity()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         try {
             $response = ['error' => true, 'msg' => 'Parametros incorrectos'];
@@ -198,7 +209,7 @@ class ResthotelController extends ActiveController {
                 $response = [];
                 $cityId = HtmlPurifier::process($_POST['cityId']);
                 $hotels = Hotel::find()->where('city_id=:cityId and status=:status', [':cityId' => $cityId, ':status' => self::ACTIVE])
-                                ->orderby('name')->all();
+                    ->orderby('name')->all();
 
                 foreach ($hotels as $hotel) {
                     $model = new \stdClass();
@@ -207,12 +218,13 @@ class ResthotelController extends ActiveController {
                     $response[] = $model;
                 }
             }
+            \Yii::$app->response->statusCode = 200;
             return $response;
         } catch (\Exception $exc) {
             \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                    . print_r(' {ERROR [' . $exc->getMessage()
-                            . '}', true) . '}', 'REST');
-            return ['error' => true, 'msg' => Yii::$app->params['errorRest']];
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
+            return ['error' => true, 'exeptions' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
         }
     }
 
@@ -228,7 +240,8 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    public function actionGethotelsbycity() {
+    public function actionGethotelsbycity()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         try {
             $response = ['error' => true, 'msg' => 'Parametros incorrectos'];
@@ -236,7 +249,7 @@ class ResthotelController extends ActiveController {
                 $response = [];
                 $cityId = HtmlPurifier::process($_POST['cityId']);
                 $hotels = Hotel::find()->where('city_id=:cityId and status=:status', [':cityId' => $cityId, ':status' => self::ACTIVE])
-                                ->orderby('name')->all();
+                    ->orderby('name')->all();
 
                 foreach ($hotels as $hotel) {
                     $model = new \stdClass();
@@ -258,8 +271,8 @@ class ResthotelController extends ActiveController {
             return $response;
         } catch (\Exception $exc) {
             \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                    . print_r(' {ERROR [' . $exc->getMessage()
-                            . '}', true) . '}', 'REST');
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
             return ['error' => true, 'msg' => Yii::$app->params['errorRest']];
         }
     }
@@ -276,7 +289,8 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    public function actionGethotelsbyid() {
+    public function actionGethotelsbyid()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         try {
             $response = ['error' => true, 'msg' => 'Parametros incorrectos'];
@@ -305,8 +319,8 @@ class ResthotelController extends ActiveController {
             return $response;
         } catch (\Exception $exc) {
             \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                    . print_r(' {ERROR [' . $exc->getMessage()
-                            . '}', true) . '}', 'REST');
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
             return ['error' => true, 'msg' => Yii::$app->params['errorRest']];
         }
     }
@@ -323,24 +337,29 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    public function actionSearchhotels() {
+    public function actionSearchhotels()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         try {
             $response = ['error' => true, 'msg' => 'Parametros incorrectos'];
             if (isset($_POST['json']) && !empty($_POST['json'])) {
                 $post = json_decode($_POST['json']);
-                if (isset($post->cityId) && !empty($post->cityId) && isset($post->checkIn) && !empty($post->checkIn) && isset($post->checkOut) && !empty($post->checkOut) && isset($post->guests) && !empty($post->guests) && isset($post->hotelId)) {
+                if (isset($post->cityId) && !empty($post->cityId) && isset($post->checkIn) && !empty($post->checkIn) && isset($post->checkOut) && !empty($post->checkOut) && isset($post->guests) && !empty($post->guests)) {
                     $response = [];
                     $cityId = HtmlPurifier::process($post->cityId);
                     $hotelId = HtmlPurifier::process($post->hotelId);
                     if (!empty($hotelId)) {
-                        $hotels = Hotel::find()->where('id=:hotelId and status=:status', [':hotelId' => $hotelId,
-                                            ':status' => self::ACTIVE])
-                                        ->orderby('name')->all();
+                        $hotels = Hotel::find()->where('id=:hotelId and status=:status', [
+                            ':hotelId' => $hotelId,
+                            ':status' => self::ACTIVE
+                        ])
+                            ->orderby('name')->all();
                     } else {
-                        $hotels = Hotel::find()->where('city_id=:cityId and status=:status', [':cityId' => $cityId,
-                                            ':status' => self::ACTIVE])
-                                        ->orderby('name')->all();
+                        $hotels = Hotel::find()->where('city_id=:cityId and status=:status', [
+                            ':cityId' => $cityId,
+                            ':status' => self::ACTIVE
+                        ])
+                            ->orderby('name')->all();
                     }
 
                     foreach ($hotels as $hotel) {
@@ -366,8 +385,8 @@ class ResthotelController extends ActiveController {
             return $response;
         } catch (\Exception $exc) {
             \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                    . print_r(' {ERROR [' . $exc->getMessage()
-                            . '}', true) . '}', 'REST');
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
             return ['error' => true, 'msg' => Yii::$app->params['errorRest']];
         }
     }
@@ -384,7 +403,8 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    public function actionGetroombyhotelid() {
+    public function actionGetroombyhotelid()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         try {
             $response = ['error' => true, 'msg' => 'Parametros incorrectos'];
@@ -398,15 +418,17 @@ class ResthotelController extends ActiveController {
                     $checkOut = HtmlPurifier::process($post->checkIn);
 
                     $guestsIn = [];
-                    for ($i = $guests; $i < ($guests + 4); $i++) {
+                    for ($i = $guests; $i < ($guests + 2); $i++) {
                         $guestsIn[] = $i;
                     }
 
                     $rooms = Room::find()->where('hotel_id=:hotelId '
-                                            . 'and status=:status', [':hotelId' => $hotelId,
-                                        ':status' => self::ACTIVE])
-                                    ->andWhere(['in', 'capacity_people', $guestsIn])
-                                    ->orderby('name')->all();
+                        . 'and status=:status', [
+                        ':hotelId' => $hotelId,
+                        ':status' => self::ACTIVE
+                    ])
+                        ->andWhere(['in', 'capacity_people', $guestsIn])
+                        ->orderby('name')->all();
 
                     foreach ($rooms as $room) {
                         $model = new \stdClass();
@@ -418,33 +440,194 @@ class ResthotelController extends ActiveController {
                         $model->capacity_people = $room->capacity_people;
                         $model->aditional_information = $room->aditional_information;
                         $model->type_package = $room->type_package;
-                        $package = new \stdClass();
-                        $package->roomPackage = \app\modules\recreacion\models\Package::find()->where('type_package=:id and status=:status', [':id' => $model->type_package, ':status' => self::ACTIVE])->one();
-                        $temp = $package->roomPackage;
-                        $images = [];
-                        foreach ($temp->files as $file) {
-                            $images[] = ['url' => $this->getUrlImage($file->path)];
-                        }
-                        $package->images = $images;
-                        $model->package = $package;
-                        $images = [];
-                        foreach ($room->files as $file) {
-                            $images[] = ['url' => $this->getUrlImage($file->path)];
+                        $model->guestsIn = $guestsIn;
+                        $iparr = split(",", $model->type_package);
+                        $sizeArray = sizeof($iparr);
+                        if ($sizeArray > 0) {
+                            foreach ($iparr as $v) {
+                                $packages = \app\modules\recreacion\models\Package::find()->where("type_package LIKE '%' :id '%'  AND status=:status  ", [':id' => $v, ':status' => self::ACTIVE])->andWhere(['in', 'capacity_people', $guestsIn])->orderby('name')->all();
+                                if (isset($packages)) {
+                                    $model->packageSize = sizeof($packages);
+                                    foreach ($packages as $key => $packa) {
+                                        $packageToSend = new \stdClass();
+                                        $temp = $packa;
+
+                                        $images = [];
+                                        foreach ($temp->files as $file) {
+                                            $images[] = ['url' => $this->getUrlImage($file->path)];
+                                        }
+                                        $packageToSend->roomPackage = $packages[$key];
+                                        $packageToSend->images = $images;
+                                        $model->package = $packageToSend;
+
+                                        $images = [];
+                                        foreach ($room->files as $file) {
+                                            $images[] = ['url' => $this->getUrlImage($file->path)];
+                                        }
+
+
+                                        $model->images = $images;
+
+                                        $model->packageFound[] = $packa->type_package;
+                                        $modelreturn = new \stdClass();
+                                        $modelreturn = clone ($model);
+                                        array_push($response, $modelreturn);
+                                    }
+                                }
+                            }
+
+
+                        } else {
+                            $package = new \stdClass();
+
+                            $package->roomPackage = \app\modules\recreacion\models\Package::find()->where('type_package=:id and status=:status', [':id' => $model->type_package, ':status' => self::ACTIVE])->one();
+
+                            if (isset($package->roomPackage)) {
+                                $temp = $package->roomPackage;
+                                $images = [];
+                                foreach ($temp->files as $file) {
+                                    $images[] = ['url' => $this->getUrlImage($file->path)];
+                                }
+                                $package->images = $images;
+                                $model->package = $package;
+                                $images = [];
+                                foreach ($room->files as $file) {
+                                    $images[] = ['url' => $this->getUrlImage($file->path)];
+                                }
+
+                                $model->images = $images;
+                                $response[] = $model;
+                            }
+
                         }
 
-                        $model->images = $images;
-                        $response[] = $model;
                     }
                 }
             }
+
+
             return $response;
         } catch (\Exception $exc) {
             \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                    . print_r(' {ERROR [' . $exc->getMessage()
-                            . '}', true) . '}', 'REST');
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
             return ['error' => true, 'info' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
         }
     }
+
+
+
+
+
+    public function actionGetpackages()
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        try {
+
+            if (isset($_POST['json']) && !empty($_POST['json'])) {
+                $response = [];
+                $post = json_decode($_POST['json']);
+                if (isset($post->cityId) && !empty($post->cityId) && isset($post->checkIn) && !empty($post->checkIn) && isset($post->checkOut) && !empty($post->checkOut) && isset($post->guests) && !empty($post->guests) && isset($post->hotelId)) {
+                    $hotelId = HtmlPurifier::process($post->hotelId);
+                    $guests = HtmlPurifier::process($post->guests);
+                    $checkIn = HtmlPurifier::process($post->checkIn);
+                    $checkOut = HtmlPurifier::process($post->checkIn);
+
+                    $guestsIn = [];
+                    for ($i = $guests; $i < ($guests + 2); $i++) {
+                        $guestsIn[] = $i;
+                    }
+
+                    $packages = \app\modules\recreacion\models\Package::find()->where("status=:status  ", [':status' => self::ACTIVE])->groupby('name')->orderby('name')->all();
+                    $model = new \stdClass();
+                    if (isset($packages)) {
+                        $model->packageSize = sizeof($packages);
+                        foreach ($packages as $key => $packa) {
+                            $packageToSend = new \stdClass();
+                            $temp = $packa;
+                            $images = [];
+                            foreach ($temp->files as $file) {
+                                $images[] = ['url' => $this->getUrlImage($file->path)];
+                            }
+                            $packageToSend->roomPackage = $packages[$key];
+                            $packageToSend->images = $images;
+                            $model->package = $packageToSend;
+                            $modelreturn = new \stdClass();
+                            $modelreturn = clone ($model);
+                            array_push($response, $modelreturn);
+
+                        }
+
+
+                    }
+
+                }
+                return $response;
+            }
+            $response = ['error' => true, 'msg' => 'Parametros incorrectos', 'params' => $_POST['json']];
+            \Yii::$app->response->statusCode = 500;
+            return $response;
+        } catch (\Exception $exc) {
+            \Yii::error(__FILE__ . ':' . __LINE__ . '{'
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
+            return ['error' => true, 'info' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
+        }
+    }
+
+    public function actionGetpackagesbyname()
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        try {
+
+            if (isset($_POST['json']) && !empty($_POST['json'])) {
+                $response = [];
+                $post = json_decode($_POST['json']);
+                if (isset($post->cityId) && !empty($post->cityId) && isset($post->checkIn) && !empty($post->checkIn) && isset($post->checkOut) && !empty($post->checkOut) && isset($post->guests) && !empty($post->guests) && isset($post->hotelId)) {
+                    $hotelId = HtmlPurifier::process($post->hotelId);
+                    $guests = HtmlPurifier::process($post->guests);
+                    $checkIn = HtmlPurifier::process($post->checkIn);
+                    $checkOut = HtmlPurifier::process($post->checkIn);
+
+                    $guestsIn = [];
+                    for ($i = $guests; $i < ($guests + 2); $i++) {
+                        $guestsIn[] = $i;
+                    }
+
+                    $packages = \app\modules\recreacion\models\Package::find()->where("status=:status  ", [':status' => self::ACTIVE])->groupby('name')->orderby('name')->all();
+                    $model = new \stdClass();
+                    if (isset($packages)) {
+                        $model->packageSize = sizeof($packages);
+                        foreach ($packages as $key => $packa) {
+                            $packageToSend = new \stdClass();
+                            $temp = $packa;
+                            $images = [];
+                 
+                            $packageToSend->roomPackage = $packages[$key];
+                            $model->package = $packageToSend;
+                            $modelreturn = new \stdClass();
+                            $modelreturn = clone ($model);
+                            array_push($response, $modelreturn);
+
+                        }
+
+
+                    }
+
+                }
+                return $response;
+            }
+            $response = ['error' => true, 'msg' => 'Parametros incorrectos', 'params' => $_POST['json']];
+            \Yii::$app->response->statusCode = 500;
+            return $response;
+        } catch (\Exception $exc) {
+            \Yii::error(__FILE__ . ':' . __LINE__ . '{'
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
+            return ['error' => true, 'info' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
+        }
+    }
+
 
     /**
      * Retorna el listado de habitaciones por hotel
@@ -458,7 +641,8 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    public function actionGetroombyid() {
+    public function actionGetroombyid()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         try {
             $response = [];
@@ -487,11 +671,13 @@ class ResthotelController extends ActiveController {
             return $response;
         } catch (\Exception $exc) {
             \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                    . print_r(' {ERROR [' . $exc->getMessage()
-                            . '}', true) . '}', 'REST');
+                . print_r(' {ERROR [' . $exc->getMessage()
+                . '}', true) . '}', 'REST');
             return ['error' => true, 'msg' => Yii::$app->params['errorRest']];
         }
     }
+
+
 
     /**
      * Retorna el dominio y el protocolo del servidor
@@ -503,9 +689,10 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    private function getSiteurl() {
+    private function getSiteurl()
+    {
         $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ||
-                $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+            $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
         $domainName = $_SERVER['HTTP_HOST'];
         return $protocol . $domainName;
     }
@@ -522,14 +709,16 @@ class ResthotelController extends ActiveController {
      * @version   Release: $Id$
      * @link      http://www.ingeneo.com.co
      */
-    private function getUrlImage($path) {
+    private function getUrlImage($path)
+    {
         $urlBlob = "https://bscolsubsidiotest.blob.core.windows.net/colsubsidioportalsalud/";
         $siteUrl = $this->getSiteurl();
         $tempPath = str_replace(\Yii::$app->basePath, $urlBlob . '/..', $path);
         return str_replace('\\', '/', $tempPath);
     }
 
-    public function actionGetimagebanner() {
+    public function actionGetimagebanner()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         $id = 1;
         $banner = Banner::find()->where('id=:id', [':id' => $id])->one();
@@ -543,15 +732,16 @@ class ResthotelController extends ActiveController {
         return $image;
     }
 
-    public function actionApplyPayment() {
+    public function actionApplyPayment()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         if (isset($_POST['identificador_proceso'], $_POST['status']) && !empty($_POST['identificador_proceso']) && !empty($_POST['status'])) {
             $reserva = Reservation::find()
-                    ->where([
-                        'identificador_proceso' => $_POST['identificador_proceso']
-                    ])
-                    ->one();
-            if ($reserva !== NULL && $reserva->validate()) {
+                ->where([
+                    'identificador_proceso' => $_POST['identificador_proceso']
+                ])
+                ->one();
+            if ($reserva !== null && $reserva->validate()) {
                 $reserva->status = $_POST['status'];
                 $reserva->fecha_confirmacion = date('Y-m-d H:i:s');
                 if ($reserva->save()) {
@@ -562,7 +752,8 @@ class ResthotelController extends ActiveController {
         return ['message' => 'Error al tratar de guardar los datos'];
     }
 
-    public function actionReservationPayment() {
+    public function actionReservationPayment()
+    {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         if (isset($_POST['hotel_id']) && !empty($_POST['hotel_id'])) {
             $data = $_POST;

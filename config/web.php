@@ -31,6 +31,9 @@ $config = [
         'recreacion' => [
             'class' => 'app\modules\recreacion\recreacion',
         ],
+        'medicines' => [
+            'class' => 'app\modules\medicines\Module',
+        ],
         'attachments' => [
 		'class' => nemmo\attachments\Module::className(),
 		'tempPath' => '@app/uploads/temp',
@@ -135,6 +138,7 @@ $config = [
                     'class' => 'yii\rest\UrlRule', 
                     'controller' => 
                     [
+                        '\app\modules\medicines\controllers\Restmessage',
                         '\app\modules\recreacion\controllers\restlounge',
                         '\app\modules\recreacion\controllers\restheadquarter',
                         '\app\modules\recreacion\controllers\restexperences',
@@ -168,6 +172,7 @@ $config = [
             'user/reset-password',
             //'admin/*',
             'debug/*',
+            'medicines/restmessage/*',
             'recreacion/restexperences/*',
             'recreacion/resthotel/*',
             'recreacion/restheadquarter/*',

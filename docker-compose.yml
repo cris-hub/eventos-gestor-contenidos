@@ -1,41 +1,35 @@
 version: '2'
 services:
   gestor_contenidos_service:
-    image:  crishubprojects/eventos-gestor-contenidos:latest
-    expose:
-      - "80"
+    image: eventos/content:latest
+    ports:
+      - 80:80
     build:
       context: ./
       dockerfile: ./Dockerfile
     networks:
       - network
-    volumes:
-      - gestor-contenidos:/var/www/html/gestor
-      - gestor-contenidos-logs:/var/log
+    volumes: 
+      - gestor_dist:/var/www/html/gestor
     restart: always
-    environment:
-      - "TZ=America/Bogota"
   proxy_service:
-    image:  crishubprojects/eventos-gestor-contenidos-proxy:latest
+    image:  colsubsidioproxy/content-proxy:eventos
     ports:
-      - "80:80"
+      - 90:80
     build:
-     context: ./
+     context: ../proxys/gestor-contenidos-proxy
      dockerfile: ./Dockerfile
     networks:
-      - network
+      - network 
     volumes:
-      - "proxy-config:/etc/nginx"
-      - proxy-logs:/var/log
-    links:
-      - gestor_contenidos_service
-    restart: always
-
+      - proxy_config:/etc/nginx
+      - proxy_logs:/var/log
+    restart: always      
 volumes:
-  gestor-contenidos:
-  gestor-contenidos-logs:
-  proxy-config:
-  proxy-logs:
+  gestor_dist:
+  proxy_config:
+  proxy_logs:
 networks:
-  network:
+  network:    
 
+   
