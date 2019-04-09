@@ -36,6 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
+            'max_guests',
             'hotel_code',
             'hotel_chain_code',
             [

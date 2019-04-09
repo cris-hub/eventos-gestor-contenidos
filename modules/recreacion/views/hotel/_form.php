@@ -23,6 +23,8 @@ use app\components\Util;
         <?= $form->field($model, 'hotel_code')->textInput(['maxlength' => true]) ?>
         
         <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+        
+        <?= $form->field($model, 'max_guests')->textInput(['maxlength' => true]) ?>
 
         <?=
         $form->field($model, 'description')->widget(CKEditor::className(), [

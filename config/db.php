@@ -10,9 +10,9 @@ return [
     // 'charset' => 'utf8',
 
 	'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=colbackendqa.mysql.database.azure.com;port=3306;dbname=yii-colsubsidio',
-    'username' => 'coladmin@colbackendqa',
-    'password' => '1234567890aA!',
+    'dsn' => getenv('MYSQL_HOTELES_CONECTION_PHP'),
+    'username' => getenv('MYSQL_HOTELES_USER'),
+    'password' => getenv('MYSQL_HOTELES_PASSWORD'),
     'charset' => 'utf8',
 	
     // Schema cache options (for production environment)

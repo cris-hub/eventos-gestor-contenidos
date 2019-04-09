@@ -17,7 +17,7 @@ class HotelSearch extends Hotel {
      */
     public function rules() {
         return [
-            [['id', 'city_id'], 'integer'],
+            [['id', 'city_id','max_guests'], 'integer'],
             [['hotel_code', 'hotel_chain_code', 'name', 'description', 'slug', 'cell_phone', 'address', 'phone',
             'status', 'created', 'created_by', 'modified', 'modified_by'],
                 'safe'],
@@ -72,6 +72,7 @@ class HotelSearch extends Hotel {
                 ->andFilterWhere(['like', 'cell_phone', $this->cell_phone])
                 ->andFilterWhere(['like', 'address', $this->address])
                 ->andFilterWhere(['like', 'phone', $this->phone])
+                ->andFilterWhere(['like', 'max_guests', $this->max_guests])
                 ->andFilterWhere(['like', 'status', $this->status])
                 ->andFilterWhere(['like', 'created_by', $this->created_by])
                 ->andFilterWhere(['like', 'modified_by', $this->modified_by]);

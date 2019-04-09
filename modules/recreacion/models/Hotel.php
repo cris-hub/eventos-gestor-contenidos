@@ -25,6 +25,7 @@ use app\modules\recreacion\models\Room;
  * @property string $modified
  * @property string $modified_by
  * @property int $city_id
+ * @property int $max_guests
  *
  * @property City $city
  */
@@ -69,10 +70,10 @@ class Hotel extends ActiveRecord {
      */
     public function rules() {
         return [
-            [['hotel_code', 'hotel_chain_code', 'name', 'address', 'phone', 'city_id'], 'required'],
+            [['hotel_code', 'hotel_chain_code', 'name', 'address', 'phone', 'city_id','max_guests'], 'required'],
             [['address', 'description'], 'string'],
             [['created', 'modified', 'status'], 'safe'],
-            [['city_id'], 'integer'],
+            [['city_id','max_guests'], 'integer'],
             [['name', 'slug'], 'string', 'max' => 45],
             [['cell_phone', 'phone'], 'string', 'max' => 150],
             [['created_by', 'modified_by'], 'string', 'max' => 50],
@@ -100,6 +101,7 @@ class Hotel extends ActiveRecord {
             'modified' => Yii::t('app', 'Modified'),
             'modified_by' => Yii::t('app', 'Modified By'),
             'city_id' => Yii::t('app', 'City'),
+            'max_guests' => Yii::t('app', 'Max Guests')
         ];
     }
 
