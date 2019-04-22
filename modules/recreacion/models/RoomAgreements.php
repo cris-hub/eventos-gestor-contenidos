@@ -12,6 +12,7 @@ use yii\behaviors\BlameableBehavior;
  *
  * @property int $id
  * @property string $type_package
+ * @property string $type_room
  * @property string $slug
  * @property string $description
  * @property int $capacity_people
@@ -23,9 +24,9 @@ use yii\behaviors\BlameableBehavior;
  * @property string $modified_by
  * @property int $hotel_id
  *
- * @property Hotel $hotel
+ * @property HotelAgreements $HotelAgreements
  */
-class Package extends ActiveRecord {
+class RoomAgreements extends ActiveRecord {
 
     public $images;
 
@@ -58,7 +59,7 @@ class Package extends ActiveRecord {
      * {@inheritdoc}
      */
     public static function tableName() {
-        return 'package';
+        return 'room_agreements';
     }
 
     /**
@@ -66,13 +67,14 @@ class Package extends ActiveRecord {
      */
     public function rules() {
         return [
-            [['type_package', 'name', 'slug', 'description', 'capacity_people', 'hotel_id'], 'required'],
-            [['description','aditional_information', 'status'], 'string'],
+            [['type_package','type_room', 'name', 'slug', 'description', 'capacity_people', 'hotel_id'], 'required'],
+            [['description', 'status'], 'string'],
             [['capacity_people', 'hotel_id'], 'integer'],
             [['created', 'modified'], 'safe'],
             [['name'], 'string', 'max' => 150],
-            [['slug',  'created_by', 'modified_by'], 'string', 'max' => 45],
-            [['hotel_id'], 'exist', 'skipOnError' => true, 'targetClass' => Hotel::className(), 'targetAttribute' => ['hotel_id' => 'id']],
+            [['type_package'], 'string', 'max' => 500],
+            [['slug', 'aditional_information', 'created_by', 'modified_by'], 'string', 'max' => 45],
+            [['hotel_id'], 'exist', 'skipOnError' => true, 'targetClass' => HotelAgreements::className(), 'targetAttribute' => ['hotel_id' => 'id']],
         ];
     }
 
@@ -83,6 +85,7 @@ class Package extends ActiveRecord {
         return [
             'id' => Yii::t('app', 'ID'),
             'type_package' => Yii::t('app', 'Tipo de paquete'),
+            'type_room' => Yii::t('app', 'Tipo de habitacion'),
             'name' => Yii::t('app', 'Name'),
             'slug' => Yii::t('app', 'Slug'),
             'description' => Yii::t('app', 'Description'),
@@ -101,7 +104,7 @@ class Package extends ActiveRecord {
      * @return \yii\db\ActiveQuery
      */
     public function getHotel() {
-        return $this->hasOne(Hotel::className(), ['id' => 'hotel_id']);
+        return $this->hasOne(HotelAgreements::className(), ['id' => 'hotel_id']);
     }
 
 }

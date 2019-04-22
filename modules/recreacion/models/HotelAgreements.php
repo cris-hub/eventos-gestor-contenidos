@@ -6,26 +6,30 @@ use Yii;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
 use yii\behaviors\BlameableBehavior;
+use app\modules\recreacion\models\Room;
 
 /**
- * This is the model class for table "room".
+ * This is the model class for table "hotel".
  *
  * @property int $id
- * @property string $type_package
- * @property string $slug
+ * @property string $hotel_code
+ * @property string $hotel_chain_code
+ * @property string $name
  * @property string $description
- * @property int $capacity_people
- * @property string $aditional_information
- * @property string $status
+ * @property string $slug
+ * @property string $cell_phone
+ * @property string $address
+ * @property string $phone
  * @property string $created
  * @property string $created_by
  * @property string $modified
  * @property string $modified_by
- * @property int $hotel_id
+ * @property int $city_id
+ * @property int $max_guests
  *
- * @property Hotel $hotel
+ * @property City $city
  */
-class Package extends ActiveRecord {
+class HotelAgreements extends ActiveRecord {
 
     public $images;
 
@@ -58,7 +62,7 @@ class Package extends ActiveRecord {
      * {@inheritdoc}
      */
     public static function tableName() {
-        return 'package';
+        return 'hotel_agreements';
     }
 
     /**
@@ -66,13 +70,14 @@ class Package extends ActiveRecord {
      */
     public function rules() {
         return [
-            [['type_package', 'name', 'slug', 'description', 'capacity_people', 'hotel_id'], 'required'],
-            [['description','aditional_information', 'status'], 'string'],
-            [['capacity_people', 'hotel_id'], 'integer'],
-            [['created', 'modified'], 'safe'],
-            [['name'], 'string', 'max' => 150],
-            [['slug',  'created_by', 'modified_by'], 'string', 'max' => 45],
-            [['hotel_id'], 'exist', 'skipOnError' => true, 'targetClass' => Hotel::className(), 'targetAttribute' => ['hotel_id' => 'id']],
+            [['hotel_code', 'hotel_chain_code', 'name', 'address', 'phone', 'city_id','max_guests'], 'required'],
+            [['address', 'description'], 'string'],
+            [['created', 'modified', 'status'], 'safe'],
+            [['city_id','max_guests'], 'integer'],
+            [['name', 'slug'], 'string', 'max' => 45],
+            [['cell_phone', 'phone'], 'string', 'max' => 150],
+            [['created_by', 'modified_by'], 'string', 'max' => 50],
+            [['city_id'], 'exist', 'skipOnError' => true, 'targetClass' => City::className(), 'targetAttribute' => ['city_id' => 'id']],
         ];
     }
 
@@ -82,26 +87,36 @@ class Package extends ActiveRecord {
     public function attributeLabels() {
         return [
             'id' => Yii::t('app', 'ID'),
-            'type_package' => Yii::t('app', 'Tipo de paquete'),
+            'hotel_code' => Yii::t('app', 'Código del Hotel'),
+            'hotel_chain_code' => Yii::t('app', 'Código Chain del Hotel'),
             'name' => Yii::t('app', 'Name'),
-            'slug' => Yii::t('app', 'Slug'),
             'description' => Yii::t('app', 'Description'),
-            'capacity_people' => Yii::t('app', 'Capacity People'),
-            'aditional_information' => Yii::t('app', 'Aditional Information'),
+            'slug' => Yii::t('app', 'Slug'),
+            'cell_phone' => Yii::t('app', 'Cell Phone'),
+            'address' => Yii::t('app', 'Address'),
+            'phone' => Yii::t('app', 'Phone'),
             'status' => Yii::t('app', 'Status'),
             'created' => Yii::t('app', 'Created'),
             'created_by' => Yii::t('app', 'Created By'),
             'modified' => Yii::t('app', 'Modified'),
             'modified_by' => Yii::t('app', 'Modified By'),
-            'hotel_id' => Yii::t('app', 'Hotel'),
+            'city_id' => Yii::t('app', 'City'),
+            'max_guests' => Yii::t('app', 'Max Guests')
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getHotel() {
-        return $this->hasOne(Hotel::className(), ['id' => 'hotel_id']);
+    public function getCity() {
+        return $this->hasOne(City::className(), ['id' => 'city_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRooms() {
+        return $this->hasMany(Room::className(), ['hotel_id' => 'id']);
     }
 
 }

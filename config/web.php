@@ -133,15 +133,17 @@ $config = [
         ],
         'db' => $db,
         'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => true,
             'rules' => [
                 [ 
                     'class' => 'yii\rest\UrlRule', 
                     'controller' => 
                     [
-                        '\app\modules\medicines\controllers\Restmessage',
                         '\app\modules\recreacion\controllers\restlounge',
                         '\app\modules\recreacion\controllers\restheadquarter',
                         '\app\modules\recreacion\controllers\restexperences',
+                        '\app\modules\recreacion\controllers\resthotelagreements',
                         '\app\modules\recreacion\controllers\resthotel',
                         ],
 //                    'extraPatterns' => [
@@ -172,9 +174,9 @@ $config = [
             'user/reset-password',
             //'admin/*',
             'debug/*',
-            'medicines/restmessage/*',
             'recreacion/restexperences/*',
             'recreacion/resthotel/*',
+            'recreacion/resthotelagreements/*',
             'recreacion/restheadquarter/*',
             'recreacion/restlounge/*',
         ]

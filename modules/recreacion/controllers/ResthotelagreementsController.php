@@ -21,7 +21,7 @@ use thamtech\uuid\helpers\UuidHelper;
 /**
  * ResthotelController implements the CRUD actions for hotel model.
  */
-class ResthotelController extends ActiveController
+class ResthotelagreementsController extends ActiveController
 {
 
     //public $modelClass = 'app\modules\recreacion\models\Hotel';
@@ -158,28 +158,7 @@ class ResthotelController extends ActiveController
         }
     }
 
-    /**
-     * Metodo que retorna todas las categorias
-     * 
-     * @return json
-     * @author    Alexander Arcila <alexander.arcila@ingeneo.com.co>
-     * @copyright 2018 INGENEO S.A.S.
-     * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
-     * @version   Release: $Id$
-     * @link      http://www.ingeneo.com.co
-     */
-    public function actionGetallcategories()
-    {
-        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        try {
-            return Category::find()->orderby('name')->all();
-        } catch (\Exception $exc) {
-            \Yii::error(__FILE__ . ':' . __LINE__ . '{'
-                . print_r(' {ERROR [' . $exc->getMessage()
-                . '}', true) . '}', 'REST');
-            return ['error' => true, 'exeptions' => $exc->getMessage(), 'msg' => Yii::$app->params['errorRest']];
-        }
-    }
+
 
     /**
      * Metodo que retorna el listado de los hoteles por ciudad

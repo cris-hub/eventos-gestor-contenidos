@@ -23,9 +23,9 @@ use yii\behaviors\BlameableBehavior;
  * @property string $modified_by
  * @property int $hotel_id
  *
- * @property Hotel $hotel
+ * @property HotelAgreements $hotel
  */
-class Package extends ActiveRecord {
+class PackageAgreements extends ActiveRecord {
 
     public $images;
 
@@ -58,7 +58,7 @@ class Package extends ActiveRecord {
      * {@inheritdoc}
      */
     public static function tableName() {
-        return 'package';
+        return 'package_agreements';
     }
 
     /**
@@ -72,7 +72,7 @@ class Package extends ActiveRecord {
             [['created', 'modified'], 'safe'],
             [['name'], 'string', 'max' => 150],
             [['slug',  'created_by', 'modified_by'], 'string', 'max' => 45],
-            [['hotel_id'], 'exist', 'skipOnError' => true, 'targetClass' => Hotel::className(), 'targetAttribute' => ['hotel_id' => 'id']],
+            [['hotel_id'], 'exist', 'skipOnError' => true, 'targetClass' => HotelAgreements::className(), 'targetAttribute' => ['hotel_id' => 'id']],
         ];
     }
 
@@ -101,7 +101,7 @@ class Package extends ActiveRecord {
      * @return \yii\db\ActiveQuery
      */
     public function getHotel() {
-        return $this->hasOne(Hotel::className(), ['id' => 'hotel_id']);
+        return $this->hasOne(HotelAgreements::className(), ['id' => 'hotel_id']);
     }
 
 }

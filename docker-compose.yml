@@ -2,8 +2,8 @@ version: '2'
 services:
   gestor_contenidos_service:
     image: eventos/content:latest
-    expose:
-      - 80
+    ports: 
+      - 82:80
     environment:
         - MYSQL_HOTELES_USER=${MYSQL_HOTELES_USER}      
         - MYSQL_HOTELES_PASSWORD=${MYSQL_HOTELES_PASSWORD}      
@@ -20,7 +20,7 @@ services:
   proxy_service:
     image:  colsubsidioproxy/content-proxy:eventos
     ports:
-      - 80:80
+      - 81:80
     build:
      context: ../proxys/gestor-contenidos-proxy
      dockerfile: ./Dockerfile
