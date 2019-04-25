@@ -11,22 +11,22 @@ $config = [
     'timeZone' => 'America/Bogota',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'modules' => [
         'admin' => [
             'class' => 'mdm\admin\Module',
-            //'layout' => 'left-menu',
-            //'controllerMap' => [
-            //    'assignment' => [
-            //        'class' => 'mdm\admin\controllers\AssignmentController',
-                    //'userClassName' => 'app\models\Usuarios', // fully qualified class name of your User model
-                    // Usually you don't need to specify it explicitly, since the module will detect it automatically
-                    //'idField' => 'id',        // id field of your User model that corresponds to Yii::$app->user->id
-                    //'usernameField' => 'username', // username field of your User model
-                    //'searchClass' => 'app\models\UsuariosSearch'    // fully qualified class name of your User model for searching
-            //    ]
-            //],
+        //'layout' => 'left-menu',
+        //'controllerMap' => [
+        //    'assignment' => [
+        //        'class' => 'mdm\admin\controllers\AssignmentController',
+        //'userClassName' => 'app\models\Usuarios', // fully qualified class name of your User model
+        // Usually you don't need to specify it explicitly, since the module will detect it automatically
+        //'idField' => 'id',        // id field of your User model that corresponds to Yii::$app->user->id
+        //'usernameField' => 'username', // username field of your User model
+        //'searchClass' => 'app\models\UsuariosSearch'    // fully qualified class name of your User model for searching
+        //    ]
+        //],
         ],
         'recreacion' => [
             'class' => 'app\modules\recreacion\recreacion',
@@ -35,24 +35,24 @@ $config = [
             'class' => 'app\modules\medicines\Module',
         ],
         'attachments' => [
-		'class' => nemmo\attachments\Module::className(),
-		'tempPath' => '@app/uploads/temp',
-		'storePath' => '@app/uploads/store',
-		'rules' => [ // Rules according to the FileValidator
-		    'maxFiles' => 10, // Allow to upload maximum 3 files, default to 3
-			'mimeTypes' => ['image/png', 'image/jpeg'], // Only png images
-			'maxSize' => 1024 * 1024 // 1 MB
-		],
-		//'tableName' => '{{%attachments}}', // Optional, default to 'attach_file'
-                'controllerMap' => [
-                    'migrate' => [
-                            'class' => 'yii\console\controllers\MigrateController',
-                            'migrationNamespaces' => [
-                                    'nemmo\attachments\migrations',
-                            ],
+            'class' => nemmo\attachments\Module::className(),
+            'tempPath' => '@app/uploads/temp',
+            'storePath' => '@app/uploads/store',
+            'rules' => [// Rules according to the FileValidator
+                'maxFiles' => 10, // Allow to upload maximum 3 files, default to 3
+                'mimeTypes' => ['image/png', 'image/jpeg'], // Only png images
+                'maxSize' => 1024 * 1024 // 1 MB
+            ],
+            //'tableName' => '{{%attachments}}', // Optional, default to 'attach_file'
+            'controllerMap' => [
+                'migrate' => [
+                    'class' => 'yii\console\controllers\MigrateController',
+                    'migrationNamespaces' => [
+                        'nemmo\attachments\migrations',
                     ],
                 ],
-	],
+            ],
+        ],
 //        'markdown' => [
 //		'class' => 'kartik\markdown\Module',
 //	]
@@ -78,10 +78,10 @@ $config = [
         ],
         'view' => [
             'theme' => [
-                'pathMap' => [                                    
+                'pathMap' => [
                     '@vendor/mdmsoft/yii2-admin/views' => '@app/views',
-                    #'@vendor/mdmsoft/yii2-admin/controllers' => '@app/controllers',
-                    #'@app/views' => '@vendor/mdmsoft/yii2-admin/views' 
+                #'@vendor/mdmsoft/yii2-admin/controllers' => '@app/controllers',
+                #'@app/views' => '@vendor/mdmsoft/yii2-admin/views' 
                 ],
             ],
         ],
@@ -90,7 +90,7 @@ $config = [
             'cookieValidationKey' => 'IGRC4CUyEW1ej6RE-Q1buiKZyYA6psxa',
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
-              ],
+            ],
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -114,12 +114,12 @@ $config = [
             // for the mailer to send real emails.
             'useFileTransport' => false,
             'transport' => [
-              'class' => 'Swift_SmtpTransport',
-              'host' => 'smtp.gmail.com',
-              'username' => 'jesusmatiz35@gmail.com',
-              'password' => 'M1t3z2018*',
-              'port' => '587',
-              'encryption' => 'tls',
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 'jesusmatiz35@gmail.com',
+                'password' => 'M1t3z2018*',
+                'port' => '587',
+                'encryption' => 'tls',
             ],
         ],
         'log' => [
@@ -135,17 +135,26 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => true,
+            'baseUrl' => '/fuloop/frontend/web',
             'rules' => [
-                [ 
-                    'class' => 'yii\rest\UrlRule', 
-                    'controller' => 
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' =>
                     [
                         '\app\modules\recreacion\controllers\restlounge',
                         '\app\modules\recreacion\controllers\restheadquarter',
                         '\app\modules\recreacion\controllers\restexperences',
-                        '\app\modules\recreacion\controllers\resthotelagreements',
                         '\app\modules\recreacion\controllers\resthotel',
-                        ],
+                        '\app\modules\recreacion\controllers\resthotelagreements',
+                        '\app\modules\recreacion\controllers\restcity',
+                        '\app\modules\recreacion\controllers\restauth',
+                        '\app\modules\recreacion\controllers\restdashboard',
+                        '\app\modules\recreacion\controllers\restconfig',
+                        '\app\modules\recreacion\controllers\restroom',
+                        '\app\modules\recreacion\controllers\restroomagreements',
+                        '\app\modules\recreacion\controllers\restpackage',
+                        '\app\modules\recreacion\controllers\restpackageagreements',
+                    ],
 //                    'extraPatterns' => [
 //                        'GET getallcities' => 'getallcities',
 //                        'GET getallcategories' => 'getallcategories',
@@ -154,17 +163,17 @@ $config = [
 //                        'POST gethotelsbyid' => 'gethotelsbyid',
 //                    ]
                 ],
-                    //['class' => 'yii\rest\UrlRule', 'controller' => 'user'],
-            ],
-          ],
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
+            //['class' => 'yii\rest\UrlRule', 'controller' => 'user'],
             ],
         ],
-        */
+    /*
+      'urlManager' => [
+      'enablePrettyUrl' => true,
+      'showScriptName' => false,
+      'rules' => [
+      ],
+      ],
+     */
     ],
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
@@ -174,9 +183,17 @@ $config = [
             'user/reset-password',
             //'admin/*',
             'debug/*',
-            'recreacion/restexperences/*',
+            'recreacion/restauth/*',
+            'recreacion/restconfig/*',
+            'recreacion/restcity/*',
+            'recreacion/restdashboard/*',
             'recreacion/resthotel/*',
             'recreacion/resthotelagreements/*',
+            'recreacion/restroom/*',
+            'recreacion/restroomagreements/*',
+            'recreacion/restpackage/*',
+            'recreacion/restpackageagreements/*',
+            'recreacion/restexperences/*',
             'recreacion/restheadquarter/*',
             'recreacion/restlounge/*',
         ]
@@ -198,7 +215,7 @@ if (YII_ENV_DEV) {
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-         'allowedIPs' => ['*'],
+        'allowedIPs' => ['*'],
     ];
 }
 

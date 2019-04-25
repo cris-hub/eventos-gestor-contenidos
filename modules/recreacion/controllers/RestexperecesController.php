@@ -2,33 +2,13 @@
 
 namespace app\modules\recreacion\controllers;
 
-use app\modules\recreacion\models\Reservation;
 use Yii;
-use app\modules\recreacion\models\Hotel;
 use app\modules\recreacion\models\Banner;
-use app\modules\recreacion\models\HotelSearch;
-use yii\web\Controller;
-use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 use yii\rest\ActiveController;
-use app\modules\recreacion\models\City;
-
 use app\modules\recreacion\models\EventType;
 use app\modules\recreacion\models\Experences;
-
-
-use app\modules\recreacion\models\Category;
-use app\modules\recreacion\models\Room;
 use yii\helpers\HtmlPurifier;
-use yii\filters\auth\QueryParamAuth;
-use yii\filters\auth\HttpBasicAuth;
-use yii\filters\auth\HttpBearerAuth;
-use yii\filters\auth\CompositeAuth;
-use app\models\User;
-use sizeg\jwt\JwtHttpBearerAuth;
-use Lcobucci\JWT\Signer\Hmac\Sha256;
-use app\modules\recreacion\models\Authapirest;
-use thamtech\uuid\helpers\UuidHelper;
+
 
 /**
  * RestexperecesController implements the CRUD actions for hotel model.
