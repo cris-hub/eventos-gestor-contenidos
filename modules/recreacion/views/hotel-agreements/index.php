@@ -34,7 +34,7 @@ $arrayCities = ArrayHelper::map($cities, 'id', 'name');
 
             'id',
             'hotel_code',
-            'hotel_chain_code',
+            // 'hotel_chain_code',
             'name',
             'max_guests',
             /*[
@@ -49,8 +49,8 @@ $arrayCities = ArrayHelper::map($cities, 'id', 'name');
                     
                 }
             ],*/
-            'slug',
-            'cell_phone',
+            // 'slug',
+            // 'cell_phone',
             [
                 'attribute'=>'status',
                 'filter'=> Util::getlistStatus(),

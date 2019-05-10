@@ -22,7 +22,7 @@ services:
     ports:
       - 81:80
     build:
-     context: ../proxys/gestor-contenidos-proxy
+     context: ./gestor-contenidos-proxy
      dockerfile: ./Dockerfile
     networks:
       - network 

@@ -141,7 +141,7 @@ class Module extends \yii\base\Module
         $createContainerOptions->setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS);
         $createContainerOptions->addMetaData("key1", "value1");
         $createContainerOptions->addMetaData("key2", "value2");
-        $containerName = "colsubsidioportalsalud";
+        $containerName = "colsubsidiodigrecreacion";
 
         if (empty($owner->id)) {
             throw new Exception('Parent model must have ID when you attaching a file');
@@ -190,7 +190,7 @@ class Module extends \yii\base\Module
     {
         $connectionString = "DefaultEndpointsProtocol=https;AccountName=bscolsubsidiotest;AccountKey=1INLeStZNrhAR2zFSMUlk7Q1H5oGzsR+fSNSQY27AfVtWFlfzM2YKCUyaHkysYLHmhb57AkWknlOf30LU79sEA==";
         $blobClient = BlobRestProxy::createBlobService($connectionString);
-        $containerName = "colsubsidioportalsalud";
+        $containerName = "colsubsidiodigrecreacion";
         $storePath = "/uploads/store";
 
         /** @var File $file */

@@ -82,7 +82,7 @@ class FileController extends Controller
         $createContainerOptions->setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS);
         $createContainerOptions->addMetaData("key1", "value1");
         $createContainerOptions->addMetaData("key2", "value2");
-        $containerName = "colsubsidioportalsalud";
+        $containerName = "colsubsidiodigrecreacion";
 
         $storePath = "/uploads/store";
         $fileResponse = "";

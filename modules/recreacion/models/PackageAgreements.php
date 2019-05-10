@@ -6,12 +6,12 @@ use Yii;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
 use yii\behaviors\BlameableBehavior;
-
 /**
- * This is the model class for table "room".
+ * This is the model class for table "package_agreements".
  *
  * @property int $id
  * @property string $type_package
+ * @property string $name
  * @property string $slug
  * @property string $description
  * @property int $capacity_people
@@ -25,8 +25,8 @@ use yii\behaviors\BlameableBehavior;
  *
  * @property HotelAgreements $hotel
  */
-class PackageAgreements extends ActiveRecord {
-
+class PackageAgreements extends \yii\db\ActiveRecord
+{
     public $images;
 
     public function behaviors() {
@@ -57,21 +57,25 @@ class PackageAgreements extends ActiveRecord {
     /**
      * {@inheritdoc}
      */
-    public static function tableName() {
+    public static function tableName()
+    {
         return 'package_agreements';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function rules() {
+    public function rules()
+    {
         return [
-            [['type_package', 'name', 'slug', 'description', 'capacity_people', 'hotel_id'], 'required'],
-            [['description','aditional_information', 'status'], 'string'],
+            [['type_package', 'name', 'description', 'hotel_id'], 'required'],
+            [['description', 'aditional_information', 'status'], 'string'],
             [['capacity_people', 'hotel_id'], 'integer'],
             [['created', 'modified'], 'safe'],
+            [['type_package'], 'string', 'max' => 50],
             [['name'], 'string', 'max' => 150],
-            [['slug',  'created_by', 'modified_by'], 'string', 'max' => 45],
+            [['slug', 'created_by', 'modified_by'], 'string', 'max' => 45],
+            [['type_package'], 'unique'],
             [['hotel_id'], 'exist', 'skipOnError' => true, 'targetClass' => HotelAgreements::className(), 'targetAttribute' => ['hotel_id' => 'id']],
         ];
     }
@@ -79,10 +83,11 @@ class PackageAgreements extends ActiveRecord {
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'id' => Yii::t('app', 'ID'),
-            'type_package' => Yii::t('app', 'Tipo de paquete'),
+            'type_package' => Yii::t('app', 'Type Package'),
             'name' => Yii::t('app', 'Name'),
             'slug' => Yii::t('app', 'Slug'),
             'description' => Yii::t('app', 'Description'),
@@ -93,15 +98,24 @@ class PackageAgreements extends ActiveRecord {
             'created_by' => Yii::t('app', 'Created By'),
             'modified' => Yii::t('app', 'Modified'),
             'modified_by' => Yii::t('app', 'Modified By'),
-            'hotel_id' => Yii::t('app', 'Hotel'),
+            'hotel_id' => Yii::t('app', 'Hotel ID'),
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getHotel() {
+    public function getHotel()
+    {
         return $this->hasOne(HotelAgreements::className(), ['id' => 'hotel_id']);
     }
 
+    /**
+     * {@inheritdoc}
+     * @return PackageAgreementsQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new PackageAgreementsQuery(get_called_class());
+    }
 }

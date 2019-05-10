@@ -38,14 +38,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'max_guests',
             'hotel_code',
-            'hotel_chain_code',
+            // 'hotel_chain_code',
             [
                 'attribute'=>'description',
                 'format'=>'html',
             ],
             'slug',
             'cell_phone',
-            'address',
+            'address',  [
+                'attribute'=>'ubicacion',
+                'format'=>'html',
+            ],
             'phone',
             [
                 'attribute'=>'status',
@@ -77,7 +80,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="box-body">
         <?= GridView::widget([
-            'dataProvider' => new ArrayDataProvider(['allModels' => $model->rooms]),
+            'dataProvider' => new ArrayDataProvider(['allModels' => $model->roomAgreements]),
             'layout' => '{items}',
             'columns' => [
                 'id',
@@ -94,7 +97,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         }
 
                     }
-                ],
+                ],  
                 'capacity_people',
                 [
                     'attribute'=>'aditional_information',
