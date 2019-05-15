@@ -9,6 +9,7 @@ use nemmo\attachments\components\AttachmentsInput;
 use app\modules\recreacion\models\City;
 use app\components\Util;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\modules\recreacion\models\Hotel */
 /* @var $form yii\widgets\ActiveForm */
@@ -37,6 +38,7 @@ use app\components\Util;
             ]
         ])
         ?>
+  
 
         <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
 
@@ -74,7 +76,11 @@ use app\components\Util;
             ]
         ])
         ?>
-  
+        <?= $form->field($model, 'ubicacion')->textarea(['rows' => 12]) ?>
+
+        <div  style="justify-content: center;
+        display: flex;" class="box-body">
+        <?php echo  htmlspecialchars_decode($model->ubicacion); ?>
 
         <div class="form-group">
             <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

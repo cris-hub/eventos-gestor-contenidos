@@ -7,8 +7,8 @@ use app\components\Util;
 /* @var $this yii\web\View */
 /* @var $model app\modules\recreacion\models\Room */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Packages'), 'url' => ['index']];
+$this->title = Yii::t('app', 'PackageAgreements');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'PackageAgreements'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="room-view box box-primary">

@@ -14,7 +14,7 @@ $this->title = Yii::t('app', 'Hotels');
 $this->params['breadcrumbs'][] = $this->title;
 
 $cities = City::find()->orderby('name')->all();
-$arrayCities = ArrayHelper::map($cities, 'id', 'name'); 
+$arrayCities = ArrayHelper::map($cities, 'id', 'name');
 ?>
 <div class="hotel-index box box-primary">
 
@@ -36,7 +36,7 @@ $arrayCities = ArrayHelper::map($cities, 'id', 'name');
             'hotel_code',
             // 'hotel_chain_code',
             'name',
-            'max_guests',
+            // 'max_guests',
             /*[
                 'attribute'=>'description',
                 'format'=>'html',
@@ -44,9 +44,9 @@ $arrayCities = ArrayHelper::map($cities, 'id', 'name');
                     if(!empty($data->description)){
                         return substr($data->description, 0,250).'...';
                     }else{
-                       return substr($data->description, 0,150); 
+                       return substr($data->description, 0,150);
                     }
-                    
+
                 }
             ],*/
             // 'slug',
@@ -56,7 +56,7 @@ $arrayCities = ArrayHelper::map($cities, 'id', 'name');
                 'filter'=> Util::getlistStatus(),
                 'value'=>function($data){
                     return Util::getStatus($data->status);
-                    
+
                 }
             ],
             [
@@ -64,7 +64,7 @@ $arrayCities = ArrayHelper::map($cities, 'id', 'name');
                 'filter'=>$arrayCities,
                 'value'=>function($data){
                     return $data->city->name;
-                    
+
                 }
             ],
             ['class' => 'yii\grid\ActionColumn'],

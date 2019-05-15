@@ -10,7 +10,7 @@ use yii\helpers\ArrayHelper;
 /* @var $searchModel app\modules\recreacion\models\RoomSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Packages');
+$this->title = Yii::t('app', 'PackageAgreements');
 $this->params['breadcrumbs'][] = $this->title;
 
 $hotels = Hotel::find()->orderby('name')->all();
@@ -22,7 +22,7 @@ $arrayHotels = ArrayHelper::map($hotels, 'id', 'name');
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <div class="box-header with-border">
-        <?= Html::a(Yii::t('app', 'Create Package'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Package agreements'), ['create'], ['class' => 'btn btn-success']) ?>
     </div>
     <div class="box-body">
 

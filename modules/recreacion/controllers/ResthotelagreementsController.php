@@ -49,6 +49,7 @@ class ResthotelagreementsController extends ActiveController {
                 'slug' => $hotel->slug,
                 'cell_phone' => $hotel->cell_phone,
                 'address' => $hotel->address,
+                'ubicacion' => $hotel->ubicacion,
                 'hotel_code' => $hotel->hotel_code,
                 'images' => $images,
                 'phone' => $hotel->phone];

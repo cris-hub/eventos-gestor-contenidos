@@ -1,22 +1,12 @@
 <?php
 
 return [
-    // 'class' => 'yii\db\Connection',
-    // 'dsn' => 'mysql:host=localhost;dbname=yii-colsubsidio',
-    // 'username' => 'root',
-    // 'password' => '',
-    // // 'username' => 'coladmin',
-    // // 'password' => '123456!aA',
-    // 'charset' => 'utf8',
-
 	'class' => 'yii\db\Connection',
-    'dsn' => getenv('MYSQL_HOTELES_CONECTION_PHP'),
-    'username' => getenv('MYSQL_HOTELES_USER'),
-    'password' => '123456789!aA',
+    'dsn' => getenv('MYSQL_CONECTION_PHP'),
+    'username' => getenv('MYSQL_USER'),
+    'password' => getenv('MYSQL_PASSWORD'),
     'charset' => 'utf8',
-	
-    // Schema cache options (for production environment)
-    //'enableSchemaCache' => true,
-    //'schemaCacheDuration' => 60,
-    //'schemaCache' => 'cache',
+    'enableSchemaCache' => true,
+    'schemaCacheDuration' => 3600,
+    'schemaCache' => 'cache',
 ];

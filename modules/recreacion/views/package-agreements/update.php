@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\recreacion\models\Room */
 
-$this->title = Yii::t('app', 'Update Package: ') . $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Packages'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Update Package agreements: ') . $model->name;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'PackageAgreements'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>

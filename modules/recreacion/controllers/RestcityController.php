@@ -30,7 +30,7 @@ class RestcityController extends ActiveController {
         try {
             return City::find()
                             ->join(
-                                    'INNER JOIN', 'hotel', 'hotel.city_id = city.id'
+                                    'LEFT JOIN', 'hotel', 'hotel.city_id = city.id'
                             )
                             ->join(
                                     'LEFT JOIN', 'hotel_agreements', 'hotel_agreements.city_id = city.id'

@@ -36,34 +36,39 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'max_guests',
+            // 'max_guests',
             'hotel_code',
             // 'hotel_chain_code',
             [
                 'attribute'=>'description',
                 'format'=>'html',
             ],
-            'slug',
-            'cell_phone',
-            'address',  [
+            // 'slug',
+            // 'cell_phone',
+            'address',  
+            [
                 'attribute'=>'ubicacion',
                 'format'=>'html',
             ],
-            'phone',
+            // 'phone',
             [
                 'attribute'=>'status',
                 'value'=> Util::getStatus($model->status),
+            ],
+            [
+                'attribute'=>'city_id',
+                'value'=>$model->city->name,
             ],
             'created',
             'created_by',
             'modified',
             'modified_by',
-            [
-                'attribute'=>'city_id',
-                'value'=>$model->city->name,
-            ],
         ],
     ]) ?>
+    <div style="justify-content: center;
+    display: flex;">
+     <?php echo  htmlspecialchars_decode($model->ubicacion); ?>
+     </div>
     </div>
 </div>
 <div class="box box-primary">

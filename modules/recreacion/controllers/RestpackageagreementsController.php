@@ -75,7 +75,7 @@ class RestpackageagreementsController extends ActiveController {
             $packages = PackageAgreements::find()
                             ->where("hotel_id =:hotelId "
                                     . "AND status=:status", ['hotelId' => $hotelId, 'status' => self::ACTIVE])
-                            ->andWhere(['in', 'capacity_people', $guestsIn])
+                            // ->andWhere(['in', 'capacity_people', $guestsIn])
                             ->groupby('name')->orderby('name')->all();
             return $packages;
         }

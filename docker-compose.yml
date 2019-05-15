@@ -1,16 +1,24 @@
 version: '2'
 services:
   gestor_contenidos_service:
-    image: eventos/content:latest
-    ports: 
-      - 82:80
-    environment:
-        - MYSQL_HOTELES_USER=${MYSQL_HOTELES_USER}      
-        - MYSQL_HOTELES_PASSWORD=${MYSQL_HOTELES_PASSWORD}      
-        - MYSQL_HOTELES_CONECTION=${MYSQL_HOTELES_CONECTION}              
-        - MYSQL_HOTELES_CONECTION_PHP=${MYSQL_HOTELES_CONECTION_PHP}              
+    image: colsazurecontainerregistrydigital.azurecr.io/eventos/content:latest
+    expose: 
+      - 80
+    env_file:
+      - .env             
     build:
       context: ./
+      args:
+        - URLBLOB
+        - STOREPATH
+        - CONTAINERNAME
+        - CONNECTIONSTRINGBLOB
+        - DEPLOYMENT_PORT
+        - FOLDER_PROJECT
+        - MYSQL_USER      
+        - MYSQL_PASSWORD    
+        - MYSQL_CONECTION_SPRING             
+        - MYSQL_CONECTION_PHP     
       dockerfile: ./Dockerfile
     networks:
       - network
@@ -18,9 +26,9 @@ services:
       - ./:/var/www/html
     restart: always
   proxy_service:
-    image:  colsubsidioproxy/content-proxy:eventos
+    image:  colsazurecontainerregistrydigital.azurecr.io/colsubsidioproxy/content-proxy:eventos
     ports:
-      - 81:80
+      - 80:80
     build:
      context: ./gestor-contenidos-proxy
      dockerfile: ./Dockerfile
@@ -28,6 +36,7 @@ services:
       - network 
     volumes:
       - proxy_config:/etc/nginx
+      - ./gestor-contenidos-proxy/default.conf:/etc/nginx/conf.d/default.conf
       - proxy_logs:/var/log
     restart: always      
 volumes:

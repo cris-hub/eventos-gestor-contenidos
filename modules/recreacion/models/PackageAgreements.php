@@ -87,7 +87,7 @@ class PackageAgreements extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'type_package' => Yii::t('app', 'Type Package'),
+            'type_package' => Yii::t('app', 'Type Package agreements'),
             'name' => Yii::t('app', 'Name'),
             'slug' => Yii::t('app', 'Slug'),
             'description' => Yii::t('app', 'Description'),

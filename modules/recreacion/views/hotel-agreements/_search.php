@@ -28,8 +28,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'description') ?>
 
     <?= $form->field($model, 'slug') ?>
-    
-    <?= $form->field($model, 'max_guests') ?>
+
+    <!-- <?= $form->field($model, 'max_guests') ?> -->
 
     <?= $form->field($model, 'cell_phone') ?>
 
