@@ -9,6 +9,7 @@ use dosamigos\ckeditor\CKEditor;
 use yii\helpers\ArrayHelper;
 use nemmo\attachments\components\AttachmentsInput;
 use kartik\select2\Select2;
+use yii\widgets\Pjax;
 
 
 ?>
@@ -25,13 +26,14 @@ use kartik\select2\Select2;
         ->where("hotel_id =:hotelId "
                 . "AND status=:status", ['hotelId' => $model->hotel_id, 'status' => 'active'])
                 ->all();
-        $arrayPackages = ArrayHelper::getColumn($packages, 'type_package', 'name');           
+        $arrayPackages = ArrayHelper::map($packages, 'type_package','type_package',['name']);           
+        
+
+
         
         echo $form->field($model, 'type_packages')->widget(Select2::classname(), [
-        'data' => $arrayPackages,
-        'name' => 'type_package',
-        'attribute' => 'type_package',
-        'value' =>  split(",", $model->type_package),
+        'data' => $arrayPackages,      
+        'value' => $model->type_packages,      
         'options' => [
         'placeholder' => 'Select a package ...',
         'multiple' => true],

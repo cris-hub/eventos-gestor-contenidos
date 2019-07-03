@@ -68,7 +68,7 @@ class Room extends ActiveRecord {
      */
     public function rules() {
         return [
-            [['type_room', 'name', 'slug', 'description', 'capacity_people', 'hotel_id'], 'required'],
+            [['type_room', 'name', 'slug', 'type_packages','description', 'capacity_people', 'hotel_id'], 'required'],
             [['description', 'status'], 'string'],
             [['capacity_people', 'hotel_id'], 'integer'],
             [['created', 'modified'], 'safe'],

@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\components\Util;
-use app\modules\recreacion\models\Hotel;
+use app\modules\recreacion\models\HotelAgreements;
 use dosamigos\ckeditor\CKEditor;
 use yii\helpers\ArrayHelper;
 use nemmo\attachments\components\AttachmentsInput;
@@ -51,7 +51,7 @@ use nemmo\attachments\components\AttachmentsInput;
 
         
     <?php
-        $hotels = Hotel::find()->orderby('name')->all();
+        $hotels = HotelAgreements::find()->orderby('name')->all();
         $arrayHotels = ArrayHelper::map($hotels, 'id', 'name');            
         echo $form->field($model, 'hotel_id')->dropDownList($arrayHotels
                 , ['prompt' => "Seleccione..."]);

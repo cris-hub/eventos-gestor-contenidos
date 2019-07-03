@@ -23,7 +23,7 @@ services:
     networks:
       - network
     volumes: 
-      - ./:/var/www/html
+      - gestor_dist:/var/www/html
     restart: always
   proxy_service:
     image:  colsazurecontainerregistrydigital.azurecr.io/colsubsidioproxy/content-proxy:eventos
@@ -36,7 +36,6 @@ services:
       - network 
     volumes:
       - proxy_config:/etc/nginx
-      - ./gestor-contenidos-proxy/default.conf:/etc/nginx/conf.d/default.conf
       - proxy_logs:/var/log
     restart: always      
 volumes:

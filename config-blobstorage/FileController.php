@@ -71,7 +71,7 @@ class FileController extends Controller
 
     public function actionDownload($id)
     {
-        $connectionString = Yii::$app->params['connectionString'];
+        $connectionString = \Yii::$app->params['connectionString'];
         $blobClient = BlobRestProxy::createBlobService($connectionString);
 
         getcwd();
@@ -82,9 +82,9 @@ class FileController extends Controller
         $createContainerOptions->setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS);
         $createContainerOptions->addMetaData("key1", "value1");
         $createContainerOptions->addMetaData("key2", "value2");
-        $containerName = Yii::$app->params['containerName'];
+        $containerName = \Yii::$app->params['containerName'];
 
-        $storePath =  Yii::$app->params['storePath']; 
+        $storePath =  \Yii::$app->params['storePath']; 
         $fileResponse = "";
         $file = File::findOne(['id' => $id]);
         

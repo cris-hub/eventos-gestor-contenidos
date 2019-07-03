@@ -134,14 +134,14 @@ class Module extends \yii\base\Module
      */
     public function attachFile($filePath, $owner)
     {
-        $connectionString = Yii::$app->params['connectionString'];
+        $connectionString = \Yii::$app->params['connectionString'];
         $blobClient = BlobRestProxy::createBlobService($connectionString);
 
         $createContainerOptions = new CreateContainerOptions();
         $createContainerOptions->setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS);
         $createContainerOptions->addMetaData("key1", "value1");
         $createContainerOptions->addMetaData("key2", "value2");
-        $containerName = Yii::$app->params['containerName']; 
+        $containerName = \Yii::$app->params['containerName']; 
 
         if (empty($owner->id)) {
             throw new Exception('Parent model must have ID when you attaching a file');
@@ -188,10 +188,10 @@ class Module extends \yii\base\Module
 
     public function detachFile($id)
     {
-        $connectionString = Yii::$app->params['connectionString'];
+        $connectionString = \Yii::$app->params['connectionString'];
         $blobClient = BlobRestProxy::createBlobService($connectionString);
-        $containerName = Yii::$app->params['containerName']; 
-        $storePath = Yii::$app->params['storePath']; 
+        $containerName = \Yii::$app->params['containerName']; 
+        $storePath = \Yii::$app->params['storePath']; 
 
         /** @var File $file */
         $file = File::findOne(['id' => $id]);
