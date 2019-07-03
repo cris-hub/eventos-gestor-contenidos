@@ -38,9 +38,9 @@ $arrayHotels = ArrayHelper::map($hotels, 'id', 'name');
                     'format' => 'html',
                     'value' => function($data) {
                         if (!empty($data->type_package)) {
-                            return substr($data->type_package, 0, 250) . '...';
+                            return substr($data->type_package, 0, 30) . '...';
                         } else {
-                            return substr($data->type_package, 0, 150);
+                            return substr($data->type_package, 0, 50);
                         }
                     }
                 ],

@@ -1,0 +1,25 @@
+version: '2'
+services:
+  proxy_service:
+    image:  crishubprojects/eventos-gestor-contenidos-proxy:latest
+    ports:
+      - "80:80"
+    build:
+     context: ./
+     dockerfile: ./Dockerfile
+    networks:
+      - network 
+    volumes:
+      - "proxy-config:/etc/nginx"
+      - proxy-logs:/var/log
+    restart: always  
+volumes:
+  proxy-config:
+  proxy-logs:
+networks:
+  network:
+     
+   
+        
+   
+        

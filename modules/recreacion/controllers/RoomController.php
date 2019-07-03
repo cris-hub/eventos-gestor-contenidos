@@ -2,13 +2,12 @@
 
 namespace app\modules\recreacion\controllers;
 
-use Yii;
 use app\modules\recreacion\models\Room;
 use app\modules\recreacion\models\RoomSearch;
+use Yii;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
-use nemmo\attachments\ModuleTrait;
 
 /**
  * RoomController implements the CRUD actions for Room model.
@@ -87,8 +86,18 @@ class RoomController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            if (sizeof($model->type_packages) > 0) {
+                $model['type_package'] = implode(',', $model->type_packages);
+            } else {
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
+            }
+
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('update', [
@@ -106,17 +115,17 @@ class RoomController extends Controller
     public function actionDelete($id, $hotelId = null)
     {
         $model = $this->findModel($id);
-        //Delete images        
+        //Delete images
         foreach ($model->files as $file) {
             $module = \Yii::$app->getModule('attachments');
             $module->detachFile($file->id);
         }
-       //Delete model
+        //Delete model
         $model->delete();
-        
-        if(!empty($hotelId)){
-            return $this->redirect(['hotel/view', 'id'=>$hotelId]);
-        }else{
+
+        if (!empty($hotelId)) {
+            return $this->redirect(['hotel/view', 'id' => $hotelId]);
+        } else {
             return $this->redirect(['index']);
         }
     }
@@ -131,6 +140,9 @@ class RoomController extends Controller
     protected function findModel($id)
     {
         if (($model = Room::findOne($id)) !== null) {
+            if($model->type_package != ''){
+                $model->type_packages =  split(",", $model->type_package);
+            }
             return $model;
         }
 

@@ -1,7 +1,7 @@
 <?php
-
 namespace nemmo\attachments\controllers;
-//require_once '../../../../vendor/autoload.php';
+
+//require_once '../../../../vendor/autoload.php';storePath
 
 use nemmo\attachments\models\File;
 use nemmo\attachments\models\UploadForm;
@@ -71,7 +71,7 @@ class FileController extends Controller
 
     public function actionDownload($id)
     {
-        $connectionString = "DefaultEndpointsProtocol=https;AccountName=bscolsubsidiotest;AccountKey=1INLeStZNrhAR2zFSMUlk7Q1H5oGzsR+fSNSQY27AfVtWFlfzM2YKCUyaHkysYLHmhb57AkWknlOf30LU79sEA==";
+        $connectionString = \Yii::$app->params['connectionString'];
         $blobClient = BlobRestProxy::createBlobService($connectionString);
 
         getcwd();
@@ -82,9 +82,9 @@ class FileController extends Controller
         $createContainerOptions->setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS);
         $createContainerOptions->addMetaData("key1", "value1");
         $createContainerOptions->addMetaData("key2", "value2");
-        $containerName = "colsubsidioportalsalud";
+        $containerName = \Yii::$app->params['containerName'];
 
-        $storePath = "/uploads/store";
+        $storePath =  \Yii::$app->params['storePath']; 
         $fileResponse = "";
         $file = File::findOne(['id' => $id]);
         

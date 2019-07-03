@@ -36,6 +36,7 @@ $arrayCities = ArrayHelper::map($cities, 'id', 'name');
             'hotel_code',
             'hotel_chain_code',
             'name',
+            'max_guests',
             /*[
                 'attribute'=>'description',
                 'format'=>'html',

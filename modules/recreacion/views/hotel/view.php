@@ -36,6 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
+            'max_guests',
             'hotel_code',
             'hotel_chain_code',
             [
@@ -45,6 +46,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'slug',
             'cell_phone',
             'address',
+            [
+                'attribute'=>'ubicacion',
+                'format'=>'html',
+            ],
             'phone',
             [
                 'attribute'=>'status',
@@ -61,6 +66,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
     </div>
+
 </div>
 <div class="box box-primary">
     <div class="box-header with-border">
@@ -147,3 +153,9 @@ $this->params['breadcrumbs'][] = $this->title;
         ]); ?>
     </div>
 </div>
+
+<div style="justify-content: center;
+    display: flex;">
+        <?php echo  htmlspecialchars_decode($model->ubicacion); ?>
+        </div>
+    </div>

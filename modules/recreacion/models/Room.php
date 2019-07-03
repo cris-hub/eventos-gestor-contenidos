@@ -29,7 +29,8 @@ use yii\behaviors\BlameableBehavior;
 class Room extends ActiveRecord {
 
     public $images;
-
+    public $type_packages = [];
+    
     public function behaviors() {
         return [
             'fileBehavior' => [
@@ -67,7 +68,7 @@ class Room extends ActiveRecord {
      */
     public function rules() {
         return [
-            [['type_package','type_room', 'name', 'slug', 'description', 'capacity_people', 'hotel_id'], 'required'],
+            [['type_room', 'name', 'slug', 'type_packages','description', 'capacity_people', 'hotel_id'], 'required'],
             [['description', 'status'], 'string'],
             [['capacity_people', 'hotel_id'], 'integer'],
             [['created', 'modified'], 'safe'],

@@ -4,21 +4,49 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\components\Util;
 use app\modules\recreacion\models\Hotel;
+use app\modules\recreacion\models\Package;
 use dosamigos\ckeditor\CKEditor;
 use yii\helpers\ArrayHelper;
 use nemmo\attachments\components\AttachmentsInput;
-use mdm\admin\AutocompleteAsset;
-use app\modules\recreacion\models\Package;
-use yii\helpers\Json;
+use kartik\select2\Select2;
+use yii\widgets\Pjax;
 
 
 ?>
 
 <div class="room-form box box-primary">
     <div class="box-body">
+
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
-    <?= Html::activeHiddenInput($model, 'type_package', ['id' => 'type_package_id']); ?>
-    <?= $form->field($model, 'type_package')->textInput(['maxlength' => true,'id' => 'type_package']) ?>
+
+
+        <?php echo '<label class="control-label">Pauetes</label>';
+
+        $packages = Package::find()
+        ->where("hotel_id =:hotelId "
+                . "AND status=:status", ['hotelId' => $model->hotel_id, 'status' => 'active'])
+                ->all();
+        $arrayPackages = ArrayHelper::map($packages, 'type_package','type_package',['name']);           
+        
+
+
+        
+        echo $form->field($model, 'type_packages')->widget(Select2::classname(), [
+        'data' => $arrayPackages,      
+        'value' => $model->type_packages,      
+        'options' => [
+        'placeholder' => 'Select a package ...',
+        'multiple' => true],
+        'pluginOptions' => [
+        'allowClear' => true,
+        'tags' => true,
+        'tokenSeparators' => [',', ' '],
+        ],
+        ]);
+        ?>
+
+    
+    
     
     <?= $form->field($model, 'type_room')->textInput(['maxlength' => true]) ?>
         
