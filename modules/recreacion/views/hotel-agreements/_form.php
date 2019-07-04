@@ -24,7 +24,7 @@ use yii\widgets\DetailView;
         
         <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
         
-        <!-- <?= $form->field($model, 'max_guests')->textInput(['maxlength' => true]) ?> -->
+         <?= $form->field($model, 'max_guests')->textInput(['maxlength' => true]) ?> 
 
         <?=
         $form->field($model, 'description')->widget(CKEditor::className(), [
@@ -67,7 +67,7 @@ use yii\widgets\DetailView;
             'id' => 'file-input',
             'model' => $model,
             'options' => [
-                'multiple' => true,
+                'multiple' => false,
             ],
             'pluginOptions' => [
                 'maxFileCount' => 5,

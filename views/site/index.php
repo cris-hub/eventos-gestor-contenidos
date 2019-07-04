@@ -9,7 +9,7 @@ $this->title = 'Recreacion';
     <div class="jumbotron">
         <h1>Bienvenido!</h1>
 
-        <p class="lead">En este portal podra configurar toda la informacion de los centros recreacionales de colsubsidio.</p>
+        <p class="lead">En éste Portal podrá configurar la información del Área de Recreación y Turismo de Colsubsidio.</p>
 
     </div>
 </div>

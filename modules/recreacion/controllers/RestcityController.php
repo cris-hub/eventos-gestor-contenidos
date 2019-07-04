@@ -35,6 +35,7 @@ class RestcityController extends ActiveController {
                             ->join(
                                     'LEFT JOIN', 'hotel_agreements', 'hotel_agreements.city_id = city.id'
                             )
+                            ->orWhere("hotel_agreements.city_id is not null ")->orWhere("hotel.city_id is not null")
                             ->groupBy('city.id')
                             ->orderby('name')->all();
         } catch (Exception $exc) {

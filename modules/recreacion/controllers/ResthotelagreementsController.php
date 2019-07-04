@@ -42,7 +42,7 @@ class ResthotelagreementsController extends ActiveController {
             $images = self::getFilesFromModelFiles($hotel->files);
             return $model = [
                 'id' => $hotel->id,
-                'name' => $hotel->name . ' - ' . 'convenio' ,
+                'name' => $hotel->name . ' - ' . 'Convenio' ,
                 'ishotelwithAgrements' => true,
                 'max_guests' => $hotel->max_guests,
                 'description' => $hotel->description,
