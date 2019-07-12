@@ -23,7 +23,7 @@ services:
     networks:
       - network
     volumes: 
-      - gestor_dist:/var/www/html
+      - ./:/var/www/html
     restart: always
   proxy_service:
     image:  colsazurecontainerregistrydigital.azurecr.io/colsubsidioproxy/content-proxy:eventos
