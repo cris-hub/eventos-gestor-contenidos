@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  phpVersion: 7.2
+  phpVersion: 5.6
 
 steps:
 - script: |
@@ -21,8 +21,6 @@ steps:
     sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
     php -version
   displayName: 'Use PHP version $(phpVersion)'
-
-
   
 - script: composer install --no-interaction --prefer-dist 
   displayName: 'composer install'
