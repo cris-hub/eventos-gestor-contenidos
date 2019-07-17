@@ -27,11 +27,11 @@ steps:
     sudo wget https://getcomposer.org/composer.phar -O /usr/local/bin/composer 
     sudo chmod +x /usr/local/bin/composer 
     export PATH=$PATH:~/usr/local/bin/ 
-    sudo composer self-update
+    sudo composer install
   displayName: 'composer udpate'
   
-- script: composer install --no-interaction --prefer-dist
-  displayName: 'composer install'
+#- script: composer install --no-interaction --prefer-dist
+#  displayName: 'composer install'
 
 - task: Docker@2
   inputs:
