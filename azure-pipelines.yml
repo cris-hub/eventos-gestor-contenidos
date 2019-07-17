@@ -22,7 +22,7 @@ steps:
     php -version
   displayName: 'Use PHP version $(phpVersion)'
   
-- script: composer install --no-interaction --prefer-dist 
+- script: composer install --no-interaction --prefer-dist --no-dev
   displayName: 'composer install'
 
 - task: Docker@2
