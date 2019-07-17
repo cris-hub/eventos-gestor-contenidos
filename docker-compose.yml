@@ -1,0 +1,48 @@
+version: '2'
+services:
+  gestor_contenidos_service:
+    image: colsazurecontainerregistrydigital.azurecr.io/eventos/content:latest
+    expose: 
+      - 80
+    env_file:
+      - .env             
+    build:
+      context: ./
+      args:
+        - URLBLOB
+        - STOREPATH
+        - CONTAINERNAME
+        - CONNECTIONSTRINGBLOB
+        - DEPLOYMENT_PORT
+        - FOLDER_PROJECT
+        - MYSQL_USER      
+        - MYSQL_PASSWORD    
+        - MYSQL_CONECTION_SPRING             
+        - MYSQL_CONECTION_PHP     
+      dockerfile: ./Dockerfile
+    networks:
+      - network
+    volumes: 
+      - ./:/var/www/html
+    restart: always
+  proxy_service:
+    image:  colsazurecontainerregistrydigital.azurecr.io/colsubsidioproxy/content-proxy:eventos
+    ports:
+      - 80:80
+    build:
+     context: ./gestor-contenidos-proxy
+     dockerfile: ./Dockerfile
+    networks:
+      - network 
+    volumes:
+      - proxy_config:/etc/nginx
+      - proxy_logs:/var/log
+    restart: always      
+volumes:
+  gestor_dist:
+  proxy_config:
+  proxy_logs:
+networks:
+  network:    
+
+   

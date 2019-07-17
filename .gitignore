@@ -1,0 +1,70 @@
+<<<<<<< HEAD
+=======
+assets/*
+!assets/.gitignore
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
+themes/classic/views/
+
+# phpstorm project files
+.idea
+<<<<<<< HEAD
+vendor/
+=======
+
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
+# netbeans project files
+#nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+<<<<<<< HEAD
+uploadds/
+# composer vendor dir
+/vendor
+
+=======
+
+# composer vendor dir
+vendor/
+/vendor/*
+/vendor
+/
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a
+# composer itself is not needed
+#composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
+
+tests/_output/*
+tests/_support/_generated
+
+#vagrant folder
+/.vagrant
+
+# file tar
+/*.tar
+/nbproject/private/
+<<<<<<< HEAD
+=======
+
+
+/vendor/kartik-v/bootstrap-fileinput
+/vendor/kartik-v/yii2-markdown
+/vendor/nemmo/yii2-attachments
+
+/vendor/**/.git
+>>>>>>> 5ba415694db797831d7c1c031948a084aea5606a

@@ -1,0 +1,7 @@
+FROM nginx:alpine
+
+WORKDIR /etc/nginx
+
+COPY default.conf /etc/nginx/conf.d/
+
+
