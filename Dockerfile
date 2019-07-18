@@ -1,19 +1,19 @@
 FROM crishubprojects/serve-php-colsubsidio
 
-ENV URLBLOB=${URLBLOB}
-ENV STOREPATH=${STOREPATH}
-ENV CONTAINERNAME=${CONTAINERNAME}
-ENV CONNECTIONSTRINGBLOB=${CONNECTIONSTRINGBLOB}
-ENV FOLDER_PROJECT=${FOLDER_PROJECT}
-ENV DEPLOYMENT_PORT=${DEPLOYMENT_PORT}
-ENV MYSQL_USER=${MYSQL_USER}
-ENV MYSQL_PASSWORD=${MYSQL_PASSWORD}
-ENV MYSQL_CONECTION_SPRING=${MYSQL_CONECTION_SPRING}
-ENV MYSQL_CONECTION_PHP=${MYSQL_CONECTION_PHP}
+ENV URLBLOB=URLBLOB
+ENV STOREPATH=STOREPATH
+ENV CONTAINERNAME=CONTAINERNAME
+ENV CONNECTIONSTRINGBLOB=CONNECTIONSTRINGBLOB
+ENV FOLDER_PROJECT=FOLDER_PROJECT
+ENV DEPLOYMENT_PORT=DEPLOYMENT_PORT
+ENV MYSQL_USER=MYSQL_USER
+ENV MYSQL_PASSWORD=MYSQL_PASSWORD
+ENV MYSQL_CONECTION_SPRING=MYSQL_CONECTION_SPRING
+ENV MYSQL_CONECTION_PHP=MYSQL_CONECTION_PHP
 
-COPY ./ /var/www/html/${FOLDER_PROJECT}
+COPY ./ /var/www/html/ryt/hoteles/hotelescont
 COPY config-server/ports.conf /etc/apache2/
 
-COPY config-blobstorage/Module.php ${FOLDER_PROJECT}/vendor/nemmo/yii2-attachments/src/Module.php
-COPY config-blobstorage/FileController.php ${FOLDER_PROJECT}/vendor/nemmo/yii2-attachments/src/controllers/FileController.php
+COPY config-blobstorage/Module.php ryt/hoteles/hotelescont/vendor/nemmo/yii2-attachments/src/Module.php
+COPY config-blobstorage/FileController.php ryt/hoteles/hotelescont/vendor/nemmo/yii2-attachments/src/controllers/FileController.php
 
