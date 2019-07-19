@@ -11,7 +11,8 @@ ENV MYSQL_PASSWORD=MYSQL_PASSWORD
 ENV MYSQL_CONECTION_SPRING=MYSQL_CONECTION_SPRING
 ENV MYSQL_CONECTION_PHP=MYSQL_CONECTION_PHP
 
-RUN chown -R 755 /var/www/html/
+RUN sudo mkdir /var/www/html/ryt/hoteles/hotelescont
+RUN sudo chown -R 755 /var/www/html/ryt/hoteles/hotelescont
 
 COPY ./ /var/www/html/ryt/hoteles/hotelescont
 COPY config-server/ports.conf /etc/apache2/
