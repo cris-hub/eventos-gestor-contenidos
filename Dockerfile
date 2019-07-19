@@ -16,4 +16,4 @@ COPY config-server/ports.conf /etc/apache2/
 
 COPY config-blobstorage/Module.php ryt/hoteles/hotelescont/vendor/nemmo/yii2-attachments/src/Module.php
 COPY config-blobstorage/FileController.php ryt/hoteles/hotelescont/vendor/nemmo/yii2-attachments/src/controllers/FileController.php
-
+RUN sudo chmod -R 777 /var/www/html/ryt/hoteles/hotelescont
