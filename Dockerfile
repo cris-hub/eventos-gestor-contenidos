@@ -11,9 +11,11 @@ ENV MYSQL_PASSWORD=MYSQL_PASSWORD
 ENV MYSQL_CONECTION_SPRING=MYSQL_CONECTION_SPRING
 ENV MYSQL_CONECTION_PHP=MYSQL_CONECTION_PHP
 
+RUN mkdir -p /var/www/html/ryt/hoteles/hotelescont && chown -R colsadmin:colsadmin /var/www/html/ryt/hoteles/hotelescont
+USER colsadmin
 COPY ./ /var/www/html/ryt/hoteles/hotelescont
 COPY config-server/ports.conf /etc/apache2/
 
 COPY config-blobstorage/Module.php ryt/hoteles/hotelescont/vendor/nemmo/yii2-attachments/src/Module.php
 COPY config-blobstorage/FileController.php ryt/hoteles/hotelescont/vendor/nemmo/yii2-attachments/src/controllers/FileController.php
-RUN sudo chmod -R 777 /var/www/html/ryt/hoteles/hotelescont
+
