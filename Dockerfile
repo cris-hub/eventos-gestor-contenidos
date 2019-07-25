@@ -39,7 +39,7 @@ ENV MYSQL_CONECTION_PHP=${MYSQL_CONECTION_PHP}
 
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-CMD /usr/sbin/apache2ctl, -D FOREGROUND && /usr/sbin/sshd -D 
+CMD /usr/sbin/apache2ctl -D FOREGROUND && /usr/sbin/sshd -D 
 COPY ./ /var/www/html/${FOLDER_PROJECT}
 COPY config-server/.htaccess /var/www/html/.htaccess
 
