@@ -28,7 +28,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'colsazurecontainerregistrydigital.azurecr.io'
-    repository: 'recreacionyturismo/hoteles/eventos/content'
+    repository: 'recreacionyturismo/hoteles/content'
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
     buildContext: '.'
