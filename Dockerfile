@@ -16,7 +16,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 CMD ["/usr/sbin/sshd", "-D"]     
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-EXPOSE 22
+EXPOSE 80 2222
 ARG URLBLOB
 ARG STOREPATH
 ARG CONTAINERNAME
