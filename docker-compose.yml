@@ -1,9 +1,12 @@
 version: '2'
 services:
   gestor_contenidos_service:
-    image: colsazurecontainerregistrydigital.azurecr.io/eventos/content:latest
-    expose: 
+    image: colsazurecontainerregistrydigital.azurecr.io/recreacionyturismo/hoteles/content:test
+    ports:
+      - 72:80
+    expose:
       - 80
+      - 22
     env_file:
       - .env             
     build:
@@ -23,7 +26,8 @@ services:
     networks:
       - network
     volumes: 
-      - ./:/var/www/html
+      - gestor_dist:/var/www/html
+      - apache_config:/etc/apache2
     restart: always
   proxy_service:
     image:  colsazurecontainerregistrydigital.azurecr.io/colsubsidioproxy/content-proxy:eventos
@@ -40,6 +44,7 @@ services:
     restart: always      
 volumes:
   gestor_dist:
+  apache_config:
   proxy_config:
   proxy_logs:
 networks:
