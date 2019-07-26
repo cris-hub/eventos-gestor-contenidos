@@ -1,8 +1,3 @@
-# PHP
-
-# Test and package your PHP project.
-# Add steps that run tests, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/php
 
 trigger:
 - master
@@ -25,32 +20,12 @@ steps:
   
 - script: composer install --no-interaction --prefer-dist --no-dev
   displayName: 'composer install'
-# - task: Docker@2
-#   inputs:
-#     containerRegistry: 'colsazurecontainerregistrydigital.azurecr.io'
-#     repository: 'recreacionyturismo/hoteles/content'
-#     command: 'buildAndPush'
-#     Dockerfile: 'Dockerfile'
-#     buildContext: '.'
-#     tags: '$(build.buildNumber)'
-- task: DockerCompose@0
+
+- task: Docker@2
   inputs:
-    containerregistrytype: 'Azure Container Registry'
-    dockerComposeFile: '**/docker-compose.yml'
-    action: 'Build services'
-    additionalImageTags: '$(build.buildNumber)'
-  displayName: 'composer build'
-    
-- task: DockerCompose@0
-  inputs:
-    containerregistrytype: 'Azure Container Registry'
-    dockerComposeFile: '**/docker-compose.yml'
-    action: 'Push services'
-    additionalImageTags: '$(build.buildNumber)'
-  displayName: 'composer push'
-    
-    
-    # PHP
-# Test and package your PHP project.
-# Add steps that run tests, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/php
+    containerRegistry: 'colsazurecontainerregistrydigital.azurecr.io'
+    repository: 'recreacionyturismo/hoteles/content'
+    command: 'buildAndPush'
+    Dockerfile: 'Dockerfile'
+    buildContext: '.'
+    tags: '$(build.buildNumber)'
