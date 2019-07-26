@@ -25,7 +25,6 @@ steps:
   
 - script: composer install --no-interaction --prefer-dist --no-dev
   displayName: 'composer install'
-
 # - task: Docker@2
 #   inputs:
 #     containerRegistry: 'colsazurecontainerregistrydigital.azurecr.io'
@@ -40,6 +39,11 @@ steps:
     dockerComposeFile: '**/docker-compose.yml'
     action: 'Build services'
     additionalImageTags: '$(build.buildNumber)'
-    
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Azure Container Registry'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Push services'
+    additionalImageTags: '$(build.buildNumber)'
     
     
