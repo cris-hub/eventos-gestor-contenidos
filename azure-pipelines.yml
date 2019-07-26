@@ -26,14 +26,14 @@ steps:
 - script: composer install --no-interaction --prefer-dist --no-dev
   displayName: 'composer install'
 
-- task: Docker@2
-  inputs:
-    containerRegistry: 'colsazurecontainerregistrydigital.azurecr.io'
-    repository: 'recreacionyturismo/hoteles/content'
-    command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
-    buildContext: '.'
-    tags: '$(build.buildNumber)'
+# - task: Docker@2
+#   inputs:
+#     containerRegistry: 'colsazurecontainerregistrydigital.azurecr.io'
+#     repository: 'recreacionyturismo/hoteles/content'
+#     command: 'buildAndPush'
+#     Dockerfile: 'Dockerfile'
+#     buildContext: '.'
+#     tags: '$(build.buildNumber)'
 - task: DockerCompose@0
   inputs:
     containerregistrytype: 'Azure Container Registry'
