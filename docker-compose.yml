@@ -1,12 +1,10 @@
 version: '2'
 services:
   gestor_contenidos_service:
-    image: colsazurecontainerregistrydigital.azurecr.io/recreacionyturismo/hoteles/content:test
+    image: colsazurecontainerregistrydigital.azurecr.io/recreacionyturismo/hoteles/content:test-17
     ports:
       - 72:80
-    expose:
-      - 80
-      - 22
+
     env_file:
       - .env             
     build:
