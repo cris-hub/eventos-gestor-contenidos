@@ -22,3 +22,7 @@ COPY config-server/docker-php.conf /etc/apache2/conf-available/
 COPY config-server/000-default.conf /etc/apache2/sites-available/
 COPY config-blobstorage/Module.php /var/www//vendor/nemmo/yii2-attachments/src/Module.php
 COPY config-blobstorage/FileController.php /var/www/vendor/nemmo/yii2-attachments/src/controllers/FileController.php
+
+RUN chgrp www-data ./web/assets
+RUN chmod -R 777 ./runtime
+RUN chmod g+w ./web/assets/

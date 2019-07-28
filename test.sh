@@ -15,7 +15,7 @@ echo $MYSQL_USER
 echo $MYSQL_PASSWORD
 echo $MYSQL_CONECTION_PHP
 
-# docker build ./ -t colsazurecontainerregistrydigital.azurecr.io/recreacionyturismo/hoteles/content:test-17
+docker build ./ -t colsazurecontainerregistrydigital.azurecr.io/recreacionyturismo/hoteles/content:test-17
 
 docker run -it -p 80:80  \
 colsazurecontainerregistrydigital.azurecr.io/recreacionyturismo/hoteles/content:test-17 \
