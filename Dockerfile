@@ -26,3 +26,5 @@ COPY config-blobstorage/FileController.php /var/www/vendor/nemmo/yii2-attachment
 RUN chgrp www-data ./web/assets
 RUN chmod -R 777 ./runtime
 RUN chmod g+w ./web/assets/
+
+EXPOSE 2222 80

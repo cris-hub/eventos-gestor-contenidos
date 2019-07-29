@@ -23,4 +23,4 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 CMD bash -c '/usr/sbin/apache2ctl start;/usr/sbin/sshd -D'
 
-EXPOSE 80 2222
+EXPOSE 2222 80
