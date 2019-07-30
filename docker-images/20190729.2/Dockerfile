@@ -1,0 +1,1 @@
+FROM colsazurecontainerregistrydigital.azurecr.io/recreacionyturismo/hoteles/content:20190729.2

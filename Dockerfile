@@ -1,22 +1,30 @@
-FROM crishubprojects/serve-php-colsubsidio
+FROM colsazurecontainerregistrydigital.azurecr.io/serve-php:latest
 
-ENV URLBLOB=URLBLOB
-ENV STOREPATH=STOREPATH
-ENV CONTAINERNAME=CONTAINERNAME
-ENV CONNECTIONSTRINGBLOB=CONNECTIONSTRINGBLOB
-ENV FOLDER_PROJECT=FOLDER_PROJECT
-ENV DEPLOYMENT_PORT=DEPLOYMENT_PORT
-ENV MYSQL_USER=MYSQL_USER
-ENV MYSQL_PASSWORD=MYSQL_PASSWORD
-ENV MYSQL_CONECTION_SPRING=MYSQL_CONECTION_SPRING
-ENV MYSQL_CONECTION_PHP=MYSQL_CONECTION_PHP
+ARG URLBLOB
+ARG STOREPATH
+ARG CONTAINERNAME
+ARG CONNECTIONSTRINGBLOB
+ARG MYSQL_USER      
+ARG MYSQL_PASSWORD    
+ARG MYSQL_CONECTION_PHP
+ENV URLBLOB=${URLBLOB}
+ENV STOREPATH=${STOREPATH}
+ENV CONTAINERNAME=${CONTAINERNAME}
+ENV CONNECTIONSTRINGBLOB=${CONNECTIONSTRINGBLOB}
+ENV MYSQL_USER=${MYSQL_USER}
+ENV MYSQL_PASSWORD=${MYSQL_PASSWORD}
+ENV MYSQL_CONECTION_PHP=${MYSQL_CONECTION_PHP}
 
-RUN mkdir -p /var/www/html/ryt/hoteles/hotelescont/runtime/cache
-#RUN chown -R 777 /var/www/html/ryt/hoteles/hotelescont 
-RUN chgrp root /var/www/html/ryt/hoteles/hotelescont
-COPY ./ /var/www/html/ryt/hoteles/hotelescont
+COPY ./ /var/www/html
+COPY config-server/.htaccess /var/www/html/.htaccess
 COPY config-server/ports.conf /etc/apache2/
+COPY config-server/docker-php.conf /etc/apache2/conf-available/
+COPY config-server/000-default.conf /etc/apache2/sites-available/
+COPY config-blobstorage/Module.php /var/www//vendor/nemmo/yii2-attachments/src/Module.php
+COPY config-blobstorage/FileController.php /var/www/vendor/nemmo/yii2-attachments/src/controllers/FileController.php
 
-COPY config-blobstorage/Module.php ryt/hoteles/hotelescont/vendor/nemmo/yii2-attachments/src/Module.php
-COPY config-blobstorage/FileController.php ryt/hoteles/hotelescont/vendor/nemmo/yii2-attachments/src/controllers/FileController.php
+RUN chgrp www-data ./web/assets
+RUN chmod -R 777 ./runtime
+RUN chmod g+w ./web/assets/
 
+EXPOSE 2222 80
