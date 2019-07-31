@@ -1,7 +1,7 @@
 version: '2'
 services:
   gestor_contenidos_service:
-    image: colsazurecontainerregistrydigital.azurecr.io/recreacionyturismo/hoteles/content:20190716.4
+    image: colsazurecontainerregistrydigital.azurecr.io/recreacionyturismo/hoteles/content:20190730.2
     ports:
       - 72:80
 
