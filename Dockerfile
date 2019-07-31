@@ -23,8 +23,8 @@ COPY ./ /var/www/html/ryt/hoteles/contenido
 COPY config-blobstorage/Module.php /var/www//vendor/nemmo/yii2-attachments/src/Module.php
 COPY config-blobstorage/FileController.php /var/www/vendor/nemmo/yii2-attachments/src/controllers/FileController.php
 
-RUN chgrp www-data ./web/assets
-RUN chmod -R 777 ./runtime
-RUN chmod g+w ./web/assets/
+RUN chgrp www-data /var/www/html/ryt/hoteles/contenido/web/assets
+RUN chmod -R 777 /var/www/html/ryt/hoteles/contenido/runtime
+RUN chmod g+w /var/www/html/ryt/hoteles/contenido/web/assets/
 
 EXPOSE 2222 80
