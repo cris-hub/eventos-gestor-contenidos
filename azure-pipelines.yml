@@ -1,6 +1,6 @@
 
 trigger:
-- development
+- master
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -28,4 +28,4 @@ steps:
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
     buildContext: '.'
-    tags: '$(build.buildNumber)'
+    tags: '$(build.buildNumber)-prod'
