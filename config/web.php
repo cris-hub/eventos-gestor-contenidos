@@ -135,7 +135,6 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'baseUrl' => '/index.php',
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
