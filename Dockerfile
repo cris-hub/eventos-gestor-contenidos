@@ -30,7 +30,7 @@ COPY config-blobstorage/FileController.php ${PATH_MAIN}/vendor/nemmo/yii2-attach
 
 RUN chgrp www-data ${PATH_MAIN}/web/assets
 RUN chmod -R 777 ${PATH_MAIN}/runtime
-RUN chmod -R 777 ${PATH_MAIN}/uploads
+RUN chmod 777 ${PATH_MAIN}
 RUN chmod g+w ${PATH_MAIN}/web/assets/
 
 EXPOSE 2222 80
