@@ -23,8 +23,8 @@ ENV PATH_MAIN=/var/www/html/ryt/hoteles/contenido
 COPY ./ ${PATH_MAIN}
 # COPY config-server/.htaccess /var/www/html/.htaccess
 # COPY config-server/ports.conf /etc/apache2/
-# COPY config-server/docker-php.conf /etc/apache2/conf-available/
-# COPY config-server/000-default.conf /etc/apache2/sites-available/
+COPY config-server/docker-php.conf /etc/apache2/conf-available/docker-php.conf
+COPY config-server/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY config-blobstorage/Module.php ${PATH_MAIN}/vendor/nemmo/yii2-attachments/src/Module.php
 COPY config-blobstorage/FileController.php ${PATH_MAIN}/vendor/nemmo/yii2-attachments/src/controllers/FileController.php
 
