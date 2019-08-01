@@ -1,9 +1,9 @@
 version: '2'
 services:
   proxy_service:
-    image:  crishubprojects/eventos-gestor-contenidos-proxy:latest
+    image:  proxy
     ports:
-      - "80:80"
+      - "81:80"
     build:
      context: ./
      dockerfile: ./Dockerfile
