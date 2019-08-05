@@ -30,34 +30,7 @@ class RestauthController extends ActiveController {
     }
 
     public static function behaviorsUtil() {
-        $behaviors['authenticator'] = [
-            'class' => CompositeAuth::className(),
-            'authMethods' => [
-                [
-                    'class' => JwtHttpBearerAuth::className(),
-                    'auth' => function ($token, $authMethod) {
-                        $signer = new Sha256();
-                        if ($token->verify($signer, Yii::$app->jwt->key)) {
-                            $token = Yii::$app->jwt->getParser()->parse((string) $token);
-                            $id = $token->getHeader('jti');
-                            $auth = Authapirest::findOne([
-                                        'username' => $id,
-                                        'module' => self::MODULE
-                            ]);
-                            if (!empty($auth)) {
-                                return $auth;
-                            }
-                        }
-                        return null;
-                    }
-                ],
-            ],
-        ];
 
-        // remove authentication filter
-        $auth = $behaviors['authenticator'];
-        unset($behaviors['authenticator']);
-        // add CORS filter
         $behaviors['corsFilter'] = [
             'class' => Cors::className(),
             'cors' => [
@@ -66,7 +39,6 @@ class RestauthController extends ActiveController {
                 'Access-Control-Request-Headers' => ['*'],
             ],
         ];
-        // re-add authentication filter
         $behaviors['authenticator'] = $auth;
         $behaviors['authenticator']['except'] = ['login'];
         return $behaviors;

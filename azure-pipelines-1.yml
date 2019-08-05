@@ -1,6 +1,10 @@
+# PHP
+# Test and package your PHP project.
+# Add steps that run tests, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/php
 
 trigger:
-- master
+- develop
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -28,4 +32,4 @@ steps:
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
     buildContext: '.'
-    tags: '$(build.buildNumber)-prod'
+    tags: '$(build.buildNumber)-test'
