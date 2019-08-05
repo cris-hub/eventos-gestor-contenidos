@@ -28,7 +28,7 @@ services:
   proxy_service:
     image:  colsazurecontainerregistrydigital.azurecr.io/colsubsidioproxy/content-proxy:eventos
     ports:
-      - 80:80
+      - 88:80
     build:
      context: ./gestor-contenidos-proxy
      dockerfile: ./Dockerfile

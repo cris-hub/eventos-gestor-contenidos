@@ -118,7 +118,7 @@ $config = [
                 'host' => 'smtp.gmail.com',
                 'username' => 'jesusmatiz35@gmail.com',
                 'password' => 'M1t3z2018*',
-                'port' => '587',
+                'port' => '25',
                 'encryption' => 'tls',
             ],
         ],
