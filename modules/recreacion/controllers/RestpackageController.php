@@ -76,7 +76,8 @@ class RestpackageController extends ActiveController {
                             ->where("hotel_id =:hotelId "
                                     . "AND status=:status", ['hotelId' => $hotelId, 'status' => self::ACTIVE])
                             // ->andWhere(['in', 'capacity_people', $guestsIn])
-                            ->groupby('name')->orderby('name')->all();
+                            //->groupby('name')
+                            ->orderby('name')->all();
             return $packages;
         }
     }
