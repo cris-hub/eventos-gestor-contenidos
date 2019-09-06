@@ -107,7 +107,14 @@ class BannerController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        //Delete images        
+        foreach ($model->files as $file) {
+            $module = \Yii::$app->getModule('attachments');
+            $module->detachFile($file->id);
+        }
+       //Delete model
+        $model->delete();
 
         return $this->redirect(['index']);
     }

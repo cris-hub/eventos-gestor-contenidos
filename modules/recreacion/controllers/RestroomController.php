@@ -105,7 +105,7 @@ class RestroomController extends ActiveController {
     }
 
     private function allowedRange($guests) {
-        for ($i = $guests; $i < ($guests + 2); $i++) {
+        for ($i = $guests; $i <= ($guests + 2); $i++) {
             $guestsIn[] = $i;
         }
         return $guestsIn;

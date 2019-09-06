@@ -4,8 +4,8 @@ use yii\helpers\Html;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-$minilogo = Html::img('images/minilogo.png',["width" => '20px']);
-$logo = Html::img('images/logo.png',["width" => '130px']);
+$minilogo = Html::img('web/images/minilogo.png',["width" => '20px']);
+$logo = Html::img('web/images/logo.png',["width" => '130px']);
 ?>
 
 <header class="main-header">

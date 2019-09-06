@@ -8,6 +8,7 @@ ARG MYSQL_USER
 ARG MYSQL_PASSWORD    
 ARG MYSQL_CONECTION_PHP
 ARG FOLDER_PROJECT
+ARG APACHE_LOG_DIR
 ENV URLBLOB=${URLBLOB}
 ENV STOREPATH=${STOREPATH}
 ENV CONTAINERNAME=${CONTAINERNAME}
@@ -17,6 +18,7 @@ ENV MYSQL_PASSWORD=${MYSQL_PASSWORD}
 ENV MYSQL_CONECTION_PHP=${MYSQL_CONECTION_PHP}
 ENV FOLDER_PROJECT=${FOLDER_PROJECT}
 ENV PATH_MAIN=/var/www/html/ryt/hoteles/contenido
+ARG APACHE_LOG_DIR=/var/log
 
 
 
@@ -30,6 +32,7 @@ COPY config-blobstorage/FileController.php ${PATH_MAIN}/vendor/nemmo/yii2-attach
 
 RUN chgrp www-data ${PATH_MAIN}/web/assets
 RUN chmod -R 777 ${PATH_MAIN}/runtime
+RUN chmod -R 777 ${PATH_MAIN}/uploads
 RUN chmod 777 ${PATH_MAIN}
 RUN chmod g+w ${PATH_MAIN}/web/assets/
 

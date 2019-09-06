@@ -12,7 +12,7 @@ use Yii;
  */
 class Banner extends \yii\db\ActiveRecord
 {
-
+    public $images;
     public function behaviors()
     {
         return [
