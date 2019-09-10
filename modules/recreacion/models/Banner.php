@@ -5,7 +5,7 @@ namespace app\modules\recreacion\models;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\behaviors\BlameableBehavior;
-
+use yii\db\Expression;
 /**
  * This is the model class for table "banner".
  *
