@@ -3,6 +3,8 @@
 namespace app\modules\recreacion\models;
 
 use Yii;
+use yii\db\ActiveRecord;
+use yii\behaviors\BlameableBehavior;
 
 /**
  * This is the model class for table "banner".
