@@ -52,7 +52,7 @@ class RestroomController extends ActiveController {
                             , ['id' => $v,
                         'status' => self::ACTIVE,
                         'packageName' => $packageName])
-                    ->andWhere(['in', 'capacity_people', $guestsIn])
+                    //->andWhere(['in', 'capacity_people', $guestsIn])
                     ->andWhere(['and', 'hotel_id', $hotelId])
                     ->orderby('name')
                     ->all();
