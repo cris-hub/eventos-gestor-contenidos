@@ -118,7 +118,7 @@ $config = [
                 'host' => 'smtp.gmail.com',
                 'username' => 'jesusmatiz35@gmail.com',
                 'password' => 'M1t3z2018*',
-                'port' => '587',
+                'port' => '25',
                 'encryption' => 'tls',
             ],
         ],
@@ -135,7 +135,6 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => true,
-            'baseUrl' => '/fuloop/frontend/web',
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
@@ -155,25 +154,11 @@ $config = [
                         '\app\modules\recreacion\controllers\restpackage',
                         '\app\modules\recreacion\controllers\restpackageagreements',
                     ],
-//                    'extraPatterns' => [
-//                        'GET getallcities' => 'getallcities',
-//                        'GET getallcategories' => 'getallcategories',
-//                        'POST getlisthotelsbycity' => 'getlisthotelsbycity',
-//                        'POST gethotelsbycity' => 'gethotelsbycity',
-//                        'POST gethotelsbyid' => 'gethotelsbyid',
-//                    ]
+
                 ],
-            //['class' => 'yii\rest\UrlRule', 'controller' => 'user'],
+
             ],
         ],
-    /*
-      'urlManager' => [
-      'enablePrettyUrl' => true,
-      'showScriptName' => false,
-      'rules' => [
-      ],
-      ],
-     */
     ],
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',

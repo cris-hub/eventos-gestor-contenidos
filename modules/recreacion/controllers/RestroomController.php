@@ -52,7 +52,7 @@ class RestroomController extends ActiveController {
                             , ['id' => $v,
                         'status' => self::ACTIVE,
                         'packageName' => $packageName])
-                    ->andWhere(['in', 'capacity_people', $guestsIn])
+                    //->andWhere(['in', 'capacity_people', $guestsIn])
                     ->andWhere(['and', 'hotel_id', $hotelId])
                     ->orderby('name')
                     ->all();
@@ -105,7 +105,7 @@ class RestroomController extends ActiveController {
     }
 
     private function allowedRange($guests) {
-        for ($i = $guests; $i < ($guests + 2); $i++) {
+        for ($i = $guests; $i <= ($guests + 2); $i++) {
             $guestsIn[] = $i;
         }
         return $guestsIn;

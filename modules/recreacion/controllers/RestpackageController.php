@@ -39,7 +39,7 @@ class RestpackageController extends ActiveController {
     }
 
     private function allowedRange($guests) {
-        for ($i = $guests; $i < ($guests + 2); $i++) {
+        for ($i = $guests; $i <= ($guests + 2); $i++) {
             $guestsIn[] = $i;
         }
         return $guestsIn;
@@ -75,8 +75,9 @@ class RestpackageController extends ActiveController {
             $packages = Package::find()
                             ->where("hotel_id =:hotelId "
                                     . "AND status=:status", ['hotelId' => $hotelId, 'status' => self::ACTIVE])
-                            ->andWhere(['in', 'capacity_people', $guestsIn])
-                            ->groupby('name')->orderby('name')->all();
+                            // ->andWhere(['in', 'capacity_people', $guestsIn])
+                            //->groupby('name')
+                            ->orderby('name')->all();
             return $packages;
         }
     }

@@ -14,7 +14,6 @@ use nemmo\attachments\components\AttachmentsInput;
         <?php $form = ActiveForm::begin(['id' => 'banner-form', 'action' => ['banner/update', 'id' => 1]]); ?>
 
         <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
         <?=
         AttachmentsInput::widget([
             'id' => 'file-input',
@@ -24,8 +23,6 @@ use nemmo\attachments\components\AttachmentsInput;
             ],
             'pluginOptions' => [
                 'maxFileCount' => 1,
-                'validateInitialCount' => true,
-                'validateInitialCount' => true,
                 'showUpload' => false,
                 'showUploadedThumbs' => false,
                 'overwriteInitial' => false,

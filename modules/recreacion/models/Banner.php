@@ -3,7 +3,9 @@
 namespace app\modules\recreacion\models;
 
 use Yii;
-
+use yii\db\ActiveRecord;
+use yii\behaviors\BlameableBehavior;
+use yii\db\Expression;
 /**
  * This is the model class for table "banner".
  *
@@ -12,15 +14,32 @@ use Yii;
  */
 class Banner extends \yii\db\ActiveRecord
 {
-
-    public function behaviors()
-    {
+    public $images;
+    public function behaviors() {
         return [
             'fileBehavior' => [
                 'class' => \nemmo\attachments\behaviors\FileBehavior::className()
             ],
+            'timestamp' => [
+                'class' => 'yii\behaviors\TimestampBehavior',
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created', 'modified'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['modified'],
+                ],
+                'value' => new Expression('NOW()'),
+            ],
+            'blameable' => [
+                'class' => BlameableBehavior::className(),
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_by', 'modified_by'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['modified_by'],
+                ],
+                'value' => isset(Yii::$app->user->identity->username) ?
+                Yii::$app->user->identity->username : '',
+            ],
         ];
     }
+
 
     /**
      * {@inheritdoc}

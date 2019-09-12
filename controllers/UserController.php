@@ -87,7 +87,7 @@ class UserController extends Controller
             throw new BadRequestHttpException($e->getMessage());
         }
 
-        if ($model->load(Yii::$app->getRequest()->post()) && $model->validate() && $model->resetPassword()) {
+        if ($model->load(Yii::$app->getRequest()->post()) && $model->resetPassword()) {
             Yii::$app->getSession()->setFlash('success', 'Se guardó una nueva contraseña.');
 
             return $this->redirect(['/admin/user/login']);

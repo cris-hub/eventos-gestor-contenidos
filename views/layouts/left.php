@@ -9,7 +9,7 @@ $userName = isset(Yii::$app->user->identity->username) ? Yii::$app->user->identi
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">                
-                <?= \yii\helpers\Html::img('images/user2.png',
+                <?= \yii\helpers\Html::img('web/images/user2.png',
                         ["class" => 'img-circle'], ['alt' => 'User Image', 'width'=>'350px']) ?>
             </div>
             <div class="pull-left info">
