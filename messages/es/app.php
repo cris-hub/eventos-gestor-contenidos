@@ -96,7 +96,7 @@ return [
     'PackageAgreements' => 'Negociaciones',
     'Create Package agreements' => 'Nueva negociación',
     'Update Package agreements: ' => 'Actualizar negociación: ',
-    'Type Package agreements' => 'Codigo negociación',
+    'Type Package agreements' => 'Código negociación',
     //Paquetes   && Negotiations
     'Hotel ID' => 'Hotel',
 ];

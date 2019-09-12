@@ -1,7 +1,7 @@
 <?php
 
 $params = require __DIR__ . '/params.php';
-$db = require __DIR__ . '/db.php';
+$db = require __DIR__ . '/db.test.php';
 
 $config = [
     'id' => 'basic',
@@ -71,7 +71,7 @@ $config = [
                     'skin' => 'skin-blue',
                 ],
             ],
-            'linkAssets' => true,
+            'linkAssets' => false,
         ],
         'util' => [
             'class' => 'app\components\Util',

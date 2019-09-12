@@ -92,7 +92,7 @@ use yii\widgets\Pjax;
             'id' => 'file-input',
             'model' => $model,
             'options' => [
-                    'multiple' => true, 
+                'multiple' => false,
             ],
             'pluginOptions' => [
                     'maxFileCount' => 10, 
